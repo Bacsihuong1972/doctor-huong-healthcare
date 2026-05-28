@@ -16,7 +16,7 @@ const stats = [
 export function DoctorIntro() {
   return (
     <section className="bg-cream border-t border-heading/8 overflow-hidden">
-      <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[640px]">
+      <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] min-h-[640px]">
 
         {/* ── Left — text ─────────────────────────────────────────────────── */}
         <div className="flex items-center px-5 sm:px-10 lg:px-16 xl:px-24 py-16 lg:py-24 order-2 lg:order-1">

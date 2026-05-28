@@ -87,7 +87,7 @@ export function PainPoints() {
                   aria-expanded={isOpen}
                 >
                   <h3
-                    className={`font-display text-xl md:text-2xl lg:text-3xl tracking-tight leading-tight transition-colors ${
+                    className={`font-display text-lg md:text-xl lg:text-2xl tracking-tight leading-tight transition-colors ${
                       isOpen ? "text-heading" : "text-heading/70 group-hover:text-heading"
                     }`}
                   >

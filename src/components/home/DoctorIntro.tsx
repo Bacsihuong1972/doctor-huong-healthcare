@@ -62,7 +62,7 @@ export function DoctorIntro() {
 
             {/* CTA */}
             <Link
-              href="/tham-gia"
+              href="/chuong-trinh"
               className="group inline-flex items-center gap-3 h-[56px] pl-7 pr-3 rounded-full bg-heading text-cream font-600 text-[15px] hover:bg-heading/85 transition-colors"
             >
               <span>Học cùng Bác sĩ Hương</span>

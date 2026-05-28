@@ -62,10 +62,10 @@ export function Hero() {
               ) : (
                 <>
                   <Link
-                    href="/tham-gia"
+                    href="/chuong-trinh"
                     className="group inline-flex items-center gap-3 h-[60px] pl-7 pr-3 rounded-full bg-heading text-cream font-500 text-[15px] hover:bg-heading/90 transition-colors"
                   >
-                    <span>Tham gia khóa học</span>
+                    <span>Xem các khoá học</span>
                     <span className="w-11 h-11 rounded-full bg-cream/15 group-hover:bg-cream/25 flex items-center justify-center transition-colors">
                       <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                     </span>

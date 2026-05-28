@@ -32,12 +32,12 @@ export const CourseLink = forwardRef<HTMLAnchorElement, Props>(function CourseLi
     if (user) {
       router.push(to);
     } else {
-      router.push(`/tham-gia?next=${encodeURIComponent(to)}`);
+      router.push("/chuong-trinh");
     }
   };
 
   // Render the destination href so it's visible/copyable, but intercept the click.
-  const visibleHref = user ? to : `/tham-gia?next=${encodeURIComponent(to)}`;
+  const visibleHref = user ? to : "/chuong-trinh";
 
   return (
     <a ref={ref} href={visibleHref} onClick={handleClick} {...rest}>

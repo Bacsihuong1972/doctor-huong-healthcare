@@ -390,8 +390,8 @@ export default function TaiLieuPage() {
             <p className="text-text max-w-xl mx-auto mb-8 leading-relaxed">
               Ngoài tài liệu, Bác sĩ Hương còn có khóa học video ngắn giúp cô chú hiểu sâu hơn về tiểu đường và cách kiểm soát qua bữa ăn hàng ngày.
             </p>
-            <a href="/tham-gia" className="inline-flex items-center gap-3 h-[56px] pl-7 pr-3 rounded-full bg-heading text-cream font-600 text-[15px] hover:bg-heading/85 transition-colors">
-              <span>Tham gia khóa học</span>
+            <a href="/chuong-trinh" className="inline-flex items-center gap-3 h-[56px] pl-7 pr-3 rounded-full bg-heading text-cream font-600 text-[15px] hover:bg-heading/85 transition-colors">
+              <span>Xem các khoá học</span>
               <span className="w-10 h-10 rounded-full bg-cream/15 flex items-center justify-center">
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </span>

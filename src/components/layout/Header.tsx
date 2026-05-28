@@ -303,10 +303,10 @@ export function Header() {
                 </div>
               ) : !isFormPage ? (
                 <Link
-                  href="/tham-gia"
+                  href="/chuong-trinh"
                   className="hidden sm:flex min-h-[44px] items-center px-5 rounded-full bg-heading text-cream font-600 text-[14px] hover:bg-heading/85 transition-colors"
                 >
-                  Tham gia khóa học
+                  Xem khoá học
                 </Link>
               ) : null}
 
@@ -383,10 +383,10 @@ export function Header() {
 
               {!user ? (
                 <Link
-                  href="/tham-gia"
+                  href="/chuong-trinh"
                   className="mt-4 min-h-[52px] flex items-center justify-center px-5 rounded-full bg-heading text-cream font-600"
                 >
-                  Tham gia khóa học
+                  Xem khoá học
                 </Link>
               ) : (
                 <Link

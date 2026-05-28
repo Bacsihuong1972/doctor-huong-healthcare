@@ -475,10 +475,10 @@ export default function TracNghiemPage() {
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-3 mb-10">
             <Link
-              href="/tham-gia"
+              href="/chuong-trinh"
               className="flex-1 h-[52px] rounded-full bg-heading text-cream font-600 text-[15px] hover:bg-heading/85 transition-colors flex items-center justify-center"
             >
-              Tham gia khóa học miễn phí →
+              Xem các khoá học →
             </Link>
             <button
               onClick={restart}

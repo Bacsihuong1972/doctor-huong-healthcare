@@ -13,6 +13,7 @@ import { LessonIllustration } from "@/components/illustrations/LessonIllustratio
 import { getLessonBySlug, lessons } from "@/data/lessons";
 import { useProgress } from "@/hooks/useProgress";
 import { cn } from "@/lib/utils";
+import { SparrowChat } from "@/components/chat/SparrowChat";
 
 function BodyText({ text }: { text: string }) {
   const lines = text.split("\n").filter(Boolean);
@@ -365,6 +366,9 @@ function LessonContent() {
           )}
         </div>
       </nav>
+
+      {/* Trợ lý Chim Sẻ — chỉ hiển thị cho học viên đã đăng ký */}
+      <SparrowChat lessonSlug={slug} />
     </article>
   );
 }

@@ -2,23 +2,20 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import { Send, X } from "lucide-react";
 import Link from "next/link";
-import { getLessonBySlug } from "@/data/lessons";
+import { getLessonBySlug, lessons } from "@/data/lessons";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
 type Message = { role: "user" | "assistant"; content: string };
 
 // ── Client-side AI engine ─────────────────────────────────────────────────────
-// Runs entirely in the browser — no server needed. Used as primary engine
-// (for instant response) and as guaranteed fallback when API is unavailable.
 
 const MEDICAL_KEYWORDS = [
-  "thuốc", "toa thuốc", "đơn thuốc", "liều", "uống thuốc",
-  "insulin", "tiêm", "kim tiêm",
-  "hba1c", "a1c", "mmol", "mg/dl",
-  "xét nghiệm", "chẩn đoán", "chỉ số",
-  "tác dụng phụ", "metformin", "glipizide",
-  "ngưng thuốc", "đổi thuốc", "bỏ thuốc",
+  "thuốc","toa thuốc","đơn thuốc","liều","uống thuốc",
+  "insulin","tiêm","kim tiêm",
+  "hba1c","a1c","mmol","mg/dl",
+  "xét nghiệm","chẩn đoán","chỉ số của tôi",
+  "tác dụng phụ","metformin","glipizide","ngưng thuốc","đổi thuốc",
 ];
 
 const MEDICAL_REPLY =
@@ -28,7 +25,8 @@ const STOP = new Set([
   "và","là","của","có","không","được","cho","với","trong","từ","đến",
   "này","đó","một","các","những","hay","hoặc","thì","mà","khi","nên",
   "vì","do","nhưng","tôi","cô","chú","bài","bạn","ạ","nhé","ơi",
-  "sao","gì","nào","thế","vậy","như","tại","rằng","đây","thế nào",
+  "sao","gì","nào","thế","vậy","như","tại","rằng","đây","hôm","đó",
+  "cho","rất","lắm","quá","cũng","đã","sẽ","đang","bị","được","vẫn",
 ]);
 
 function tokenize(text: string): string[] {
@@ -39,50 +37,110 @@ function tokenize(text: string): string[] {
     .filter((w) => w.length >= 3 && !STOP.has(w));
 }
 
-function clientAI(question: string, lessonTitle: string, lessonContent: string): string {
-  // Medical guard
+// Detect question intent for natural response framing
+function detectIntent(q: string): "define" | "why" | "how" | "food" | "general" {
+  const s = q.toLowerCase();
+  if (/là gì|nghĩa là|thế nào là|tức là|hiểu như/.test(s)) return "define";
+  if (/tại sao|vì sao|lý do|nguyên nhân|sao lại/.test(s)) return "why";
+  if (/ăn|uống|thực phẩm|món|cơm|bữa|thức ăn|kiêng/.test(s)) return "food";
+  if (/làm thế nào|làm sao|cách|hướng dẫn|thực hiện|áp dụng/.test(s)) return "how";
+  return "general";
+}
+
+function intentIntro(intent: string): string {
+  switch (intent) {
+    case "define": return "Để giải thích cho cô chú:\n\n";
+    case "why":    return "Lý do là:\n\n";
+    case "food":   return "Về ăn uống, Chim Sẻ tìm thấy:\n\n";
+    case "how":    return "Cách thực hiện:\n\n";
+    default:       return "Về câu hỏi của cô chú:\n\n";
+  }
+}
+
+// Build searchable units from a lesson (paragraphs + quiz explanations)
+type SearchUnit = { text: string; lessonTitle: string; isCurrentLesson: boolean };
+
+function buildSearchUnits(currentSlug: string): SearchUnit[] {
+  const units: SearchUnit[] = [];
+
+  for (const lesson of lessons) {
+    if (!lesson.content) continue;
+    const isCurrent = lesson.slug === currentSlug;
+
+    const parts: string[] = [
+      lesson.content.openingLine ?? "",
+      lesson.content.simpleSummary ?? "",
+      lesson.content.actionToday ?? "",
+      ...lesson.content.body,
+      ...lesson.content.quiz.map(
+        (q) => `${q.question} — ${q.explanation}`
+      ),
+    ];
+
+    for (const part of parts) {
+      const clean = part.replace(/\*\*/g, "").trim();
+      if (clean.length > 30) {
+        units.push({ text: clean, lessonTitle: lesson.title, isCurrentLesson: isCurrent });
+      }
+    }
+  }
+
+  return units;
+}
+
+function clientAI(question: string, currentSlug: string): string {
   const q = question.toLowerCase();
+
+  // Medical guard
   if (MEDICAL_KEYWORDS.some((kw) => q.includes(kw))) return MEDICAL_REPLY;
 
   const words = tokenize(question);
-
-  if (words.length === 0 || !lessonContent) {
-    return `Chim Sẻ chỉ có thể giải đáp thắc mắc về nội dung 16 bài học trong khóa ạ. Cô chú đặt lịch với Bác sĩ Hương để được tư vấn thêm nhé 🌿`;
+  if (words.length === 0) {
+    return "Cô chú vui lòng đặt câu hỏi cụ thể hơn để Chim Sẻ giải đáp được ạ 🌿";
   }
 
-  // Score each paragraph by keyword overlap
-  const paragraphs = lessonContent
-    .split("\n\n")
-    .map((p) => p.trim().replace(/\*\*/g, ""))
-    .filter((p) => p.length > 25);
+  const intent = detectIntent(question);
+  const units = buildSearchUnits(currentSlug);
 
-  const scored = paragraphs
-    .map((p) => ({
-      text: p,
-      score: words.filter((w) => p.toLowerCase().includes(w)).length,
-    }))
+  // Score each unit: keyword matches + bonus for current lesson
+  const scored = units.map((u) => {
+    const lower = u.text.toLowerCase();
+    const hits = words.filter((w) => lower.includes(w)).length;
+    const score = hits + (u.isCurrentLesson ? hits * 0.5 : 0); // 50% boost for current lesson
+    return { ...u, score };
+  }).filter((u) => u.score > 0)
     .sort((a, b) => b.score - a.score);
 
-  const top = scored.filter((p) => p.score > 0).slice(0, 2);
-
-  if (top.length === 0) {
-    return `Về bài "${lessonTitle}", Chim Sẻ chưa tìm thấy thông tin phù hợp với câu hỏi của cô chú ạ. Thử hỏi theo cách khác hoặc đặt lịch với Bác sĩ Hương nhé 🌿`;
+  if (scored.length === 0) {
+    return `Chim Sẻ chưa tìm thấy nội dung phù hợp trong 16 bài học ạ. Cô chú thử hỏi theo cách khác, hoặc đặt lịch với Bác sĩ Hương để được tư vấn trực tiếp nhé 🌿`;
   }
 
-  return `Về câu hỏi của cô chú:\n\n${top.map((p) => p.text).join("\n\n")}\n\n🌿`;
+  // Take top 2 unique units
+  const top = scored.slice(0, 2);
+  const fromDifferentLesson = !top[0].isCurrentLesson;
+
+  let reply = intentIntro(intent);
+
+  if (fromDifferentLesson) {
+    reply += `(Từ bài "${top[0].lessonTitle}")\n\n`;
+  }
+
+  reply += top.map((u) => u.text).join("\n\n");
+  reply += "\n\n🌿";
+
+  return reply;
 }
 
-// Detect if the server returned the old "not connected" error
+// Detect old server error messages to replace client-side
 function isServerError(reply: string): boolean {
   return (
     reply.includes("chưa được kết nối") ||
     reply.includes("quản trị viên") ||
-    reply.includes("sự cố kỹ thuật") ||
     reply.trim() === ""
   );
 }
 
-// ── Sparrow SVG icon ──────────────────────────────────────────────────────────
+// ── Sparrow SVG ───────────────────────────────────────────────────────────────
 
 function SparrowSVG({ size = 28 }: { size?: number }) {
   return (
@@ -99,8 +157,6 @@ function SparrowSVG({ size = 28 }: { size?: number }) {
     </svg>
   );
 }
-
-// ── Loading dots ──────────────────────────────────────────────────────────────
 
 function LoadingDots() {
   return (
@@ -131,28 +187,19 @@ export function SparrowChat({ lessonSlug }: Props) {
 
   const lesson = getLessonBySlug(lessonSlug);
 
-  // Full lesson content available client-side for local AI
   const lessonContext = lesson?.content
     ? [
         lesson.content.openingLine,
         lesson.content.simpleSummary,
         ...lesson.content.body,
         "Hành động ngay hôm nay: " + lesson.content.actionToday,
+        ...lesson.content.quiz.map((q) => `${q.question} — ${q.explanation}`),
       ].filter(Boolean).join("\n\n")
     : lesson?.previewText ?? "";
 
-  useEffect(() => {
-    setMessages([WELCOME]);
-    setInput("");
-  }, [lessonSlug]);
-
-  useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages, loading]);
-
-  useEffect(() => {
-    if (open) setTimeout(() => inputRef.current?.focus(), 180);
-  }, [open]);
+  useEffect(() => { setMessages([WELCOME]); setInput(""); }, [lessonSlug]);
+  useEffect(() => { bottomRef.current?.scrollIntoView({ behavior: "smooth" }); }, [messages, loading]);
+  useEffect(() => { if (open) setTimeout(() => inputRef.current?.focus(), 180); }, [open]);
 
   const getReply = useCallback(
     async (text: string, history: Message[]): Promise<string> => {
@@ -170,19 +217,14 @@ export function SparrowChat({ lessonSlug }: Props) {
         });
 
         if (!res.ok) throw new Error("non-200");
-
         const data = await res.json();
         const reply = (data.reply as string) ?? "";
 
-        // If server returned old error message → use client AI instead
-        if (isServerError(reply)) {
-          return clientAI(text, lesson?.title ?? lessonSlug, lessonContext);
-        }
-
+        // Server returned old error → use client AI
+        if (isServerError(reply)) return clientAI(text, lessonSlug);
         return reply;
       } catch {
-        // Network error or bad response → client AI
-        return clientAI(text, lesson?.title ?? lessonSlug, lessonContext);
+        return clientAI(text, lessonSlug);
       }
     },
     [lessonSlug, lesson, lessonContext]
@@ -208,11 +250,8 @@ export function SparrowChat({ lessonSlug }: Props) {
 
   return (
     <>
-      {/* ── Chat panel ────────────────────────────────────────────────────── */}
       {open && (
         <div className="no-print fixed bottom-[88px] right-4 sm:right-6 z-50 flex flex-col w-[340px] sm:w-[380px] h-[500px] bg-cream rounded-3xl shadow-2xl border border-heading/10 overflow-hidden">
-
-          {/* Header */}
           <div className="flex items-center gap-3 px-5 py-3.5 bg-heading text-cream shrink-0">
             <div className="w-9 h-9 rounded-full bg-primary flex items-center justify-center shrink-0">
               <SparrowSVG size={22} />
@@ -221,27 +260,18 @@ export function SparrowChat({ lessonSlug }: Props) {
               <p className="font-600 text-[13px] leading-none mb-0.5">Trợ lý Chim Sẻ</p>
               <p className="text-[11px] text-cream/55 truncate">{lesson?.title ?? "Bài học"}</p>
             </div>
-            <button
-              onClick={() => setOpen(false)}
-              className="w-8 h-8 rounded-full hover:bg-cream/10 flex items-center justify-center transition-colors"
-              aria-label="Đóng"
-            >
+            <button onClick={() => setOpen(false)} className="w-8 h-8 rounded-full hover:bg-cream/10 flex items-center justify-center transition-colors" aria-label="Đóng">
               <X className="w-4 h-4" />
             </button>
           </div>
 
-          {/* Disclaimer strip */}
           <div className="bg-accent/8 border-b border-accent/15 px-4 py-2 shrink-0">
             <p className="text-[10px] text-muted leading-snug">
-              Chim Sẻ chỉ giải đáp thắc mắc về bài học. Câu hỏi y khoa, thuốc, chỉ số
-              xét nghiệm sẽ được chuyển đến{" "}
-              <Link href="/lien-he" className="underline underline-offset-2 text-accent">
-                Bác sĩ Hương
-              </Link>.
+              Chim Sẻ giải đáp thắc mắc về bài học. Câu hỏi y khoa, thuốc, chỉ số xét nghiệm sẽ được chuyển đến{" "}
+              <Link href="/lien-he" className="underline underline-offset-2 text-accent">Bác sĩ Hương</Link>.
             </p>
           </div>
 
-          {/* Messages */}
           <div className="flex-1 overflow-y-auto p-4 space-y-3 min-h-0">
             {messages.map((msg, i) => (
               <div key={i} className={`flex gap-2 ${msg.role === "user" ? "justify-end" : "justify-start"}`}>
@@ -273,22 +303,18 @@ export function SparrowChat({ lessonSlug }: Props) {
             <div ref={bottomRef} />
           </div>
 
-          {/* Quick-action */}
           <div className="px-4 py-2 border-t border-heading/6 shrink-0">
             <Link href="/lien-he" className="text-[11px] text-accent hover:text-accent/75 transition-colors font-500">
               📅 Đặt lịch tư vấn 1-1 với Bác sĩ Hương
             </Link>
           </div>
 
-          {/* Input */}
           <div className="flex items-center gap-2 px-3 pb-3 shrink-0">
             <input
               ref={inputRef}
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); send(); }
-              }}
+              onKeyDown={(e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); send(); } }}
               placeholder="Hỏi Chim Sẻ về bài học..."
               className="flex-1 h-10 px-4 rounded-full bg-paper border border-heading/12 text-[13px] text-text placeholder:text-muted/60 focus:outline-none focus:border-primary/50 transition-colors"
             />
@@ -304,7 +330,6 @@ export function SparrowChat({ lessonSlug }: Props) {
         </div>
       )}
 
-      {/* ── Floating trigger button ────────────────────────────────────────── */}
       <button
         onClick={() => setOpen((v) => !v)}
         className={`no-print fixed bottom-5 right-4 sm:right-6 z-50 flex items-center gap-2.5 h-14 rounded-full bg-primary text-cream shadow-lg hover:shadow-xl hover:bg-primary/90 transition-all active:scale-95 ${open ? "px-4" : "pl-4 pr-5"}`}
@@ -313,9 +338,7 @@ export function SparrowChat({ lessonSlug }: Props) {
         <div className={`transition-transform duration-300 ${open ? "rotate-12 scale-90" : ""}`}>
           <SparrowSVG size={26} />
         </div>
-        {!open && (
-          <span className="text-[13px] font-600 whitespace-nowrap pr-0.5">Trợ lý Chim Sẻ</span>
-        )}
+        {!open && <span className="text-[13px] font-600 whitespace-nowrap pr-0.5">Trợ lý Chim Sẻ</span>}
       </button>
     </>
   );

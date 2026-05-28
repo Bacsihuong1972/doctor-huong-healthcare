@@ -238,7 +238,7 @@ export default function ChuongTrinhPage() {
       </section>
 
       {/* ── Comparison table ─────────────────────────────────────────────── */}
-      <section className="pb-20 md:pb-28 border-t border-heading/8 pt-16">
+      <section id="bang-quyen-loi" className="pb-20 md:pb-28 border-t border-heading/8 pt-16">
         <div className="max-w-[1320px] mx-auto px-5 sm:px-8 lg:px-10">
           <div className="mb-10">
             <div className="eyebrow text-muted mb-3">So sánh chi tiết</div>

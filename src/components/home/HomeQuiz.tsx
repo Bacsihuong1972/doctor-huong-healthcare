@@ -223,6 +223,7 @@ const RESULTS: Record<ResultCase, {
       courseName: string;
       price: string;
       href: string;
+      extras: string[];
     };
   };
   note?: string;
@@ -231,8 +232,8 @@ const RESULTS: Record<ResultCase, {
     icon: "🌿",
     badge: "Ổn định",
     badgeColor: "bg-primary/10 text-primary border-primary/20",
-    headline: "Đường huyết của cô chú khá ổn định — tiếp tục duy trì!",
-    intro: "Kết quả rất tích cực. Cô chú hầu như không có dấu hiệu đường huyết tăng vọt. Hãy duy trì thói quen tốt và trang bị thêm kiến thức để giữ vững sức khỏe lâu dài.",
+    headline: "Đường huyết của cô chú đang trong ngưỡng kiểm soát tốt",
+    intro: "Không có dấu hiệu rõ ràng của tăng đường huyết sau ăn. Giai đoạn này rất thuận lợi để củng cố kiến thức và duy trì thói quen bền vững — phòng ngừa sớm tốt hơn can thiệp muộn.",
     hacks: [
       { title: "Ăn rau trước mỗi bữa", desc: "Chất xơ tạo lớp đệm trong ruột, làm phẳng đường cong glucose sau ăn." },
       { title: "Đi bộ 10 phút sau ăn", desc: "Cơ bắp hấp thu glucose mà không cần insulin — đơn giản và hiệu quả." },
@@ -251,14 +252,21 @@ const RESULTS: Record<ResultCase, {
       ],
       href: "/tham-gia",
       cta: "Bắt đầu ngay",
+      secondary: {
+        label: "Muốn có chuyên gia theo dõi sát hơn?",
+        courseName: "Kiểm Soát Chủ Động 90 Ngày",
+        price: "2.999.000đ",
+        href: "/lien-he",
+        extras: ["6 buổi tư vấn 1-1", "Lộ trình 28 ngày", "Bữa ăn cá nhân hóa"],
+      },
     },
   },
   MODERATE: {
     icon: "⚡",
     badge: "Cần chú ý",
     badgeColor: "bg-accent/10 text-accent border-accent/20",
-    headline: "Cơ thể đang gửi tín hiệu — hãy điều chỉnh ngay từ bây giờ",
-    intro: "Những gì cô chú đang gặp — thèm ngọt, mệt mỏi sau ăn — là dấu hiệu đường huyết đang tăng vọt rồi sụt giảm liên tục. Đây là giai đoạn dễ can thiệp nhất và hiệu quả thay đổi sẽ thấy rõ trong vài tuần.",
+    headline: "Cơ thể đang xuất hiện tín hiệu của dao động đường huyết",
+    intro: "Mệt mỏi sau ăn, thèm ngọt và khó tập trung là biểu hiện phổ biến khi đỉnh glucose sau bữa chưa được kiểm soát. Can thiệp ở giai đoạn này cho hiệu quả rõ rệt nhất — thường thấy cải thiện trong 2–3 tuần.",
     hacks: [
       { title: "Bữa sáng có đạm", desc: "Trứng, rau, đậu phụ thay vì cháo trắng hay bánh mì ngọt. Ổn định năng lượng cả ngày." },
       { title: "Ăn rau trước, cơm sau", desc: "Thứ tự ăn đúng giảm đỉnh glucose sau ăn đến 75%." },
@@ -278,10 +286,11 @@ const RESULTS: Record<ResultCase, {
       href: "/tham-gia",
       cta: "Bắt đầu ngay",
       secondary: {
-        label: "Muốn có tư vấn 1-1 từ chuyên gia?",
+        label: "Muốn có chuyên gia xây kế hoạch riêng?",
         courseName: "Kiểm Soát Chủ Động 90 Ngày",
         price: "2.999.000đ",
         href: "/lien-he",
+        extras: ["6 buổi tư vấn 1-1", "Lộ trình 28 ngày", "Bữa ăn cá nhân hóa"],
       },
     },
   },
@@ -289,8 +298,8 @@ const RESULTS: Record<ResultCase, {
     icon: "🔥",
     badge: "Cần hành động ngay",
     badgeColor: "bg-orange-100 text-orange-700 border-orange-200",
-    headline: "Đường huyết đang ảnh hưởng nhiều đến cuộc sống hàng ngày",
-    intro: "Kết quả cho thấy đường huyết đang biến động thường xuyên và ảnh hưởng đến năng lượng, giấc ngủ và sự tập trung. Những triệu chứng này hoàn toàn có thể cải thiện với những thay đổi nhỏ, đúng hướng.",
+    headline: "Đường huyết đang biến động đáng kể và ảnh hưởng trực tiếp đến chất lượng sống",
+    intro: "Mức độ này cần can thiệp có hệ thống — không chỉ điều chỉnh một vài thói quen mà cần lộ trình rõ ràng, kế hoạch bữa ăn cá nhân hóa và theo dõi định kỳ với chuyên gia.",
     hacks: [
       { title: "Ăn rau đầu mỗi bữa", desc: "Tạo lớp đệm chất xơ trước khi tinh bột vào — giảm tốc độ hấp thu glucose đáng kể." },
       { title: "Bữa sáng mặn không ngọt", desc: "Trứng, rau, cá, thịt. Không cơm, không bánh mì, không cháo trắng buổi sáng." },
@@ -310,10 +319,11 @@ const RESULTS: Record<ResultCase, {
       href: "/lien-he",
       cta: "Đặt lịch tư vấn",
       secondary: {
-        label: "Hoặc bắt đầu với gói tự học:",
-        courseName: "Hiểu Đúng Tiểu Đường",
-        price: "799.000đ",
-        href: "/tham-gia",
+        label: "Muốn đồng hành sâu hơn với Bác sĩ Hương?",
+        courseName: "Đồng Hành Chuyên Sâu 12 Tuần",
+        price: "10.299.000đ",
+        href: "/lien-he",
+        extras: ["Thực đơn riêng từng tuần", "Zalo 5 lần/tuần", "01 người thân cùng tham gia"],
       },
     },
   },
@@ -321,8 +331,8 @@ const RESULTS: Record<ResultCase, {
     icon: "🔬",
     badge: "Kháng insulin",
     badgeColor: "bg-purple-100 text-purple-700 border-purple-200",
-    headline: "Đường huyết không ổn định đang ảnh hưởng đến chuyển hóa",
-    intro: "Kháng insulin có mối liên hệ trực tiếp với đường huyết tăng vọt. Khi cô chú làm phẳng đường cong glucose, nồng độ insulin dần giảm và cơ thể bắt đầu phục hồi độ nhạy — thường thấy kết quả trong vài tuần.",
+    headline: "Tế bào đang phản ứng kém với insulin — đường huyết khó ổn định dù không ăn nhiều",
+    intro: "Kháng insulin làm glucose tích lũy trong máu thay vì đi vào tế bào. Cần can thiệp chuyên biệt về bữa ăn, theo dõi chỉ số định kỳ và điều chỉnh theo từng tuần để phục hồi độ nhạy insulin.",
     hacks: [
       { title: "Bữa sáng mặn — ưu tiên số 1", desc: "Bữa sáng ngọt tạo đỉnh insulin cao ngay từ đầu ngày — ảnh hưởng suốt nhiều giờ sau đó." },
       { title: "Không ăn tinh bột một mình", desc: "Luôn kết hợp cơm/bún với rau và đạm — không bao giờ ăn tinh bột một mình." },
@@ -342,10 +352,11 @@ const RESULTS: Record<ResultCase, {
       href: "/lien-he",
       cta: "Đặt lịch tư vấn",
       secondary: {
-        label: "Hoặc bắt đầu với gói tự học:",
-        courseName: "Hiểu Đúng Tiểu Đường",
-        price: "799.000đ",
-        href: "/tham-gia",
+        label: "Muốn đồng hành sâu hơn với Bác sĩ Hương?",
+        courseName: "Đồng Hành Chuyên Sâu 12 Tuần",
+        price: "10.299.000đ",
+        href: "/lien-he",
+        extras: ["Thực đơn riêng từng tuần", "Zalo 5 lần/tuần", "01 người thân cùng tham gia"],
       },
     },
   },
@@ -353,8 +364,8 @@ const RESULTS: Record<ResultCase, {
     icon: "⏰",
     badge: "Tiền đái tháo đường",
     badgeColor: "bg-accent/10 text-accent border-accent/20",
-    headline: "Giai đoạn vàng để hành động — tiền đái tháo đường có thể đảo ngược",
-    intro: "Tiền đái tháo đường KHÔNG phải bản án chung thân. Nhiều nghiên cứu lâm sàng xác nhận thay đổi lối ăn uống có thể đảo ngược hoàn toàn. Đây là cửa sổ để hành động — đừng để qua.",
+    headline: "Đường huyết đã vượt ngưỡng bình thường — đây là giai đoạn có thể đảo ngược hoàn toàn",
+    intro: "Tiền đái tháo đường không phải bản án chung thân. Nhiều nghiên cứu lâm sàng xác nhận thay đổi chế độ ăn và lối sống có thể đưa đường huyết về ngưỡng bình thường — nhưng cần hành động có kế hoạch, không phải tự điều chỉnh ngẫu hứng.",
     hacks: [
       { title: "Bữa sáng mặn — thay đổi quan trọng nhất", desc: "Ngừng bữa sáng ngọt. Thay bằng trứng, rau, cá hoặc thịt." },
       { title: "Ăn đúng thứ tự", desc: "Rau củ đầu tiên, đạm và chất béo tiếp, tinh bột cuối. Giảm đỉnh glucose sau ăn đến 75%." },
@@ -374,10 +385,11 @@ const RESULTS: Record<ResultCase, {
       href: "/lien-he",
       cta: "Đặt lịch tư vấn",
       secondary: {
-        label: "Hoặc bắt đầu với gói tự học:",
-        courseName: "Hiểu Đúng Tiểu Đường",
-        price: "799.000đ",
-        href: "/tham-gia",
+        label: "Muốn đồng hành sâu hơn với Bác sĩ Hương?",
+        courseName: "Đồng Hành Chuyên Sâu 12 Tuần",
+        price: "10.299.000đ",
+        href: "/lien-he",
+        extras: ["Thực đơn riêng từng tuần", "Zalo 5 lần/tuần", "01 người thân cùng tham gia"],
       },
     },
   },
@@ -385,8 +397,8 @@ const RESULTS: Record<ResultCase, {
     icon: "💊",
     badge: "Đái tháo đường type 2",
     badgeColor: "bg-red-100 text-red-700 border-red-200",
-    headline: "Khóa học của Bác sĩ Hương được thiết kế cho người tiểu đường type 2",
-    intro: "Hơn 7 triệu người Việt Nam đang cùng hành trình với cô chú. Bài học ngắn gọn, áp dụng được ngay vào bữa cơm Việt, phối hợp an toàn với thuốc và phác đồ điều trị của bác sĩ.",
+    headline: "Tình trạng cần chương trình đồng hành chuyên sâu, cá nhân hóa và theo dõi sát",
+    intro: "Đái tháo đường type 2 với mức độ này cần can thiệp toàn diện — không chỉ điều chỉnh bữa ăn mà cần thực đơn thiết kế riêng từng tuần, theo dõi nhật ký đường huyết và phối hợp chặt chẽ với bác sĩ điều trị.",
     hacks: [
       { title: "Bữa sáng mặn — quan trọng nhất", desc: "Trứng, rau, đạm. Không bao giờ bắt đầu ngày với tinh bột hay đường." },
       { title: "Phương pháp ba vùng", desc: "½ đĩa rau · ¼ đĩa đạm · ¼ đĩa tinh bột — không bỏ cơm, chỉ điều chỉnh tỉ lệ." },
@@ -405,12 +417,6 @@ const RESULTS: Record<ResultCase, {
       ],
       href: "/lien-he",
       cta: "Liên hệ đăng ký",
-      secondary: {
-        label: "Hoặc chọn gói tư vấn ngắn hơn:",
-        courseName: "Kiểm Soát Chủ Động 90 Ngày",
-        price: "2.999.000đ",
-        href: "/lien-he",
-      },
     },
     note: "Đang dùng insulin hoặc thuốc hạ đường huyết — hãy báo bác sĩ khi thay đổi chế độ ăn vì đường huyết có thể thay đổi nhanh.",
   },
@@ -661,15 +667,25 @@ export function HomeQuiz() {
                   {res.courseRec.secondary && (
                     <div className="mt-4 pt-4 border-t border-heading/10">
                       <p className="text-xs text-muted mb-2">{res.courseRec.secondary.label}</p>
-                      <div className="flex items-center justify-between gap-3">
-                        <span className="text-sm font-600 text-heading leading-snug">
-                          {res.courseRec.secondary.courseName}
-                        </span>
+                      <div className="flex items-start justify-between gap-3 bg-heading/[0.04] rounded-2xl p-3">
+                        <div className="flex-1 min-w-0">
+                          <p className="text-sm font-600 text-heading mb-2">
+                            {res.courseRec.secondary.courseName}
+                            <span className="ml-2 text-muted font-500">{res.courseRec.secondary.price}</span>
+                          </p>
+                          <div className="flex flex-wrap gap-1.5">
+                            {res.courseRec.secondary.extras.map((e, i) => (
+                              <span key={i} className="text-xs text-heading/70 bg-heading/8 px-2.5 py-1 rounded-full">
+                                + {e}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
                         <Link
                           href={res.courseRec.secondary.href}
-                          className="shrink-0 text-xs font-600 text-heading border border-heading/25 hover:border-heading/50 px-4 h-9 rounded-full flex items-center transition-colors whitespace-nowrap"
+                          className="shrink-0 text-xs font-600 text-heading border border-heading/25 hover:border-heading/50 px-3 h-8 rounded-full flex items-center transition-colors whitespace-nowrap mt-0.5"
                         >
-                          {res.courseRec.secondary.price} →
+                          Xem →
                         </Link>
                       </div>
                     </div>

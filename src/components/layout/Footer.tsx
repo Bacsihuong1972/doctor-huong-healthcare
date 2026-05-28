@@ -1,55 +1,15 @@
 "use client";
 import Link from "next/link";
-import { ArrowUpRight, Facebook, Youtube } from "lucide-react";
+import { Facebook, Youtube } from "lucide-react";
 import { CourseLink } from "@/components/ui/CourseLink";
-import { useAuth } from "@/hooks/useAuth";
 
 const FACEBOOK_URL = "https://www.facebook.com/profile.php?id=61585399547400&locale=vi_VN";
 const YOUTUBE_URL = "https://www.youtube.com/@BacsiHuongVN";
 
 export function Footer() {
-  const { user } = useAuth();
   return (
     <footer className="relative bg-heading text-cream" role="contentinfo">
       <div className="max-w-[1320px] mx-auto px-5 sm:px-8 lg:px-10 pt-24 md:pt-32 pb-12">
-        {/* Top — CTA editorial */}
-        <div className="pb-20 border-b border-cream/15">
-          <div className="eyebrow text-accent mb-8">Sẵn sàng bắt đầu</div>
-          <h2 className="font-display text-5xl md:text-6xl lg:text-[88px] leading-[1.1] tracking-tight mb-12">
-            Một bữa ăn tốt hơn,
-            <br />
-            bắt đầu hôm nay.
-          </h2>
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-            {user ? (
-              <CourseLink
-                to="/khoa-hoc"
-                className="group inline-flex items-center gap-3 h-[60px] pl-7 pr-3 rounded-full bg-cream text-heading font-500 text-[15px] hover:bg-cream/90 transition-colors w-fit"
-              >
-                <span>Vào khóa học của tôi</span>
-                <span className="w-11 h-11 rounded-full bg-heading text-cream group-hover:bg-heading/85 flex items-center justify-center transition-colors">
-                  <ArrowUpRight className="w-4 h-4" />
-                </span>
-              </CourseLink>
-            ) : (
-              <>
-                <Link
-                  href="/tham-gia"
-                  className="group inline-flex items-center gap-3 h-[60px] pl-7 pr-3 rounded-full bg-cream text-heading font-500 text-[15px] hover:bg-cream/90 transition-colors w-fit"
-                >
-                  <span>Tham gia khóa học</span>
-                  <span className="w-11 h-11 rounded-full bg-heading text-cream group-hover:bg-heading/85 flex items-center justify-center transition-colors">
-                    <ArrowUpRight className="w-4 h-4" />
-                  </span>
-                </Link>
-                <p className="text-sm text-cream/60">
-                  Hoàn toàn miễn phí — chỉ cần tên và số điện thoại.
-                </p>
-              </>
-            )}
-          </div>
-        </div>
-
         {/* Middle — column links */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 py-16 border-b border-cream/15">
           {/* Brand */}
@@ -115,10 +75,10 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/tham-gia"
+                  href="/chuong-trinh"
                   className="text-cream/75 hover:text-cream text-[15px] link-underline"
                 >
-                  Tham gia khóa học
+                  Xem các khoá học
                 </Link>
               </li>
             </ul>

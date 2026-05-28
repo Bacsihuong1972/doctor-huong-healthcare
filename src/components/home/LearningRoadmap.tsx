@@ -105,13 +105,13 @@ export function LearningRoadmap() {
           className="mt-20 md:mt-24 pt-12 border-t border-heading/10 text-center"
         >
           <p className="text-sm text-muted mb-5 max-w-md mx-auto">
-            Để vào học toàn bộ 20 bài, cô chú vui lòng điền tên và số điện thoại — Bác sĩ Hương sẽ ghi nhớ tiến độ học.
+            Để vào học toàn bộ 20 bài, cô chú vui lòng đăng ký hoặc đăng nhập tài khoản — Bác sĩ Hương sẽ ghi nhớ tiến độ học.
           </p>
           <Link
-            href="/tham-gia"
+            href="/chuong-trinh"
             className="inline-flex items-center gap-3 h-[60px] pl-7 pr-3 rounded-full bg-heading text-cream font-500 text-[15px] hover:bg-heading/90 transition-colors group"
           >
-            <span>Tham gia để bắt đầu học</span>
+            <span>Xem các khoá học</span>
             <span className="w-11 h-11 rounded-full bg-cream/15 group-hover:bg-cream/25 flex items-center justify-center transition-colors">
               <ArrowUpRight className="w-4 h-4" />
             </span>

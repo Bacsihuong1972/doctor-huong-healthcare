@@ -16,8 +16,7 @@ export function AuthGate({ children }: Props) {
   useEffect(() => {
     if (loading) return;
     if (!user) {
-      const next = encodeURIComponent(pathname ?? "/khoa-hoc");
-      router.replace(`/tham-gia?next=${next}`);
+      router.replace("/chuong-trinh");
     }
   }, [user, loading, router, pathname]);
 
@@ -33,7 +32,7 @@ export function AuthGate({ children }: Props) {
     return (
       <div className="min-h-[60vh] flex flex-col items-center justify-center px-6 text-center">
         <Loader2 className="w-6 h-6 animate-spin text-primary mb-4" />
-        <p className="text-muted text-sm">Đang chuyển sang trang điền thông tin...</p>
+        <p className="text-muted text-sm">Đang chuyển sang trang khóa học...</p>
       </div>
     );
   }

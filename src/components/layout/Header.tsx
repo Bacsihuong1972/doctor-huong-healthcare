@@ -20,12 +20,14 @@ interface NavLink {
   href: string;
   label: string;
   gated: boolean;
+  /** Extra paths that count as "active" for this nav item */
+  activeAlso?: string[];
   dropdown?: DropdownItem[];
 }
 
 const navLinks: NavLink[] = [
   { href: "/", label: "Trang chủ", gated: false },
-  { href: "/khoa-hoc", label: "Khóa học", gated: true },
+  { href: "/khoa-hoc", label: "Khóa học", gated: true, activeAlso: ["/chuong-trinh", "/tham-gia"] },
   {
     href: "/tai-lieu",
     label: "Tài liệu",
@@ -169,7 +171,8 @@ export function Header() {
                 {navLinks.map((link) => {
                   const active =
                     pathname === link.href ||
-                    (link.href !== "/" && pathname?.startsWith(link.href));
+                    (link.href !== "/" && pathname?.startsWith(link.href)) ||
+                    (link.activeAlso?.some((p) => pathname === p || pathname?.startsWith(p + "/")) ?? false);
 
                   // Link with dropdown
                   if (link.dropdown) {

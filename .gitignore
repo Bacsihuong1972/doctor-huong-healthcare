@@ -43,3 +43,4 @@ next-env.d.ts
 /*.pdf
 /files Quizz/
 /HUONG_DAN_GOOGLE_SHEET.md
+public/documents/*.pdf

@@ -106,38 +106,6 @@ export function Hero() {
           </div>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 32 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-20 md:mt-28"
-        >
-          <div className="relative rounded-3xl overflow-hidden shadow-premium">
-            <div className="aspect-[16/7] md:aspect-[21/8]">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=1800&q=90&fit=crop&auto=format"
-                alt="Bát ăn cân đối — rau xanh, đạm và tinh bột vừa phải"
-                className="w-full h-full object-cover"
-              />
-
-              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10 bg-gradient-to-t from-heading/85 via-heading/30 to-transparent">
-                <div className="max-w-3xl">
-                  <div className="eyebrow text-cream/70 mb-3">Phương pháp đơn giản</div>
-                  <p className="font-display text-2xl md:text-4xl text-cream leading-tight">
-                    &ldquo;Ăn rau trước, đạm tiếp theo, cơm sau cùng.&rdquo;
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mt-6 pl-1">
-            <p className="text-sm text-muted max-w-md">
-              Thay đổi nhỏ trong thứ tự ăn — phương pháp được khoa học ủng hộ và phù hợp với bữa cơm Việt Nam.
-            </p>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Hero } from "@/components/home/Hero";
 import { DoctorIntro } from "@/components/home/DoctorIntro";
 import { PainPoints } from "@/components/home/PainPoints";
+import { HomeQuiz } from "@/components/home/HomeQuiz";
 import { GlucoseExplainer } from "@/components/home/GlucoseExplainer";
 import { MedicalSafetyBanner } from "@/components/home/MedicalSafetyBanner";
 
@@ -16,6 +17,7 @@ export default function HomePage() {
     <>
       <DoctorIntro />
       <Hero />
+      <HomeQuiz />
       <PainPoints />
       <GlucoseExplainer />
       <MedicalSafetyBanner />

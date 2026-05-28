@@ -344,44 +344,6 @@ export default function TaiLieuPage() {
           </div>
         </section>
 
-        {/* ── Quiz teaser ──────────────────────────────────────────────────── */}
-        <section className="border-t border-heading/8 bg-paper">
-          <div className="min-h-[400px] grid grid-cols-1 lg:grid-cols-2">
-            {/* Left */}
-            <div className="flex flex-col justify-center px-8 py-14 sm:px-12 lg:px-16 xl:px-20">
-              <div className="eyebrow text-muted mb-6">№ 03 — Trắc nghiệm</div>
-              <h2 className="font-display text-4xl md:text-5xl lg:text-[56px] text-heading leading-[1.1] tracking-tight mb-6">
-                Cô chú có đang bị
-                <br />
-                tăng đột biến
-                <br />
-                đường huyết không?
-              </h2>
-              <p className="text-text leading-relaxed mb-10 max-w-md">
-                Bác sĩ Hương giúp cô chú nhận ra dấu hiệu sớm và gợi ý phù hợp với tình trạng thực tế.
-              </p>
-              <div className="flex items-center gap-6 flex-wrap">
-                <Link
-                  href="/tai-lieu/trac-nghiem"
-                  className="group inline-flex items-center gap-3 h-[56px] pl-7 pr-3 rounded-full bg-heading text-cream font-600 text-[15px] hover:bg-heading/85 transition-colors"
-                >
-                  <span>Làm trắc nghiệm</span>
-                  <span className="w-10 h-10 rounded-full bg-cream/15 group-hover:bg-cream/25 flex items-center justify-center transition-colors">
-                    <ChevronRight className="w-4 h-4" />
-                  </span>
-                </Link>
-                <span className="text-sm text-muted">⏱ Khoảng 3 phút</span>
-              </div>
-            </div>
-            {/* Right image */}
-            <div className="hidden lg:block relative overflow-hidden">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=1200&q=90&fit=crop&auto=format" alt="Bữa ăn Việt Nam cân đối" className="absolute inset-0 w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-r from-paper/50 to-transparent" />
-            </div>
-          </div>
-        </section>
-
         {/* ── Bottom CTA ───────────────────────────────────────────────────── */}
         <section className="border-t border-heading/8 py-16 md:py-20 bg-paper">
           <div className="max-w-[1320px] mx-auto px-5 sm:px-8 lg:px-10 text-center">

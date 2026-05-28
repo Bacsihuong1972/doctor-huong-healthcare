@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronRight, RotateCcw, ArrowUpRight, ArrowLeft } from "lucide-react";
+import { ChevronRight, RotateCcw, ArrowUpRight, ArrowLeft, Check } from "lucide-react";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -212,10 +212,18 @@ const RESULTS: Record<ResultCase, {
   hacks: { title: string; desc: string }[];
   courseRec: {
     eyebrow: string;
-    title: string;
-    desc: string;
+    courseTag: string;
+    courseName: string;
+    price: string;
+    highlights: string[];
     href: string;
     cta: string;
+    secondary?: {
+      label: string;
+      courseName: string;
+      price: string;
+      href: string;
+    };
   };
   note?: string;
 }> = {
@@ -231,11 +239,18 @@ const RESULTS: Record<ResultCase, {
       { title: "Phương pháp ba vùng", desc: "½ đĩa rau · ¼ đĩa đạm · ¼ đĩa tinh bột — áp dụng vào mâm cơm Việt." },
     ],
     courseRec: {
-      eyebrow: "Gợi ý bắt đầu",
-      title: "Chặng 2: Bữa cơm Việt",
-      desc: "Cô chú đang ổn định — hãy bắt đầu từ Chặng 2 để điều chỉnh bữa cơm hằng ngày mà không cần thay đổi nhiều.",
-      href: "/khoa-hoc?chuong=bua-com-viet",
-      cta: "Vào Chặng 2 ngay",
+      eyebrow: "Phù hợp với cô chú",
+      courseTag: "Tự học",
+      courseName: "Hiểu Đúng Tiểu Đường",
+      price: "799.000đ",
+      highlights: [
+        "16 video bài giảng khoa học",
+        "90 ngày truy cập không giới hạn",
+        "10 tài liệu PDF tải về",
+        "Chứng chỉ hoàn thành khoá",
+      ],
+      href: "/tham-gia",
+      cta: "Bắt đầu ngay",
     },
   },
   MODERATE: {
@@ -250,11 +265,24 @@ const RESULTS: Record<ResultCase, {
       { title: "Đi bộ 10 phút sau ăn", desc: "Công cụ đơn giản nhất và hiệu quả nhất để kiểm soát đường huyết sau bữa." },
     ],
     courseRec: {
-      eyebrow: "Gợi ý bắt đầu",
-      title: "Chặng 1: Hiểu bệnh & chỉ số",
-      desc: "Hiểu rõ cơ chế đường huyết và ba chỉ số quan trọng trước khi thay đổi thói quen — đây là nền tảng quan trọng nhất.",
-      href: "/khoa-hoc",
-      cta: "Bắt đầu từ Chặng 1",
+      eyebrow: "Gợi ý cho cô chú",
+      courseTag: "Tự học",
+      courseName: "Hiểu Đúng Tiểu Đường",
+      price: "799.000đ",
+      highlights: [
+        "16 video bài giảng khoa học",
+        "90 ngày truy cập không giới hạn",
+        "10 tài liệu PDF tải về",
+        "Bài kiểm tra và chứng chỉ hoàn thành",
+      ],
+      href: "/tham-gia",
+      cta: "Bắt đầu ngay",
+      secondary: {
+        label: "Muốn có tư vấn 1-1 từ chuyên gia?",
+        courseName: "Kiểm Soát Chủ Động 90 Ngày",
+        price: "2.999.000đ",
+        href: "/lien-he",
+      },
     },
   },
   HEAVY: {
@@ -269,11 +297,24 @@ const RESULTS: Record<ResultCase, {
       { title: "Đi bộ 10–15 phút sau ăn", desc: "Một trong những công cụ mạnh nhất để kiểm soát đường huyết sau ăn." },
     ],
     courseRec: {
-      eyebrow: "Đặc biệt cần",
-      title: "Khóa học đầy đủ 16 bài giảng",
-      desc: "Bắt đầu từ Chặng 1 — hiểu bệnh, điều chỉnh bữa ăn, theo dõi tại nhà và sống an toàn. Mỗi chặng chỉ 4 bài, 10 phút mỗi bài.",
-      href: "/khoa-hoc",
-      cta: "Bắt đầu học ngay",
+      eyebrow: "Phù hợp nhất với cô chú",
+      courseTag: "Phổ biến nhất",
+      courseName: "Kiểm Soát Chủ Động 90 Ngày",
+      price: "2.999.000đ",
+      highlights: [
+        "6 buổi tư vấn 1-1 với chuyên gia",
+        "Lộ trình 28 ngày cá nhân hóa",
+        "Khung bữa ăn Việt thiết kế riêng",
+        "Hỗ trợ hỏi đáp Zalo 5 lần / tháng",
+      ],
+      href: "/lien-he",
+      cta: "Đặt lịch tư vấn",
+      secondary: {
+        label: "Hoặc bắt đầu với gói tự học:",
+        courseName: "Hiểu Đúng Tiểu Đường",
+        price: "799.000đ",
+        href: "/tham-gia",
+      },
     },
   },
   INSULIN_RESISTANCE: {
@@ -288,11 +329,24 @@ const RESULTS: Record<ResultCase, {
       { title: "Đi bộ sau ăn", desc: "Cơ bắp hấp thu glucose trực tiếp — đặc biệt quan trọng với kháng insulin." },
     ],
     courseRec: {
-      eyebrow: "Ưu tiên cao",
-      title: "Chặng 3: Theo dõi tại nhà",
-      desc: "Cô chú đặc biệt cần học Chặng 3 — đo đường huyết đúng cách, đọc kết quả và theo dõi cân nặng. Chặng 1 & 2 là nền tảng không thể bỏ qua.",
-      href: "/khoa-hoc",
-      cta: "Vào khóa học đầy đủ",
+      eyebrow: "Cần kế hoạch cá nhân hóa",
+      courseTag: "Phổ biến nhất",
+      courseName: "Kiểm Soát Chủ Động 90 Ngày",
+      price: "2.999.000đ",
+      highlights: [
+        "Đánh giá tình trạng ban đầu",
+        "Khung bữa ăn Việt cá nhân hóa",
+        "6 buổi tư vấn riêng / 90 ngày",
+        "Nhận xét nhật ký đường huyết",
+      ],
+      href: "/lien-he",
+      cta: "Đặt lịch tư vấn",
+      secondary: {
+        label: "Hoặc bắt đầu với gói tự học:",
+        courseName: "Hiểu Đúng Tiểu Đường",
+        price: "799.000đ",
+        href: "/tham-gia",
+      },
     },
   },
   PREDIABETES: {
@@ -307,11 +361,24 @@ const RESULTS: Record<ResultCase, {
       { title: "Đi bộ 10–15 phút sau mỗi bữa", desc: "Đặc biệt hiệu quả cho tiền đái tháo đường — theo dõi đường huyết sau ăn để thấy kết quả." },
     ],
     courseRec: {
-      eyebrow: "Quan trọng nhất với cô chú",
-      title: "Chặng 1 & 2 — Hiểu bệnh và Bữa cơm Việt",
-      desc: "Hai chặng đầu tiên đặc biệt quan trọng với tiền đái tháo đường: hiểu đúng các chỉ số và điều chỉnh bữa cơm hằng ngày.",
-      href: "/khoa-hoc",
-      cta: "Bắt đầu khóa học",
+      eyebrow: "Giai đoạn vàng — đừng bỏ lỡ",
+      courseTag: "Phổ biến nhất",
+      courseName: "Kiểm Soát Chủ Động 90 Ngày",
+      price: "2.999.000đ",
+      highlights: [
+        "Lộ trình 28 ngày riêng cho tiền tiểu đường",
+        "6 buổi tư vấn trực tiếp với chuyên gia",
+        "Khung bữa ăn Việt cá nhân hóa",
+        "Báo cáo tổng kết cuối 90 ngày",
+      ],
+      href: "/lien-he",
+      cta: "Đặt lịch tư vấn",
+      secondary: {
+        label: "Hoặc bắt đầu với gói tự học:",
+        courseName: "Hiểu Đúng Tiểu Đường",
+        price: "799.000đ",
+        href: "/tham-gia",
+      },
     },
   },
   DIABETES_T2: {
@@ -326,11 +393,24 @@ const RESULTS: Record<ResultCase, {
       { title: "Kiểm tra bàn chân mỗi tối", desc: "3 phút mỗi tối — thói quen nhỏ phòng ngừa biến chứng bàn chân hiệu quả nhất." },
     ],
     courseRec: {
-      eyebrow: "Dành riêng cho cô chú",
-      title: "Khóa học đầy đủ 16 bài · 28 ngày",
-      desc: "Được thiết kế cho người tiểu đường type 2: hiểu bệnh → bữa cơm Việt → theo dõi tại nhà → sống an toàn. Miễn phí hoàn toàn.",
-      href: "/chuong-trinh",
-      cta: "Xem khoá học của tôi",
+      eyebrow: "Đồng hành toàn diện",
+      courseTag: "Cao cấp",
+      courseName: "Đồng Hành Chuyên Sâu 12 Tuần",
+      price: "10.299.000đ",
+      highlights: [
+        "7 buổi tư vấn trực tiếp với Bác sĩ Hương",
+        "Thực đơn Việt thiết kế riêng từng tuần",
+        "Hỗ trợ Zalo 5 lần / tuần",
+        "01 người thân cùng tham gia",
+      ],
+      href: "/lien-he",
+      cta: "Liên hệ đăng ký",
+      secondary: {
+        label: "Hoặc chọn gói tư vấn ngắn hơn:",
+        courseName: "Kiểm Soát Chủ Động 90 Ngày",
+        price: "2.999.000đ",
+        href: "/lien-he",
+      },
     },
     note: "Đang dùng insulin hoặc thuốc hạ đường huyết — hãy báo bác sĩ khi thay đổi chế độ ăn vì đường huyết có thể thay đổi nhanh.",
   },
@@ -540,20 +620,60 @@ export function HomeQuiz() {
               {/* Course recommendation — prominent */}
               <div className="lg:col-span-7">
                 <div className="bg-cream rounded-3xl p-7 md:p-8">
-                  <div className="eyebrow text-accent mb-3">{res.courseRec.eyebrow}</div>
-                  <h3 className="font-display text-2xl text-heading leading-tight tracking-tight mb-3">
-                    {res.courseRec.title}
+                  {/* Header row */}
+                  <div className="flex items-start justify-between gap-3 mb-4">
+                    <div className="eyebrow text-accent">{res.courseRec.eyebrow}</div>
+                    <span className="shrink-0 inline-block px-3 py-1 rounded-full text-xs font-600 bg-heading text-cream">
+                      {res.courseRec.courseTag}
+                    </span>
+                  </div>
+
+                  {/* Course name */}
+                  <h3 className="font-display text-2xl text-heading leading-tight tracking-tight mb-2">
+                    {res.courseRec.courseName}
                   </h3>
-                  <p className="text-muted text-sm leading-relaxed mb-6">{res.courseRec.desc}</p>
+
+                  {/* Price */}
+                  <div className="flex items-baseline gap-1 mb-5 pb-5 border-b border-heading/10">
+                    <span className="font-display text-3xl text-heading">{res.courseRec.price}</span>
+                  </div>
+
+                  {/* Highlights */}
+                  <ul className="space-y-2.5 mb-6">
+                    {res.courseRec.highlights.map((h, i) => (
+                      <li key={i} className="flex items-start gap-2.5">
+                        <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                        <span className="text-sm text-text leading-snug">{h}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* CTA */}
                   <Link
                     href={res.courseRec.href}
-                    className="group inline-flex items-center gap-3 h-[52px] pl-6 pr-2 rounded-full bg-heading text-cream font-600 text-[14px] hover:bg-heading/85 transition-colors"
+                    className="group flex items-center justify-center gap-3 h-[52px] pl-6 pr-3 rounded-full bg-heading text-cream font-600 text-[14px] hover:bg-heading/85 transition-colors w-full"
                   >
                     <span>{res.courseRec.cta}</span>
-                    <span className="w-9 h-9 rounded-full bg-cream/15 group-hover:bg-cream/25 flex items-center justify-center transition-colors">
-                      <ArrowUpRight className="w-4 h-4" />
-                    </span>
+                    <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   </Link>
+
+                  {/* Secondary option */}
+                  {res.courseRec.secondary && (
+                    <div className="mt-4 pt-4 border-t border-heading/10">
+                      <p className="text-xs text-muted mb-2">{res.courseRec.secondary.label}</p>
+                      <div className="flex items-center justify-between gap-3">
+                        <span className="text-sm font-600 text-heading leading-snug">
+                          {res.courseRec.secondary.courseName}
+                        </span>
+                        <Link
+                          href={res.courseRec.secondary.href}
+                          className="shrink-0 text-xs font-600 text-heading border border-heading/25 hover:border-heading/50 px-4 h-9 rounded-full flex items-center transition-colors whitespace-nowrap"
+                        >
+                          {res.courseRec.secondary.price} →
+                        </Link>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
 

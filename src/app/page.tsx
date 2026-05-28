@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Hero } from "@/components/home/Hero";
 import { DoctorIntro } from "@/components/home/DoctorIntro";
 import { PainPoints } from "@/components/home/PainPoints";
 import { HomeQuiz } from "@/components/home/HomeQuiz";
@@ -16,7 +15,6 @@ export default function HomePage() {
   return (
     <>
       <DoctorIntro />
-      <Hero />
       <HomeQuiz />
       <PainPoints />
       <GlucoseExplainer />

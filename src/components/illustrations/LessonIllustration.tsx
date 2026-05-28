@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 interface Props {
   type: string;
   alt: string;
+  src?: string; // override — use directly if provided
 }
 
 // Map lesson slugs to illustration types
@@ -54,10 +55,10 @@ const imageMap: Record<string, string> = {
   doctor: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1200&q=85&fit=crop&auto=format",
 };
 
-export function LessonIllustration({ type, alt }: Props) {
-  // type can be a slug or a direct image key
+export function LessonIllustration({ type, alt, src }: Props) {
+  // Use src directly if provided, otherwise fall back to slug/type map
   const imageKey = slugMap[type] ?? type;
-  const imageUrl = imageMap[imageKey] ?? imageMap["glucose"];
+  const imageUrl = src ?? imageMap[imageKey] ?? imageMap["glucose"];
 
   return (
     <motion.figure

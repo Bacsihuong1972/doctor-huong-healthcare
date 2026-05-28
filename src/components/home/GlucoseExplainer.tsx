@@ -15,7 +15,6 @@ export function GlucoseExplainer() {
             transition={{ duration: 0.6 }}
             className="lg:col-span-5"
           >
-            <div className="eyebrow text-muted mb-3">№ 03 — Khoa học</div>
             <h2 className="font-display text-4xl md:text-5xl lg:text-[64px] text-heading leading-[1.1] tracking-tight mb-8">
               Hai bữa ăn,
               <br />

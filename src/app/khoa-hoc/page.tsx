@@ -103,7 +103,7 @@ function CourseContent() {
             <div>
               <div className="eyebrow text-muted mb-3">Tất cả bài học</div>
               <h2 className="font-display text-4xl md:text-5xl text-heading tracking-tight leading-tight">
-                {filterChapter ? chapters[filterChapter].title : "Hai mươi bài học"}
+                {filterChapter ? chapters[filterChapter].title : "Mười sáu bài học"}
               </h2>
             </div>
           </div>

@@ -159,10 +159,10 @@ function LessonContent() {
             <span className="text-muted">{lesson.estimatedMinutes} phút đọc</span>
             <span className="w-1 h-1 rounded-full bg-muted/40" />
             <span className="text-muted">
-              {lesson.chapter === "hieu-duong-huyet" && "Hiểu đường huyết"}
-              {lesson.chapter === "nguy-co-va-theo-doi" && "Nhận diện nguy cơ"}
-              {lesson.chapter === "thuc-hanh-bua-an" && "Thực hành bữa ăn"}
-              {lesson.chapter === "ke-hoach-ca-nhan" && "Kế hoạch riêng"}
+              {lesson.chapter === "hieu-benh-va-chi-so" && "Chặng 1: Hiểu bệnh & chỉ số"}
+              {lesson.chapter === "bua-com-viet" && "Chặng 2: Bữa cơm Việt"}
+              {lesson.chapter === "theo-doi-tai-nha" && "Chặng 3: Theo dõi tại nhà"}
+              {lesson.chapter === "song-an-toan" && "Chặng 4: Sống an toàn"}
             </span>
           </div>
 
@@ -183,10 +183,41 @@ function LessonContent() {
         </div>
       </header>
 
+      {/* Video section */}
+      <div className="max-w-[1080px] mx-auto px-5 sm:px-8 lg:px-10 mb-16 no-print">
+        {lesson.videoUrl ? (
+          <div className="rounded-3xl overflow-hidden shadow-card border border-heading/8 bg-heading aspect-video">
+            <iframe
+              src={lesson.videoUrl}
+              title={`Video bài giảng: ${lesson.title}`}
+              className="w-full h-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        ) : (
+          <div className="rounded-3xl border-2 border-dashed border-heading/15 bg-paper/60 aspect-video flex flex-col items-center justify-center gap-4 text-muted">
+            <div className="w-16 h-16 rounded-full bg-heading/8 flex items-center justify-center">
+              <svg className="w-7 h-7 text-heading/40" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </div>
+            <div className="text-center">
+              <p className="font-display text-lg text-heading/60 italic">Video bài giảng</p>
+              <p className="text-sm text-muted/70 mt-1">Đang được chuẩn bị — sẽ có sớm</p>
+            </div>
+          </div>
+        )}
+      </div>
+
       {/* Hero image */}
       {lesson.content?.illustrationAlt && (
         <div className="max-w-[1080px] mx-auto px-5 sm:px-8 lg:px-10 mb-16">
-          <LessonIllustration type={slug} alt={lesson.content.illustrationAlt} />
+          <LessonIllustration
+            type={slug}
+            alt={lesson.content.illustrationAlt}
+            src={lesson.content.illustrationPlaceholder}
+          />
         </div>
       )}
 

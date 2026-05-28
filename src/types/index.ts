@@ -1,10 +1,10 @@
 export type LessonStatus = "not-started" | "in-progress" | "completed";
 
 export type LessonChapter =
-  | "hieu-duong-huyet"
-  | "nguy-co-va-theo-doi"
-  | "thuc-hanh-bua-an"
-  | "ke-hoach-ca-nhan";
+  | "hieu-benh-va-chi-so"
+  | "bua-com-viet"
+  | "theo-doi-tai-nha"
+  | "song-an-toan";
 
 export interface SafetyAlertData {
   type: "default" | "medication" | "exercise" | "diet";
@@ -40,6 +40,8 @@ export interface Lesson {
   icon: string;
   previewText: string;
   hasSafetyAlert: boolean;
+  /** YouTube embed URL or direct video URL — undefined = show placeholder */
+  videoUrl?: string;
   content?: LessonContent;
 }
 

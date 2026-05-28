@@ -1,31 +1,38 @@
 import type { Lesson } from "@/types";
 
 export const lessons: Lesson[] = [
+  // ─────────────────────────────────────────────
+  // CHẶNG 1: HIỂU BỆNH & CHỈ SỐ (bài 1–4)
+  // ─────────────────────────────────────────────
   {
-    id: 0,
-    slug: "truoc-khi-bat-dau",
-    title: "Trước khi bắt đầu: Cô chú cần nhớ điều này",
-    chapter: "hieu-duong-huyet",
-    estimatedMinutes: 4,
-    icon: "Shield",
+    id: 1,
+    slug: "cuoc-song-binh-thuong-voi-tieu-duong",
+    title: "Tôi bị tiểu đường rồi — cuộc sống có còn bình thường không?",
+    chapter: "hieu-benh-va-chi-so",
+    estimatedMinutes: 10,
+    icon: "Heart",
     previewText:
-      "Lưu ý an toàn quan trọng và những điều cần biết trước khi học khóa này.",
+      "Nhận chẩn đoán tiểu đường là một cú sốc — nhưng cuộc sống vẫn có thể tiếp tục bình thường và đầy đủ ý nghĩa.",
     hasSafetyAlert: true,
+    videoUrl: undefined,
     content: {
       openingLine:
-        "Trước khi bắt đầu, cô chú hãy đọc kỹ những lưu ý quan trọng dưới đây.",
+        "Cô chú vừa cầm tờ kết quả xét nghiệm và đọc hai từ 'tiểu đường' — cảm giác đó như thế nào?",
       simpleSummary:
-        "Khóa học này giúp cô chú hiểu hơn về đường huyết và cách ăn uống, vận động phù hợp. Đây là kiến thức giáo dục, không thay thế bác sĩ điều trị.",
+        "Tiểu đường type 2 là bệnh mạn tính, nhưng hoàn toàn có thể kiểm soát được. Hàng triệu người đang sống tốt với bệnh này khi hiểu và chăm sóc bản thân đúng cách.",
       actionToday:
-        "Đọc hết bài này và nói chuyện với bác sĩ hoặc người thân về việc cô chú bắt đầu tìm hiểu chủ đề này.",
-      illustrationPlaceholder: "/images/placeholder-safety.svg",
+        "Hôm nay, hãy nói chuyện với một người thân về việc cô chú bắt đầu tìm hiểu về bệnh — sự đồng hành của gia đình là nguồn động lực lớn nhất.",
+      illustrationPlaceholder:
+        "https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=1200&q=85&fit=crop",
       illustrationAlt:
-        "Hình minh họa bác sĩ và bệnh nhân đang trao đổi thân thiện",
+        "Gia đình sum họp bên mâm cơm — niềm vui giản dị của cuộc sống hằng ngày",
       body: [
-        "Khóa học 'Ổn định đường huyết mỗi ngày' được xây dựng dựa trên kiến thức y khoa và được biên tập lại cho phù hợp với người Việt Nam.",
-        "Nội dung ở đây nhằm mục đích **giáo dục sức khỏe**. Cô chú vẫn cần tuân thủ phác đồ điều trị của bác sĩ, uống thuốc đúng giờ, và đi tái khám đúng lịch.",
-        "Những thay đổi trong bữa ăn hay thói quen vận động có thể ảnh hưởng đến đường huyết. Vì vậy, hãy chia sẻ với bác sĩ những gì cô chú học được để cùng điều chỉnh phù hợp.",
-        "Nếu cô chú đang dùng insulin hoặc thuốc có nguy cơ gây hạ đường huyết, hãy đặc biệt thận trọng khi thay đổi bữa ăn hoặc bắt đầu tập luyện mới.",
+        "Nhận chẩn đoán tiểu đường không có nghĩa là cuộc sống của cô chú kết thúc. Ngược lại, đây là lúc cô chú bắt đầu hiểu cơ thể mình hơn để chăm sóc nó tốt hơn.",
+        "Tiểu đường type 2 khác với tiểu đường type 1. Ở type 2, cơ thể vẫn sản xuất insulin nhưng không sử dụng nó hiệu quả — gọi là 'đề kháng insulin'. Đây là quá trình phát triển dần dần trong nhiều năm, và cũng có thể được cải thiện dần dần.",
+        "Bệnh này không cần phải dẫn đến mù mắt, cắt chân hay suy thận. Những biến chứng đó chỉ xảy ra khi đường huyết cao kéo dài nhiều năm mà không được kiểm soát. Cô chú đang học bài này — nghĩa là cô chú đã đi đúng hướng.",
+        "Bữa cơm Việt Nam — với cơm, rau, canh, thịt cá — hoàn toàn có thể điều chỉnh để phù hợp với người tiểu đường mà không cần bỏ cơm hay kiêng cữ cực đoan.",
+        "Trong 28 ngày tới, chúng ta sẽ cùng nhau xây dựng từng thói quen nhỏ, áp dụng ngay trong bữa ăn hằng ngày. Không áp lực, không hoàn hảo — chỉ cần tiến từng bước.",
+        "Điều quan trọng nhất cô chú cần nhớ: thuốc, bữa ăn, vận động và theo dõi là bốn trụ cột — không thứ nào thay thế được thứ kia. Cả bốn cùng hoạt động mới cho kết quả tốt nhất.",
       ],
       safetyAlerts: [
         {
@@ -36,1246 +43,1030 @@ export const lessons: Lesson[] = [
       ],
       quiz: [
         {
-          id: "q0-1",
-          question: "Khóa học này có thay thế được bác sĩ điều trị không?",
+          id: "q1-1",
+          question:
+            "Tiểu đường type 2 là do cơ thể không sản xuất được insulin nào cả — đúng hay sai?",
           options: [
-            "Không, đây là tài liệu giáo dục sức khỏe",
-            "Có, cô chú không cần đi khám nữa",
+            "Sai — type 2 vẫn có insulin nhưng tế bào không dùng được hiệu quả",
+            "Đúng — type 2 hoàn toàn không có insulin",
           ],
           correctIndex: 0,
           explanation:
-            "Đúng rồi! Khóa học chỉ cung cấp kiến thức giáo dục. Cô chú vẫn cần gặp bác sĩ điều trị để được tư vấn phù hợp với tình trạng cụ thể.",
+            "Đúng rồi! Tiểu đường type 2 đặc trưng bởi 'đề kháng insulin' — tụy vẫn tiết insulin nhưng tế bào không phản ứng tốt với nó. Khác với type 1, nơi tụy hầu như không còn tiết insulin.",
         },
         {
-          id: "q0-2",
+          id: "q1-2",
           question:
-            "Khi muốn thay đổi bữa ăn hoặc bắt đầu vận động, cô chú nên làm gì trước?",
+            "Biến chứng tiểu đường (mù mắt, tổn thương thận) xảy ra như thế nào?",
           options: [
-            "Trao đổi với bác sĩ điều trị",
-            "Tự thay đổi ngay mà không cần hỏi ai",
+            "Là kết quả của đường huyết cao kéo dài nhiều năm không kiểm soát",
+            "Xảy ra ngay sau khi được chẩn đoán tiểu đường",
           ],
           correctIndex: 0,
           explanation:
-            "Rất tốt! Đặc biệt với người đang dùng insulin hoặc thuốc tiểu đường, mọi thay đổi đáng kể đều cần được thảo luận với bác sĩ trước.",
+            "Chính xác! Biến chứng không xảy ra tức thì — đây là kết quả tích lũy nhiều năm. Điều đó có nghĩa là cô chú còn thời gian và cơ hội để thay đổi hướng đi.",
         },
       ],
       sources: [
-        "Khuyến cáo của Hội Nội tiết - Đái tháo đường Việt Nam (VADE)",
-        "American Diabetes Association Standards of Care (2024)",
+        "Hội Nội tiết - Đái tháo đường Việt Nam (VADE), Hướng dẫn chẩn đoán và điều trị đái tháo đường type 2 (2023)",
+        "American Diabetes Association, Standards of Medical Care in Diabetes (2024)",
+        "Bác sĩ Nguyễn Thị Hương, Khung chương trình 'Hiểu đúng tiểu đường' (2024)",
       ],
     },
   },
   {
-    id: 1,
-    slug: "duong-huyet-la-gi",
-    title: "Đường huyết là gì?",
-    chapter: "hieu-duong-huyet",
-    estimatedMinutes: 5,
-    icon: "Droplets",
+    id: 2,
+    slug: "duong-huyet-va-chia-khoa-insulin",
+    title: "Đường huyết và chiếc chìa khóa insulin",
+    chapter: "hieu-benh-va-chi-so",
+    estimatedMinutes: 10,
+    icon: "Key",
     previewText:
-      "Tìm hiểu đường huyết là gì, tại sao cơ thể cần glucose và chỉ số bình thường là bao nhiêu.",
+      "Hiểu cơ chế đường huyết và insulin qua hình ảnh chiếc chìa khóa — nền tảng để hiểu tất cả các bài học tiếp theo.",
     hasSafetyAlert: false,
+    videoUrl: undefined,
     content: {
       openingLine:
-        "Cô chú đã từng thắc mắc tại sao bác sĩ hay nói về 'đường trong máu' chưa?",
+        "Mỗi tế bào trong cơ thể cô chú cần glucose để sống — nhưng glucose không thể tự vào tế bào. Nó cần một chiếc chìa khóa.",
       simpleSummary:
-        "Đường huyết (glucose trong máu) là nguồn năng lượng chính của cơ thể. Mức đường huyết cần được giữ trong một phạm vi nhất định để cơ thể hoạt động tốt.",
+        "Insulin là chiếc chìa khóa mở cửa tế bào để glucose vào tạo năng lượng. Ở người tiểu đường type 2, ổ khóa bị kẹt — tụy phải làm việc nhiều hơn nhưng ít hiệu quả hơn.",
       actionToday:
-        "Hôm nay, khi ăn bữa chính, hãy để ý xem sau khi ăn cô chú có cảm thấy buồn ngủ hoặc mệt không – đó là dấu hiệu đường huyết có thể đã tăng cao.",
-      illustrationPlaceholder: "/images/placeholder-glucose-basic.svg",
+        "Khi ăn cơm hôm nay, hãy tưởng tượng glucose đang di chuyển trong máu và insulin đang cố gắng mở cửa tế bào — điều đó giúp cô chú hiểu tại sao bữa ăn quan trọng.",
+      illustrationPlaceholder:
+        "https://images.unsplash.com/photo-1576671414121-aa2d80e5f0d6?w=1200&q=85&fit=crop",
       illustrationAlt:
-        "Hình minh họa đơn giản: thức ăn chuyển thành glucose, glucose vào máu, insulin giúp đưa glucose vào tế bào",
+        "Hình ảnh kính hiển vi cho thấy cấu trúc tế bào — nơi glucose và insulin hoạt động",
       body: [
-        "**Đường huyết** là lượng glucose (một loại đường đơn giản) có trong máu của cô chú tại một thời điểm nhất định.",
-        "Glucose là nguồn năng lượng chính mà cơ thể dùng để hoạt động – từ việc thở, đi lại đến suy nghĩ. Não bộ đặc biệt phụ thuộc vào glucose.",
-        "Mỗi khi cô chú ăn cơm, bánh mì, trái cây hay uống nước ngọt, thức ăn được tiêu hóa và chuyển thành glucose, sau đó đi vào máu.",
-        "Tụy tạng (lá tụy) sẽ tiết ra **insulin** – một loại hormone giúp đưa glucose từ máu vào bên trong các tế bào để tạo năng lượng.",
-        "Ở người mắc **tiểu đường type 2**, cơ thể không sản xuất đủ insulin, hoặc các tế bào không phản ứng tốt với insulin nữa. Kết quả là glucose tích lại trong máu nhiều hơn bình thường.",
-        "**Chỉ số đường huyết bình thường** (theo hướng dẫn Việt Nam):\n- Lúc đói (trước ăn): 3.9 – 5.6 mmol/L\n- 2 giờ sau ăn: dưới 7.8 mmol/L\n- Người tiểu đường type 2 (mục tiêu điều trị): lúc đói 4.4–7.2 mmol/L, sau ăn 2h dưới 10 mmol/L (tùy từng người, cô chú hỏi bác sĩ mục tiêu cụ thể của mình).",
-        "Điều quan trọng không chỉ là chỉ số lúc đói, mà còn là **mức độ tăng sau ăn** và tần suất tăng cao lặp đi lặp lại.",
+        "Mỗi khi cô chú ăn cơm, bánh, trái cây — thức ăn được tiêu hóa thành glucose và đổ vào máu. Đường huyết bắt đầu tăng.",
+        "Tụy tạng (lá tụy) nhận được tín hiệu 'đường huyết đang tăng' và tiết ra insulin. Insulin là một loại hormone — và hãy hình dung nó như chiếc chìa khóa.",
+        "Mỗi tế bào có một ổ khóa đặc biệt. Khi insulin (chìa) gắn vào ổ khóa, cửa tế bào mở ra và glucose đi vào. Trong tế bào, glucose được 'đốt cháy' tạo ra năng lượng để cô chú đi đứng, suy nghĩ, thở.",
+        "Ở người tiểu đường type 2, qua nhiều năm ăn nhiều tinh bột và ít vận động, tế bào dần 'quen' với insulin và bắt đầu phớt lờ nó — gọi là đề kháng insulin. Ổ khóa bị kẹt.",
+        "Tụy phải tiết ngày càng nhiều insulin hơn để bù lại. Sau nhiều năm 'làm việc quá tải', tụy mệt mỏi dần và không còn tiết đủ insulin nữa. Glucose tích lại trong máu — đường huyết cao.",
+        "Hiểu điều này giúp cô chú thấy rõ: mỗi bữa ăn ít tinh bột hơn, mỗi lần vận động sau ăn đều giúp giảm gánh nặng cho tụy và cải thiện độ nhạy của tế bào với insulin.",
       ],
       quiz: [
         {
-          id: "q1-1",
-          question: "Glucose trong máu đến từ đâu chủ yếu?",
-          options: [
-            "Từ thức ăn cô chú ăn vào, đặc biệt là cơm, bánh, trái cây",
-            "Cơ thể tự tạo ra hoàn toàn, không liên quan đến thức ăn",
-          ],
-          correctIndex: 0,
-          explanation:
-            "Đúng rồi! Các thực phẩm chứa chất bột đường (carbohydrate) như cơm, bánh mì, khoai, trái cây khi tiêu hóa sẽ được chuyển thành glucose vào máu.",
-        },
-        {
-          id: "q1-2",
+          id: "q2-1",
           question: "Insulin có vai trò gì trong cơ thể?",
           options: [
-            "Giúp đưa glucose từ máu vào các tế bào để tạo năng lượng",
-            "Tạo thêm đường trong máu khi cơ thể thiếu năng lượng",
+            "Mở cửa tế bào để glucose đi vào tạo năng lượng",
+            "Trực tiếp đốt cháy glucose trong máu",
           ],
           correctIndex: 0,
           explanation:
-            "Chính xác! Insulin như một 'chìa khóa' mở cửa cho tế bào nhận glucose. Khi insulin không đủ hoặc không hiệu quả, glucose tích lại trong máu.",
+            "Đúng! Insulin như chiếc chìa khóa mở cửa tế bào. Không có insulin (hoặc tế bào không phản ứng với insulin), glucose không vào được tế bào và tích lại trong máu.",
+        },
+        {
+          id: "q2-2",
+          question: "Đề kháng insulin là gì?",
+          options: [
+            "Tế bào không còn phản ứng tốt với insulin, nên glucose khó vào tế bào",
+            "Cơ thể tiết quá nhiều insulin đến mức nguy hiểm",
+          ],
+          correctIndex: 0,
+          explanation:
+            "Chính xác! Đề kháng insulin là trung tâm của tiểu đường type 2. Tụy vẫn tiết insulin nhưng tế bào 'không nghe lời' — glucose ở lại trong máu cao hơn bình thường.",
         },
       ],
       sources: [
-        "Jessie Inchauspé (2022), Glucose Revolution, tr. 15–40",
+        "Jessie Inchauspé (2022), Glucose Revolution, NXB Hachette",
+        "Hội Nội tiết - Đái tháo đường Việt Nam, Tài liệu giáo dục bệnh nhân tiểu đường type 2 (2023)",
+      ],
+    },
+  },
+  {
+    id: 3,
+    slug: "ba-con-so-can-thuoc",
+    title: "Ba con số cô chú cần thuộc lòng",
+    chapter: "hieu-benh-va-chi-so",
+    estimatedMinutes: 12,
+    icon: "BarChart2",
+    previewText:
+      "HbA1c, đường huyết lúc đói, đường huyết sau ăn — ba chỉ số này nói lên tất cả về tình trạng kiểm soát đường huyết của cô chú.",
+    hasSafetyAlert: false,
+    videoUrl: undefined,
+    content: {
+      openingLine:
+        "HbA1c 7.2%, đường huyết lúc đói 8.4 mmol/L — những con số này có nghĩa gì? Hôm nay cô chú sẽ hiểu rõ.",
+      simpleSummary:
+        "Ba chỉ số cốt lõi: HbA1c (tình trạng 3 tháng qua), đường huyết lúc đói (nền tảng), và đường huyết sau ăn (phản ứng với bữa ăn). Hiểu ba số này giúp cô chú tự đánh giá tiến trình.",
+      actionToday:
+        "Lấy phiếu xét nghiệm gần nhất ra và tìm ba chỉ số này. Ghi chúng vào một tờ giấy nhỏ giữ trong ví để nhớ.",
+      illustrationPlaceholder:
+        "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1200&q=85&fit=crop",
+      illustrationAlt:
+        "Phiếu kết quả xét nghiệm máu với các chỉ số được đánh dấu rõ ràng",
+      body: [
+        "**Chỉ số 1 — HbA1c (%):** Đây là chỉ số phản ánh mức đường huyết trung bình trong 2–3 tháng qua. Bình thường: dưới 5.7%. Tiền tiểu đường: 5.7–6.4%. Tiểu đường: từ 6.5% trở lên. Mục tiêu điều trị thông thường cho người tiểu đường type 2: dưới 7% (hỏi bác sĩ mục tiêu cụ thể của cô chú).",
+        "**Tại sao HbA1c quan trọng?** Đường huyết đo tại chỗ chỉ cho biết tình trạng lúc đó. HbA1c cho biết 'điểm trung bình của 3 tháng' — không thể giả vờ bằng cách nhịn ăn trước khi xét nghiệm.",
+        "**Chỉ số 2 — Đường huyết lúc đói (mmol/L):** Đo sau khi nhịn ăn tối thiểu 8 tiếng (thường buổi sáng). Bình thường: 3.9–5.6 mmol/L. Người tiểu đường type 2 (mục tiêu điều trị): 4.4–7.2 mmol/L.",
+        "**Chỉ số 3 — Đường huyết sau ăn (mmol/L):** Đo 2 giờ sau bữa ăn. Bình thường: dưới 7.8 mmol/L. Mục tiêu cho người tiểu đường type 2: dưới 10 mmol/L (2 giờ sau ăn).",
+        "**Đọc phiếu xét nghiệm:** Cột 'Kết quả' là số đo của cô chú. Cột 'Tham chiếu' là khoảng bình thường. Kết quả nằm ngoài khoảng tham chiếu sẽ có dấu * hoặc in đậm.",
+        "**Lưu ý:** Mục tiêu đường huyết khác nhau với mỗi người. Người lớn tuổi, có bệnh đi kèm có thể có mục tiêu HbA1c khác (ví dụ dưới 8%). Hỏi bác sĩ mục tiêu cụ thể của cô chú.",
+      ],
+      quiz: [
+        {
+          id: "q3-1",
+          question: "HbA1c cho biết điều gì?",
+          options: [
+            "Mức đường huyết trung bình trong 2–3 tháng qua",
+            "Đường huyết tại thời điểm lấy máu xét nghiệm",
+          ],
+          correctIndex: 0,
+          explanation:
+            "Đúng! HbA1c phản ánh mức đường huyết trung bình dài hạn, không thể thay đổi bằng cách nhịn ăn trước xét nghiệm — đó là lý do nó là chỉ số quan trọng nhất trong theo dõi tiểu đường.",
+        },
+        {
+          id: "q3-2",
+          question:
+            "Mục tiêu đường huyết sau ăn 2 tiếng cho người tiểu đường type 2 thường là bao nhiêu?",
+          options: ["Dưới 10 mmol/L", "Dưới 15 mmol/L"],
+          correctIndex: 0,
+          explanation:
+            "Chính xác! Mục tiêu chung là dưới 10 mmol/L sau ăn 2 tiếng — nhưng mục tiêu có thể khác nhau với từng người. Hỏi bác sĩ điều trị của cô chú.",
+        },
+      ],
+      sources: [
+        "Hội Nội tiết - Đái tháo đường Việt Nam (VADE), Hướng dẫn chẩn đoán và điều trị đái tháo đường type 2 (2023)",
+        "American Diabetes Association, Standards of Medical Care in Diabetes (2024), Section 6",
+      ],
+    },
+  },
+  {
+    id: 4,
+    slug: "ban-do-suc-khoe-cua-toi",
+    title: "Lập bản đồ sức khỏe của tôi",
+    chapter: "hieu-benh-va-chi-so",
+    estimatedMinutes: 10,
+    icon: "Map",
+    previewText:
+      "Nhìn tổng thể tình trạng sức khỏe của mình — không chỉ đường huyết mà còn huyết áp, mỡ máu, chức năng thận và mắt.",
+    hasSafetyAlert: false,
+    videoUrl: undefined,
+    content: {
+      openingLine:
+        "Tiểu đường không phải chỉ là đường huyết — nó ảnh hưởng đến toàn bộ cơ thể. Biết 'bản đồ' sức khỏe của mình giúp cô chú chủ động hơn.",
+      simpleSummary:
+        "Người tiểu đường cần theo dõi nhiều hơn chỉ đường huyết: huyết áp, mỡ máu (LDL), chức năng thận (creatinine, microalbumin), và khám mắt định kỳ. Đây là 'bản đồ toàn diện'.",
+      actionToday:
+        "Kiểm tra xem trong phiếu xét nghiệm gần nhất có mấy trong số các chỉ số này chưa: HbA1c, huyết áp, cholesterol LDL, creatinine. Chưa có thì hỏi bác sĩ trong lần tái khám tới.",
+      illustrationPlaceholder:
+        "https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=1200&q=85&fit=crop",
+      illustrationAlt:
+        "Bác sĩ và bệnh nhân ngồi trao đổi thân thiện về kết quả xét nghiệm",
+      body: [
+        "**Đường huyết và HbA1c:** Chúng ta đã học ở bài 3. Đây là chỉ số trung tâm nhưng không phải là duy nhất.",
+        "**Huyết áp:** Người tiểu đường type 2 thường có nguy cơ cao huyết áp — và hai bệnh này cộng hưởng làm tăng nguy cơ tim mạch. Mục tiêu huyết áp cho người tiểu đường: dưới 130/80 mmHg (nhiều người đạt được bằng thuốc và điều chỉnh lối sống).",
+        "**Mỡ máu (Lipid):** Đặc biệt là LDL-cholesterol ('mỡ xấu'). Mục tiêu thông thường: LDL dưới 2.6 mmol/L (với người có nguy cơ tim mạch cao, có thể cần dưới 1.8 mmol/L).",
+        "**Chức năng thận:** Xét nghiệm creatinine và eGFR đánh giá thận đang hoạt động tốt đến đâu. Microalbumin niệu (microalbuminuria) phát hiện sớm tổn thương thận khi chưa có triệu chứng.",
+        "**Khám mắt:** Khám đáy mắt (fundus) ít nhất 1 lần mỗi năm để phát hiện sớm bệnh võng mạc tiểu đường — thường không có triệu chứng ở giai đoạn sớm.",
+        "**Khám bàn chân:** Kiểm tra cảm giác và tuần hoàn ở bàn chân ít nhất 1 lần mỗi năm. Nhiều vấn đề ở bàn chân có thể ngăn ngừa được nếu phát hiện sớm.",
+        "**Lịch theo dõi gợi ý:** HbA1c — 3–6 tháng/lần; Huyết áp — mỗi lần tái khám; Lipid — ít nhất 1 lần/năm; Chức năng thận — 1 lần/năm; Khám mắt — 1 lần/năm.",
+      ],
+      quiz: [
+        {
+          id: "q4-1",
+          question:
+            "Ngoài đường huyết, người tiểu đường cần theo dõi thêm những gì?",
+          options: [
+            "Huyết áp, mỡ máu (LDL), chức năng thận và khám mắt định kỳ",
+            "Chỉ cần theo dõi đường huyết là đủ",
+          ],
+          correctIndex: 0,
+          explanation:
+            "Đúng! Tiểu đường ảnh hưởng đến mạch máu toàn thân. Theo dõi toàn diện giúp phát hiện và ngăn ngừa biến chứng sớm hơn.",
+        },
+        {
+          id: "q4-2",
+          question: "Tại sao cần khám đáy mắt định kỳ dù mắt vẫn nhìn bình thường?",
+          options: [
+            "Vì bệnh võng mạc tiểu đường thường không có triệu chứng ở giai đoạn sớm",
+            "Chỉ cần khám khi thấy mắt mờ",
+          ],
+          correctIndex: 0,
+          explanation:
+            "Chính xác! Bệnh võng mạc tiểu đường giai đoạn sớm hoàn toàn không có triệu chứng. Khám định kỳ giúp phát hiện và điều trị trước khi ảnh hưởng đến thị lực.",
+        },
+      ],
+      sources: [
+        "American Diabetes Association, Standards of Medical Care in Diabetes (2024), Section 11–12",
+        "Hội Nội tiết - Đái tháo đường Việt Nam (VADE), Hướng dẫn theo dõi biến chứng (2023)",
+      ],
+    },
+  },
+
+  // ─────────────────────────────────────────────
+  // CHẶNG 2: BỮA CƠM VIỆT (bài 5–8)
+  // ─────────────────────────────────────────────
+  {
+    id: 5,
+    slug: "mam-com-ba-vung-an-toan",
+    title: "Mâm cơm ba vùng an toàn",
+    chapter: "bua-com-viet",
+    estimatedMinutes: 12,
+    icon: "Layers",
+    previewText:
+      "Cách chia đĩa ăn theo 'ba vùng' đơn giản — nửa đĩa rau, một phần tư đạm, một phần tư tinh bột — áp dụng ngay vào bữa cơm Việt.",
+    hasSafetyAlert: false,
+    videoUrl: undefined,
+    content: {
+      openingLine:
+        "Không cần cân đo từng gram — chỉ cần nhìn vào đĩa và tự hỏi: 'Rau có đủ nửa đĩa không?'",
+      simpleSummary:
+        "Phương pháp 'ba vùng': nửa đĩa rau xanh và rau củ, một phần tư đạm (thịt/cá/đậu), một phần tư tinh bột (cơm/bún). Đơn giản, không cần cân, phù hợp với mâm cơm Việt.",
+      actionToday:
+        "Bữa cơm hôm nay, trước khi ăn hãy nhìn vào mâm và xếp thức ăn theo 'ba vùng'. Rau có chiếm đủ nửa đĩa không?",
+      illustrationPlaceholder:
+        "https://images.unsplash.com/photo-1512058564366-18510be2db19?w=1200&q=85&fit=crop",
+      illustrationAlt:
+        "Mâm cơm Việt cân đối với rau, cá kho và cơm — bố cục đẹp trên bàn gỗ",
+      body: [
+        "Phương pháp 'đĩa ăn' (plate method) được Hội Tiểu đường Mỹ và nhiều tổ chức y tế khuyến nghị vì đơn giản và hiệu quả — không cần cân, không cần tính calo.",
+        "**Vùng 1 — Nửa đĩa: Rau xanh và rau củ.** Rau muống, rau lang, bắp cải, cà rốt, bí đỏ, cà chua, dưa leo — bất kỳ loại rau nào cô chú thích. Canh rau cũng tính. Rau không chỉ có ít calo mà còn giàu chất xơ giúp làm chậm đường huyết.",
+        "**Vùng 2 — Một phần tư đĩa: Đạm.** Cá, thịt nạc, đậu phụ, trứng, tôm. Đạm giúp no lâu và làm chậm hấp thu glucose từ tinh bột. Ưu tiên cá và đậu phụ hơn thịt đỏ nhiều mỡ.",
+        "**Vùng 3 — Một phần tư đĩa: Tinh bột.** Cơm, bún, khoai, bắp. Không phải bỏ tinh bột — chỉ cần giảm phần và cân bằng với rau và đạm. Một chén cơm nhỏ (khoảng 100–150g cơm chín) là phù hợp cho hầu hết mọi người.",
+        "**Áp dụng vào mâm cơm Việt:** Bữa cơm Việt thường có canh, một món rau và một món mặn — đây là cấu trúc lý tưởng! Chỉ cần điều chỉnh tỉ lệ: ăn nhiều canh và rau hơn, ít cơm hơn một chút.",
+        "**Bắt đầu từ rau:** Theo thứ tự ăn được khuyến nghị, hãy ăn phần rau/canh rau trước, sau đó đến đạm, cuối cùng mới ăn cơm. Thứ tự này giúp đường huyết sau ăn ổn định hơn.",
+      ],
+      quiz: [
+        {
+          id: "q5-1",
+          question: "Trong phương pháp ba vùng, rau nên chiếm bao nhiêu phần đĩa?",
+          options: ["Nửa đĩa (½)", "Một phần tư đĩa (¼)"],
+          correctIndex: 0,
+          explanation:
+            "Đúng! Rau xanh và rau củ chiếm nửa đĩa — đây là nền tảng của bữa ăn cân đối cho người tiểu đường. Rau cung cấp chất xơ giúp kiểm soát đường huyết.",
+        },
+        {
+          id: "q5-2",
+          question:
+            "Phương pháp ba vùng có nghĩa là cô chú phải bỏ hoàn toàn cơm không?",
+          options: [
+            "Không — tinh bột vẫn có một phần tư đĩa, chỉ giảm lượng",
+            "Có — người tiểu đường không được ăn cơm",
+          ],
+          correctIndex: 0,
+          explanation:
+            "Hoàn toàn đúng! Cơm vẫn có trong bữa ăn, chỉ chiếm một phần nhỏ hơn và được cân bằng với rau và đạm. Bỏ hoàn toàn cơm không cần thiết và khó duy trì.",
+        },
+      ],
+      sources: [
+        "American Diabetes Association, Diabetes Plate Method (2023)",
+        "Hội Nội tiết - Đái tháo đường Việt Nam, Hướng dẫn dinh dưỡng cho người tiểu đường type 2",
+      ],
+    },
+  },
+  {
+    id: 6,
+    slug: "com-bun-pho-chao-cach-doi",
+    title: "Cơm, bún, phở, cháo — cách đổi",
+    chapter: "bua-com-viet",
+    estimatedMinutes: 14,
+    icon: "RefreshCw",
+    previewText:
+      "Những món quen thuộc nhất của người Việt — cơm trắng, bún bò, phở, cháo — và cách điều chỉnh để phù hợp hơn với người tiểu đường.",
+    hasSafetyAlert: false,
+    videoUrl: undefined,
+    content: {
+      openingLine:
+        "Cô chú không cần bỏ bún, phở hay cháo — chỉ cần biết cách ăn khéo hơn một chút.",
+      simpleSummary:
+        "Cơm gạo lứt, bún chạo, phở với nhiều rau và ít sợi, cháo có thêm đạm — đây là những điều chỉnh nhỏ giúp giảm tác động lên đường huyết mà không mất đi hương vị quen thuộc.",
+      actionToday:
+        "Nếu hôm nay ăn phở hoặc bún, hãy thử ăn hết phần rau sống/giá đỗ trước khi ăn sợi bún hay bánh phở.",
+      illustrationPlaceholder:
+        "https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=1200&q=85&fit=crop",
+      illustrationAlt:
+        "Tô phở Việt Nam với rau sống, giá đỗ phong phú — bữa ăn đầy màu sắc",
+      body: [
+        "**Cơm trắng:** Cơm trắng có chỉ số đường huyết (GI) khá cao. Cô chú có thể thay 30–50% cơm trắng bằng cơm gạo lứt (GI thấp hơn, nhiều chất xơ hơn). Hoặc trộn lẫn: 1 phần gạo lứt với 2 phần gạo trắng để thích nghi dần. Cũng có thể để cơm nguội trước khi ăn — tinh bột lạnh hấp thu chậm hơn.",
+        "**Bún, bún bò, bún riêu:** Bún có GI tương tự cơm trắng. Hãy gọi 'nhỏ' hoặc ăn ít hơn nửa phần bún, thay vào đó ăn nhiều rau, giá đỗ và thịt/cá hơn. Ăn rau trước khi ăn bún.",
+        "**Phở:** Phở có nhiều rau thơm, giá đỗ đi kèm — đây là lợi thế! Ăn rau và giá đỗ trước. Yêu cầu ít bánh phở hơn. Không thêm đường vào nước phở.",
+        "**Cháo:** Cháo trắng có GI rất cao (cao hơn cơm) vì tinh bột đã bị phá vỡ hoàn toàn. Tuy nhiên, cháo cá, cháo thịt, cháo hải sản (có đạm) tốt hơn cháo trắng. Thêm rau vào cháo cũng giúp làm chậm hấp thu.",
+        "**Mì, hủ tiếu:** Tương tự bún — ưu tiên ăn ít sợi, thêm nhiều rau và đạm.",
+        "**Bánh mì:** Bánh mì trắng có GI cao. Ưu tiên bánh mì nguyên cám (whole wheat). Luôn ăn kèm trứng, thịt, rau — không ăn bánh mì không hay chỉ với bơ ngọt.",
+        "**Nguyên tắc chung:** Ăn rau trước. Giảm lượng tinh bột xuống một phần tư bữa ăn. Tăng rau và đạm. Không bỏ hoàn toàn — chỉ điều chỉnh tỉ lệ.",
+      ],
+      quiz: [
+        {
+          id: "q6-1",
+          question:
+            "Cháo trắng so với cơm trắng thì ảnh hưởng đến đường huyết như thế nào?",
+          options: [
+            "Cháo trắng thường làm đường huyết tăng nhanh hơn vì tinh bột đã bị phá vỡ hoàn toàn",
+            "Cháo trắng tốt hơn cơm vì dạng lỏng dễ tiêu hóa",
+          ],
+          correctIndex: 0,
+          explanation:
+            "Đúng! Nấu cháo phá vỡ cấu trúc tinh bột hoàn toàn, giúp glucose hấp thu rất nhanh. Cháo có đạm (cháo cá, cháo thịt) tốt hơn cháo trắng vì có đạm làm chậm lại.",
+        },
+        {
+          id: "q6-2",
+          question: "Khi ăn phở, cô chú nên làm gì để giảm tác động lên đường huyết?",
+          options: [
+            "Ăn rau và giá đỗ trước, yêu cầu ít bánh phở hơn",
+            "Uống hết nước phở và bỏ phần rau vì không cần thiết",
+          ],
+          correctIndex: 0,
+          explanation:
+            "Chính xác! Phở có rau thơm và giá đỗ kèm theo là lợi thế — hãy ăn chúng trước. Ít bánh phở hơn, nhiều rau hơn là điều chỉnh đơn giản nhưng hiệu quả.",
+        },
+      ],
+      sources: [
+        "Hội Nội tiết - Đái tháo đường Việt Nam, Hướng dẫn dinh dưỡng (2023)",
+        "Atkinson FS et al. (2021), International tables of glycemic index and glycemic load, American Journal of Clinical Nutrition",
+      ],
+    },
+  },
+  {
+    id: 7,
+    slug: "trai-cay-an-qua-dung-uong-duong",
+    title: "Trái cây ăn quả đúng, uống đường",
+    chapter: "bua-com-viet",
+    estimatedMinutes: 10,
+    icon: "Apple",
+    previewText:
+      "Trái cây có đường nhưng cũng có chất xơ — điều quan trọng là ăn như thế nào và khi nào, không phải là tránh hoàn toàn.",
+    hasSafetyAlert: false,
+    videoUrl: undefined,
+    content: {
+      openingLine:
+        "Nhiều cô chú nghĩ rằng bị tiểu đường thì không được ăn trái cây nữa. Điều này không đúng — và cũng làm cuộc sống thiếu đi một niềm vui.",
+      simpleSummary:
+        "Trái cây có đường tự nhiên kèm chất xơ — ăn cả quả tốt hơn ép nước. Ăn sau bữa cơm thay vì lúc đói. Lượng vừa phải là chìa khóa, không phải kiêng hoàn toàn.",
+      actionToday:
+        "Nếu muốn ăn trái cây hôm nay, hãy ăn sau bữa cơm — không phải lúc đói hoặc thay bữa. Ăn cả quả, không ép nước.",
+      illustrationPlaceholder:
+        "https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=1200&q=85&fit=crop",
+      illustrationAlt:
+        "Các loại trái cây tươi nhiều màu sắc — cam, ổi, thanh long, mận",
+      body: [
+        "**Tại sao trái cây không phải là 'đường xấu'?** Trái cây chứa fructose, glucose và sucrose tự nhiên — nhưng cũng chứa chất xơ, vitamin và chất chống oxy hóa. Chất xơ trong trái cây làm chậm hấp thu đường vào máu.",
+        "**Ăn cả quả, không ép nước:** Khi ép nước, chất xơ bị loại bỏ, còn lại là đường và nước. Một ly nước ép trái cây bằng 3–4 trái và không có gì làm chậm đường huyết. Ăn cả quả luôn tốt hơn uống nước ép.",
+        "**Thời điểm quan trọng:** Ăn trái cây sau bữa cơm chính là tốt nhất — khi đã có rau và đạm trong ruột, glucose từ trái cây hấp thu chậm hơn. Tránh ăn trái cây lúc đói hoặc thay bữa.",
+        "**Trái cây có GI thấp hơn (ưu tiên):** Ổi, thanh long, táo, lê, bơ, dâu tây, bưởi. Ăn một phần nhỏ (khoảng 100–150g mỗi lần).",
+        "**Trái cây cần ăn ít hơn:** Xoài, chuối chín, nho, dứa, chôm chôm, sầu riêng — những loại này có hàm lượng đường cao hơn, nên ăn lượng nhỏ hơn và chỉ ăn sau bữa.",
+        "**Nước ép và sinh tố:** Nếu làm sinh tố, giữ nguyên cả thịt quả (không lọc bã), thêm rau lá xanh (rau cải), không thêm đường hay mật ong. Nhưng ăn cả quả vẫn tốt hơn.",
+      ],
+      quiz: [
+        {
+          id: "q7-1",
+          question:
+            "Tại sao ăn cả quả tốt hơn uống nước ép trái cây đối với người tiểu đường?",
+          options: [
+            "Vì ăn cả quả giữ được chất xơ, giúp đường hấp thu chậm hơn",
+            "Vì nước ép có ít đường hơn trái cây nguyên quả",
+          ],
+          correctIndex: 0,
+          explanation:
+            "Đúng! Khi ép nước, chất xơ bị loại ra, chỉ còn đường và nước. Một ly nước ép có thể tương đương đường từ 3–4 trái — và không có gì làm chậm hấp thu.",
+        },
+        {
+          id: "q7-2",
+          question: "Khi nào nên ăn trái cây để ít ảnh hưởng đến đường huyết nhất?",
+          options: [
+            "Sau bữa cơm chính, khi đã có rau và đạm trong dạ dày",
+            "Lúc đói buổi sáng để bổ sung năng lượng",
+          ],
+          correctIndex: 0,
+          explanation:
+            "Chính xác! Sau bữa cơm, rau và đạm đã có trong ruột — đây là 'lớp đệm' làm chậm hấp thu đường từ trái cây. Ăn trái cây lúc đói không có lớp đệm này.",
+        },
+      ],
+      sources: [
+        "Atkinson FS et al. (2021), American Journal of Clinical Nutrition",
+        "Muraki I et al. (2013), Fruit consumption and risk of type 2 diabetes, BMJ",
+      ],
+    },
+  },
+  {
+    id: 8,
+    slug: "di-cho-doc-nhan-chon-mon",
+    title: "Đi chợ, đọc nhãn, chọn món",
+    chapter: "bua-com-viet",
+    estimatedMinutes: 12,
+    icon: "ShoppingBag",
+    previewText:
+      "Kỹ năng thiết thực: đọc nhãn thực phẩm, nhận biết đường ẩn và chọn thực phẩm tốt hơn khi đi chợ hay siêu thị.",
+    hasSafetyAlert: false,
+    videoUrl: undefined,
+    content: {
+      openingLine:
+        "Hàng nghìn sản phẩm trên kệ siêu thị — biết đọc nhãn là biết mình đang ăn gì.",
+      simpleSummary:
+        "Cách đọc nhãn thực phẩm: tìm lượng đường, chất xơ và thành phần. Nhận biết đường ẩn qua các tên gọi khác nhau. Nguyên tắc chọn thực phẩm ở chợ và siêu thị.",
+      actionToday:
+        "Hôm nay, lấy một sản phẩm đóng gói trong nhà ra và tìm dòng 'Đường' trong bảng thành phần dinh dưỡng. Con số đó có hơn 5g trong một khẩu phần không?",
+      illustrationPlaceholder:
+        "https://images.unsplash.com/photo-1542838132-92c53300491e?w=1200&q=85&fit=crop",
+      illustrationAlt:
+        "Người phụ nữ đọc nhãn sản phẩm tại siêu thị — kỹ năng quan trọng khi mua sắm",
+      body: [
+        "**Đọc nhãn: bốn dòng quan trọng nhất.**\n1. Khẩu phần (serving size) — tất cả số liệu đều tính cho lượng này, không phải cả gói\n2. Carbohydrate tổng — lượng bột đường trong một khẩu phần\n3. Đường (sugar) — phần carbohydrate là đường đơn, hấp thu nhanh\n4. Chất xơ (fiber) — càng cao càng tốt",
+        "**Đường ẩn:** Trên nhãn thành phần (ingredients), đường có thể được gọi là: đường (sugar), sucrose, glucose, fructose, corn syrup, high-fructose corn syrup, maltose, dextrose, mật ong (honey), siro ngô, đường mía... Nếu một trong những tên này nằm trong 3 thành phần đầu — sản phẩm có nhiều đường.",
+        "**Nguyên tắc 5g:** Cẩn thận với sản phẩm có hơn 5g đường trong một khẩu phần. Dưới 5g là tương đối an toàn hơn.",
+        "**Chọn thực phẩm ở chợ truyền thống:** Thực phẩm ở chợ thường ít qua chế biến hơn siêu thị — rau tươi, cá tươi, thịt tươi. Ưu tiên mua những thứ này. Tránh các loại gia vị đóng gói sẵn có nhiều đường và muối.",
+        "**Ở siêu thị — khu vực an toàn hơn:** Rau củ quả tươi, cá và thịt tươi/đông lạnh không ướp sẵn, đậu phụ, trứng, sữa chua không đường, các loại hạt không rang muối.",
+        "**Ở siêu thị — cẩn thận hơn:** Đồ hộp (nhiều muối/đường), sản phẩm 'ăn kiêng' hay 'low-fat' (thường thêm đường để bù vị), nước ép trái cây đóng hộp, bánh gói ngọt/mặn.",
+      ],
+      quiz: [
+        {
+          id: "q8-1",
+          question:
+            "Trên nhãn thực phẩm, khi tìm 'đường ẩn' cô chú cần chú ý đến phần nào?",
+          options: [
+            "Phần Thành phần (ingredients) — tìm các tên gọi khác của đường như sucrose, syrup, fructose",
+            "Chỉ cần xem màu sắc và hình ảnh bên ngoài bao bì",
+          ],
+          correctIndex: 0,
+          explanation:
+            "Đúng! Đường được gọi bằng nhiều tên khác nhau trong danh sách thành phần. Nếu một trong những tên này xuất hiện đầu danh sách — sản phẩm chứa nhiều đường.",
+        },
+        {
+          id: "q8-2",
+          question:
+            "Sản phẩm ghi 'low-fat' (ít béo) có nghĩa là tốt cho người tiểu đường không?",
+          options: [
+            "Không nhất thiết — sản phẩm ít béo thường thêm đường để bù vị",
+            "Có — ít béo luôn tốt cho người tiểu đường",
+          ],
+          correctIndex: 0,
+          explanation:
+            "Đúng! 'Low-fat' thường có nghĩa là nhà sản xuất đã thêm đường để bù lại vị ngậy từ chất béo. Luôn kiểm tra dòng 'Đường' trên nhãn.",
+        },
+      ],
+      sources: [
+        "US Food and Drug Administration, How to Understand and Use the Nutrition Facts Label (2022)",
+        "Hội Nội tiết - Đái tháo đường Việt Nam, Hướng dẫn đọc nhãn thực phẩm cho người tiểu đường",
+      ],
+    },
+  },
+
+  // ─────────────────────────────────────────────
+  // CHẶNG 3: THEO DÕI TẠI NHÀ (bài 9–12)
+  // ─────────────────────────────────────────────
+  {
+    id: 9,
+    slug: "tham-tu-duong-huyet",
+    title: "Thám tử đường huyết — đo đúng, hiểu đúng",
+    chapter: "theo-doi-tai-nha",
+    estimatedMinutes: 15,
+    icon: "Search",
+    previewText:
+      "Hướng dẫn đo đường huyết tại nhà đúng cách: khi nào đo, đo lúc nào trong ngày, và cách đọc kết quả.",
+    hasSafetyAlert: true,
+    videoUrl: undefined,
+    content: {
+      openingLine:
+        "Máy đo đường huyết tại nhà là người bạn đồng hành quan trọng — nhưng chỉ hữu ích khi cô chú biết dùng đúng.",
+      simpleSummary:
+        "Đo đường huyết đúng thời điểm (lúc đói, 2h sau ăn) và ghi chép nhật ký giúp cô chú và bác sĩ thấy rõ 'câu chuyện đường huyết' của mình.",
+      actionToday:
+        "Nếu đã có máy đo, hôm nay đo đường huyết lúc đói (trước bữa sáng) và 2 giờ sau bữa trưa. Ghi lại cả hai con số.",
+      illustrationPlaceholder:
+        "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=1200&q=85&fit=crop",
+      illustrationAlt:
+        "Máy đo đường huyết cầm tay — thiết bị theo dõi sức khỏe tại nhà",
+      body: [
+        "**Có cần máy đo đường huyết tại nhà không?** Không phải tất cả mọi người đều cần đo hằng ngày. Hỏi bác sĩ xem cô chú có cần không, và nếu có thì đo tần suất nào.",
+        "**Khi nào đo cho có ý nghĩa nhất:**\n- Trước bữa sáng (lúc đói): cho biết 'nền tảng' đường huyết của cô chú\n- 2 giờ sau bắt đầu bữa ăn: cho biết bữa ăn đó ảnh hưởng thế nào\n- Trước khi ngủ: cho biết đường huyết ban đêm\n- Khi có triệu chứng bất thường (run rẩy, vã mồ hôi, chóng mặt)",
+        "**Kỹ thuật đo đúng:**\n1. Rửa tay bằng xà phòng và nước ấm, lau khô\n2. Lấy que thử và cắm vào máy\n3. Chích đầu ngón tay bên (ít đau hơn đầu ngón)\n4. Lau giọt máu đầu tiên (có thể bị pha loãng bởi dịch mô)\n5. Áp giọt máu thứ hai vào que thử\n6. Đọc kết quả sau 5–10 giây",
+        "**Ghi nhật ký:** Ghi ngày, giờ đo, kết quả, và ghi chú bữa ăn trước đó. Đây là dữ liệu quý giá để bàn với bác sĩ.",
+        "**Hiểu kết quả:** Một số đo bất thường không phải lúc nào cũng đáng lo. Quan trọng là xu hướng qua nhiều lần đo — không phải một con số đơn lẻ.",
+        "**Khi nào cần gọi bác sĩ ngay:**\n- Đường huyết dưới 3.9 mmol/L kèm triệu chứng (run, vã mồ hôi)\n- Đường huyết trên 16.7 mmol/L và cảm thấy không khỏe\n- Đường huyết cao liên tục nhiều ngày dù đã uống thuốc đầy đủ",
+      ],
+      safetyAlerts: [
+        {
+          type: "medication",
+          message:
+            "Người đang dùng insulin hoặc thuốc có nguy cơ gây hạ đường huyết cần mang theo đường/kẹo bên người và biết cách xử trí hạ đường huyết. Đo đường huyết trước khi lái xe hoặc vận động mạnh.",
+        },
+      ],
+      quiz: [
+        {
+          id: "q9-1",
+          question:
+            "Đo đường huyết sau ăn nên thực hiện vào thời điểm nào?",
+          options: [
+            "2 giờ sau khi bắt đầu bữa ăn",
+            "Ngay lập tức sau khi ăn xong",
+          ],
+          correctIndex: 0,
+          explanation:
+            "Đúng! Đường huyết sau ăn đạt đỉnh khoảng 1–2 giờ sau khi bắt đầu bữa ăn. Đo lúc 2 giờ cho biết bữa ăn đó ảnh hưởng đến đường huyết như thế nào.",
+        },
+        {
+          id: "q9-2",
+          question:
+            "Khi đo đường huyết, giọt máu nào nên dùng để có kết quả chính xác hơn?",
+          options: [
+            "Giọt máu thứ hai sau khi lau bỏ giọt đầu tiên",
+            "Giọt máu đầu tiên ra",
+          ],
+          correctIndex: 0,
+          explanation:
+            "Chính xác! Giọt máu đầu tiên có thể bị pha loãng bởi dịch mô. Lau đi và dùng giọt thứ hai sẽ cho kết quả chính xác hơn.",
+        },
+      ],
+      sources: [
+        "American Diabetes Association, Standards of Medical Care in Diabetes (2024), Section 7: Diabetes Technology",
+        "Hội Nội tiết - Đái tháo đường Việt Nam, Hướng dẫn tự theo dõi đường huyết tại nhà",
+      ],
+    },
+  },
+  {
+    id: 10,
+    slug: "doc-ket-qua-may-do",
+    title: "Đọc kết quả máy đo — số nào là tốt?",
+    chapter: "theo-doi-tai-nha",
+    estimatedMinutes: 12,
+    icon: "Activity",
+    previewText:
+      "Hiểu ý nghĩa của con số trên máy đo, xác định mục tiêu cá nhân và nhận biết khi nào cần liên hệ bác sĩ.",
+    hasSafetyAlert: false,
+    videoUrl: undefined,
+    content: {
+      openingLine:
+        "Máy báo 9.2 mmol/L — cô chú có biết đây là tốt, trung bình hay cần lo không?",
+      simpleSummary:
+        "Ngưỡng đường huyết mục tiêu cho người tiểu đường type 2: lúc đói 4.4–7.2 mmol/L, sau ăn 2h dưới 10 mmol/L. Nhưng mục tiêu cụ thể của mỗi người có thể khác nhau.",
+      actionToday:
+        "Ghi vào điện thoại hoặc tờ giấy nhỏ: 'Mục tiêu của tôi: lúc đói X mmol/L, sau ăn Y mmol/L' — điền số theo chỉ dẫn của bác sĩ.",
+      illustrationPlaceholder:
+        "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=1200&q=85&fit=crop",
+      illustrationAlt:
+        "Màn hình máy tính bảng hiển thị biểu đồ theo dõi sức khỏe — dữ liệu đường huyết theo thời gian",
+      body: [
+        "**Bảng tham chiếu đường huyết (theo VADE 2023):**\n- Người không tiểu đường: lúc đói 3.9–5.6 mmol/L; sau ăn 2h dưới 7.8 mmol/L\n- Người tiểu đường type 2 (mục tiêu điều trị thông thường): lúc đói 4.4–7.2 mmol/L; sau ăn 2h dưới 10 mmol/L; HbA1c dưới 7%",
+        "**Mục tiêu không phải một size cho tất cả:** Người lớn tuổi, có bệnh tim mạch hoặc dễ hạ đường huyết có thể có mục tiêu HbA1c cao hơn (dưới 8%). Người trẻ, khỏe mạnh có thể đặt mục tiêu chặt hơn. Hỏi bác sĩ mục tiêu cụ thể.",
+        "**Đọc xu hướng, không chỉ đọc từng số:** Một kết quả 8.5 mmol/L sau ăn tối không phải là thảm họa. Quan trọng là: kết quả này có thường xuyên không? Có xu hướng tăng hay giảm qua nhiều tuần?",
+        "**Nhật ký đường huyết:** Ghi chép đơn giản: ngày, giờ đo, kết quả, ăn gì trước đó. Sau 2 tuần, cô chú sẽ nhìn thấy 'bản đồ' đường huyết của mình — bữa ăn nào làm đường tăng cao, thói quen nào giúp ổn định hơn.",
+        "**Khi thấy số cao:** Không hoảng loạn. Uống một ly nước, đi bộ nhẹ 10 phút, kiểm tra lại sau 1–2 giờ. Nếu vẫn cao và có triệu chứng (khát nhiều, tiểu nhiều, mệt), liên hệ bác sĩ.",
+        "**Khi thấy số thấp (dưới 3.9 mmol/L):** Xử trí ngay — xem bài 14 về túi cứu hộ hạ đường huyết.",
+      ],
+      quiz: [
+        {
+          id: "q10-1",
+          question:
+            "Đường huyết lúc đói 7.0 mmol/L ở người tiểu đường type 2 đang điều trị là:",
+          options: [
+            "Trong phạm vi mục tiêu điều trị thông thường (4.4–7.2 mmol/L)",
+            "Quá cao, cần đến cấp cứu ngay",
+          ],
+          correctIndex: 0,
+          explanation:
+            "Đúng! 7.0 mmol/L nằm trong phạm vi mục tiêu điều trị thông thường. Tuy nhiên, mục tiêu cụ thể của từng người khác nhau — hỏi bác sĩ để biết con số mục tiêu của cô chú.",
+        },
+        {
+          id: "q10-2",
+          question:
+            "Tại sao ghi nhật ký đường huyết quan trọng hơn là chỉ xem từng số lẻ?",
+          options: [
+            "Vì nhật ký cho thấy xu hướng theo thời gian — giúp nhận ra bữa ăn hay thói quen nào ảnh hưởng đến đường huyết",
+            "Vì bác sĩ bắt buộc mọi người phải ghi",
+          ],
+          correctIndex: 0,
+          explanation:
+            "Chính xác! Một số đo đơn lẻ không nói lên nhiều. Nhật ký 2–4 tuần cho thấy 'bản đồ đường huyết' cá nhân — thông tin quý báu để điều chỉnh bữa ăn và thuốc.",
+        },
+      ],
+      sources: [
         "Hội Nội tiết - Đái tháo đường Việt Nam (VADE), Hướng dẫn chẩn đoán và điều trị đái tháo đường type 2 (2023)",
         "American Diabetes Association, Standards of Medical Care in Diabetes (2024)",
       ],
     },
   },
   {
-    id: 2,
-    slug: "com-khoai-banh-trai-cay",
-    title: "Cơm, khoai, bánh và trái cây có điểm gì giống nhau?",
-    chapter: "hieu-duong-huyet",
-    estimatedMinutes: 5,
-    icon: "Wheat",
-    previewText:
-      "Hiểu tại sao cơm, khoai, bánh mì và trái cây đều ảnh hưởng đến đường huyết theo cách tương tự.",
-    hasSafetyAlert: false,
-    content: {
-      openingLine:
-        "Cô chú có biết cơm trắng, khoai lang, bánh mì và xoài đều có một điểm chung quan trọng không?",
-      simpleSummary:
-        "Chúng đều chứa chất bột đường (carbohydrate), khi tiêu hóa sẽ chuyển thành glucose và làm tăng đường huyết. Không phải tất cả đều tăng với tốc độ như nhau.",
-      actionToday:
-        "Hôm nay, nhìn vào đĩa ăn của mình và thử nhận ra: 'Thứ nào là tinh bột, thứ nào là rau, thứ nào là đạm (thịt/cá/đậu)?'",
-      illustrationPlaceholder: "/images/placeholder-carbs.svg",
-      illustrationAlt:
-        "Hình minh họa: cơm, khoai, bánh mì, trái cây – tất cả đều có mũi tên chỉ về phía glucose",
-      body: [
-        "**Chất bột đường (carbohydrate)** là tên khoa học chỉ nhóm thực phẩm bao gồm: cơm, bún, phở, bánh mì, khoai, ngô, đồ ngọt, trái cây và nước ép.",
-        "Khi cô chú ăn những thứ này, cơ thể tiêu hóa và phân giải chúng thành glucose – đây là lý do tại sao chúng làm tăng đường huyết.",
-        "**Tinh bột** (starch) gồm: cơm, bún, phở, bánh mì, khoai, ngô. Đây là chuỗi glucose dài, cơ thể cần thời gian để tiêu hóa.",
-        "**Đường** (sugars) gồm: đường cát, mật ong, đường trong trái cây, nước ngọt, bánh kẹo. Loại này được hấp thu nhanh hơn vào máu.",
-        "**Chất xơ** (fiber) cũng là carbohydrate nhưng cơ thể người không tiêu hóa được. Chất xơ giúp làm chậm quá trình hấp thu glucose và rất tốt cho sức khỏe.",
-        "Điểm khác biệt quan trọng: không phải mọi carbohydrate đều làm tăng đường huyết nhanh như nhau. Thực phẩm nhiều chất xơ (rau xanh, đậu đỗ) thường làm tăng đường huyết chậm hơn và ít hơn so với cơm trắng hay bánh ngọt.",
-        "Cô chú không cần bỏ hoàn toàn cơm hay khoai – nhưng hiểu được điều này sẽ giúp cô chú chọn lượng phù hợp và phối hợp tốt hơn trong bữa ăn.",
-      ],
-      quiz: [
-        {
-          id: "q2-1",
-          question:
-            "Loại nào sau đây KHÔNG phải là chất bột đường (carbohydrate)?",
-          options: ["Thịt gà, trứng, cá", "Cơm, bánh mì, khoai"],
-          correctIndex: 0,
-          explanation:
-            "Đúng! Thịt, cá, trứng là thực phẩm giàu đạm (protein), không phải carbohydrate. Chúng gần như không làm tăng đường huyết trực tiếp.",
-        },
-        {
-          id: "q2-2",
-          question: "Loại carbohydrate nào giúp làm chậm tăng đường huyết?",
-          options: [
-            "Chất xơ (trong rau xanh, đậu đỗ)",
-            "Đường (trong bánh kẹo, nước ngọt)",
-          ],
-          correctIndex: 0,
-          explanation:
-            "Chính xác! Chất xơ giúp làm chậm quá trình hấp thu glucose vào máu, nên rau xanh rất hữu ích trong bữa ăn của người tiểu đường.",
-        },
-      ],
-      sources: [
-        "Jessie Inchauspé (2022), Glucose Revolution, tr. 33–55",
-        "USDA Dietary Guidelines for Americans (2020–2025)",
-      ],
-    },
-  },
-  {
-    id: 3,
-    slug: "sau-khi-an-thuc-an-di-dau",
-    title: "Sau khi ăn, thức ăn đi đâu trong cơ thể?",
-    chapter: "hieu-duong-huyet",
-    estimatedMinutes: 5,
-    icon: "Activity",
-    previewText:
-      "Hành trình của thức ăn từ miệng đến tế bào và tại sao insulin đóng vai trò quan trọng.",
-    hasSafetyAlert: false,
-    content: {
-      openingLine: "Bao giờ cô chú có tự hỏi cơm mình ăn đi đâu không?",
-      simpleSummary:
-        "Thức ăn được tiêu hóa thành glucose, glucose vào máu, insulin giúp đưa glucose vào tế bào. Ở người tiểu đường, bước cuối này gặp trở ngại.",
-      actionToday:
-        "Lần tới khi uống thuốc tiểu đường, hãy nhớ rằng thuốc đang giúp cơ thể xử lý glucose tốt hơn.",
-      illustrationPlaceholder: "/images/placeholder-digestion.svg",
-      illustrationAlt:
-        "Sơ đồ tiêu hóa đơn giản: miệng → dạ dày → ruột non → máu → tế bào",
-      body: [
-        "Sau khi cô chú ăn, thức ăn bắt đầu được nghiền nát ở miệng rồi xuống dạ dày.",
-        "Ở **dạ dày** và **ruột non**, các enzyme tiêu hóa phân giải tinh bột và đường thành glucose.",
-        "Glucose được hấp thu qua thành ruột vào **máu**. Đây là lúc đường huyết bắt đầu tăng lên.",
-        "Tụy tạng nhận tín hiệu đường huyết tăng và tiết ra **insulin**. Insulin hoạt động như một chiếc chìa khóa – mở cửa các tế bào để glucose đi vào.",
-        "Trong tế bào, glucose được đốt cháy tạo ra **năng lượng**. Phần glucose dư thừa được gan chuyển thành glycogen dự trữ, hoặc thành mỡ.",
-        "Ở người **tiểu đường type 2**: tế bào đã quen với insulin quá nhiều và bắt đầu 'phớt lờ' – gọi là **đề kháng insulin** (kháng insulin). Tụy phải tiết insulin nhiều hơn, nhưng vẫn không đủ hiệu quả. Kết quả: glucose ở lại trong máu lâu hơn và ở mức cao hơn.",
-        "Hiểu điều này giúp cô chú thấy rõ hơn tại sao việc ăn đúng cách có thể giảm bớt gánh nặng cho tụy và giúp cơ thể xử lý glucose hiệu quả hơn.",
-      ],
-      quiz: [
-        {
-          id: "q3-1",
-          question: "Đề kháng insulin có nghĩa là gì?",
-          options: [
-            "Tế bào không phản ứng tốt với insulin nữa, làm glucose khó đi vào tế bào",
-            "Cơ thể không còn tiết insulin nào cả",
-          ],
-          correctIndex: 0,
-          explanation:
-            "Đúng rồi! Đề kháng insulin là đặc điểm điển hình của tiểu đường type 2. Tụy vẫn tiết insulin nhưng tế bào 'không nghe theo' như trước.",
-        },
-        {
-          id: "q3-2",
-          question:
-            "Sau khi ăn cơm, đường huyết thay đổi như thế nào trong vài giờ đầu?",
-          options: [
-            "Tăng lên trong khoảng 30–60 phút, rồi từ từ giảm",
-            "Không thay đổi gì cả",
-          ],
-          correctIndex: 0,
-          explanation:
-            "Chính xác! Đường huyết thường đạt đỉnh khoảng 30–60 phút sau ăn rồi dần trở về mức bình thường. Mục tiêu là hạn chế mức đỉnh quá cao.",
-        },
-      ],
-      sources: [
-        "Jessie Inchauspé (2022), Glucose Revolution, tr. 25–50",
-        "Hội Nội tiết - Đái tháo đường Việt Nam, Tài liệu giáo dục bệnh nhân tiểu đường type 2",
-      ],
-    },
-  },
-  {
-    id: 4,
-    slug: "do-che-bien-san-va-duong-huyet",
-    title: "Vì sao đồ chế biến sẵn dễ làm đường huyết tăng nhanh?",
-    chapter: "hieu-duong-huyet",
-    estimatedMinutes: 5,
-    icon: "Package",
-    previewText:
-      "Bánh gói, mì ăn liền, nước ngọt – tại sao những thứ này dễ làm đường huyết tăng đột biến.",
-    hasSafetyAlert: true,
-    content: {
-      openingLine:
-        "Cô chú có để ý thấy sau khi ăn bánh gói hay uống nước ngọt, cơ thể nhanh đói hơn không?",
-      simpleSummary:
-        "Thực phẩm chế biến sẵn thường đã được xử lý để tiêu hóa rất nhanh, làm đường huyết tăng đột biến. Lựa chọn thực phẩm ít qua chế biến hơn sẽ có lợi hơn.",
-      actionToday:
-        "Lần tới khi cầm gói bánh hay chai nước ngọt, thử nhìn vào nhãn và tìm dòng 'Đường' xem có bao nhiêu gram.",
-      illustrationPlaceholder: "/images/placeholder-processed-food.svg",
-      illustrationAlt:
-        "Hình ảnh so sánh: bên trái thực phẩm tươi (rau, cá), bên phải thực phẩm chế biến (bánh gói, nước ngọt)",
-      body: [
-        "Thực phẩm chế biến sẵn là những sản phẩm đã trải qua nhiều bước gia công: bánh quy, bánh mì công nghiệp, mì ăn liền, nước ngọt, bánh kẹo, ngũ cốc ăn sáng đóng hộp...",
-        "**Vì sao chúng nguy hiểm hơn?** Khi thực phẩm được chế biến nhiều, cấu trúc tự nhiên bị phá vỡ, chất xơ bị loại bỏ, tinh bột bị nghiền mịn. Điều này làm cho cơ thể tiêu hóa chúng cực nhanh.",
-        "Tiêu hóa nhanh = glucose vào máu rất nhanh = đường huyết tăng vọt trong thời gian ngắn.",
-        "Ngoài ra, nhà sản xuất thường thêm **đường ẩn** (sugar hiding) vào nhiều loại thực phẩm mà cô chú không ngờ tới: tương ớt, sốt nêm, bánh mặn, súp đóng hộp...",
-        "**So sánh:**\n- Cơm gạo lứt + rau luộc: tiêu hóa chậm hơn, đường huyết tăng từ từ\n- Bánh mì trắng + jam + nước ngọt: tiêu hóa rất nhanh, đường huyết tăng cao và nhanh",
-        "Cô chú không cần kiêng hoàn toàn, nhưng hạn chế và thay thế dần bằng thực phẩm ít qua chế biến là bước đi có ích.",
-      ],
-      safetyAlerts: [
-        {
-          type: "diet",
-          message:
-            "Nội dung này nhằm mục đích giáo dục sức khỏe. Không tự ý ngưng thuốc, đổi liều thuốc hoặc thay đổi insulin khi chưa trao đổi với bác sĩ điều trị.",
-        },
-      ],
-      quiz: [
-        {
-          id: "q4-1",
-          question:
-            "Tại sao thực phẩm chế biến sẵn lại làm đường huyết tăng nhanh hơn?",
-          options: [
-            "Vì chất xơ bị loại bỏ, tinh bột được nghiền mịn nên tiêu hóa cực nhanh",
-            "Vì chúng có nhiều protein hơn thực phẩm tươi",
-          ],
-          correctIndex: 0,
-          explanation:
-            "Đúng! Cấu trúc tự nhiên bị phá vỡ giúp tiêu hóa nhanh hơn, nhưng cũng có nghĩa là glucose đổ vào máu nhanh hơn và nhiều hơn.",
-        },
-        {
-          id: "q4-2",
-          question: "'Đường ẩn' là gì?",
-          options: [
-            "Đường được thêm vào thực phẩm mà nhìn bề ngoài không thấy rõ, như trong tương ớt hay sốt nêm",
-            "Một loại đường đặc biệt không ảnh hưởng đến đường huyết",
-          ],
-          correctIndex: 0,
-          explanation:
-            "Chính xác! Nhiều thực phẩm 'mặn' hoặc 'savory' lại chứa lượng đường đáng kể. Đọc nhãn thực phẩm giúp cô chú nhận ra điều này.",
-        },
-      ],
-      sources: [
-        "Jessie Inchauspé (2022), Glucose Revolution, tr. 60–80",
-        "Monteiro CA et al. (2019), Ultra-processed foods: what they are and how to identify them, Public Health Nutrition",
-      ],
-    },
-  },
-  {
-    id: 5,
-    slug: "hieu-duong-cong-duong-huyet",
-    title: "Hiểu đường cong đường huyết sau ăn",
-    chapter: "hieu-duong-huyet",
-    estimatedMinutes: 6,
-    icon: "TrendingUp",
-    previewText:
-      "Đường huyết thay đổi thế nào sau bữa ăn và tại sao mức tăng nhẹ tốt hơn mức tăng đột biến.",
-    hasSafetyAlert: false,
-    content: {
-      openingLine:
-        "Hãy tưởng tượng đường huyết như sóng biển – có sóng nhẹ và sóng lớn, và cơ thể thích sóng nhẹ hơn.",
-      simpleSummary:
-        "Sau ăn, đường huyết luôn tăng lên – đó là bình thường. Điều cần tránh là những lần tăng quá cao, quá nhanh và xảy ra thường xuyên.",
-      actionToday:
-        "Nếu cô chú có máy đo đường huyết, thử đo sau 1 giờ ăn bữa sáng thông thường và ghi lại kết quả.",
-      illustrationPlaceholder: "/images/placeholder-glucose-curve.svg",
-      illustrationAlt:
-        "Biểu đồ đường cong đường huyết: một đường tăng vọt (bữa ăn nhiều tinh bột) và một đường tăng nhẹ (bữa ăn có rau và đạm)",
-      body: [
-        "Sau mỗi bữa ăn, đường huyết đều tăng lên – đây là điều bình thường và cần thiết vì cơ thể đang hấp thu glucose để lấy năng lượng.",
-        "Điều quan trọng là **mức độ tăng** và **tốc độ tăng**:",
-        "**Đường cong nhẹ** (tăng từ từ, không quá cao): cơ thể xử lý thoải mái, insulin vừa đủ để điều tiết, tế bào nhận đủ năng lượng đều đặn.",
-        "**Đường cong đột biến** (tăng vọt cao, nhanh): tụy phải tiết nhiều insulin một lúc, cơ thể mệt mỏi hơn, cô chú có thể cảm thấy buồn ngủ, nhanh đói lại.",
-        "Theo thời gian, những đột biến thường xuyên gây thêm gánh nặng cho tụy và có thể đẩy nhanh quá trình tiến triển của bệnh.",
-        "**Yếu tố nào ảnh hưởng đến hình dạng đường cong?**\n- Loại và lượng carbohydrate ăn vào\n- Thứ tự ăn (rau trước hay cơm trước)\n- Có rau, đạm và chất béo trong bữa ăn không\n- Có vận động nhẹ sau ăn không",
-        "Những bài học tiếp theo sẽ giúp cô chú áp dụng những yếu tố này vào bữa ăn hằng ngày.",
-      ],
-      quiz: [
-        {
-          id: "q5-1",
-          question: "Sau bữa ăn, đường huyết tăng có phải là điều bất thường?",
-          options: [
-            "Không, tăng sau ăn là bình thường – vấn đề là tăng quá cao",
-            "Có, đường huyết lý tưởng không bao giờ được tăng",
-          ],
-          correctIndex: 0,
-          explanation:
-            "Đúng! Tăng đường huyết sau ăn là quá trình sinh lý bình thường. Mục tiêu là hạn chế những cơn tăng quá cao và quá nhanh.",
-        },
-        {
-          id: "q5-2",
-          question: "Ăn rau trước bữa chính giúp ích gì cho đường cong đường huyết?",
-          options: [
-            "Giúp đường huyết tăng chậm và ổn định hơn",
-            "Không có tác dụng gì với đường huyết",
-          ],
-          correctIndex: 0,
-          explanation:
-            "Chính xác! Chất xơ trong rau tạo ra 'lớp đệm' trong ruột, giúp glucose hấp thu chậm hơn và đường cong sau ăn ổn định hơn.",
-        },
-      ],
-      sources: [
-        "Jessie Inchauspé (2022), Glucose Revolution, tr. 51–75",
-        "Wolever TM et al. (2006), The glycemic index: methodology and clinical implications, American Journal of Clinical Nutrition",
-      ],
-    },
-  },
-  {
-    id: 6,
-    slug: "co-the-lam-viec-vat-va-hon",
-    title: "Khi đường huyết thường xuyên tăng cao, cơ thể phải làm việc vất vả hơn",
-    chapter: "nguy-co-va-theo-doi",
-    estimatedMinutes: 6,
-    icon: "HeartPulse",
-    previewText:
-      "Tác động tích lũy của đường huyết cao lặp đi lặp lại đến tim, thận, mắt và thần kinh.",
-    hasSafetyAlert: true,
-    content: {
-      openingLine:
-        "Cô chú đã biết đường huyết cao gây hại – nhưng biết cụ thể nó gây hại như thế nào giúp cô chú có thêm động lực chăm sóc bản thân.",
-      simpleSummary:
-        "Đường huyết cao kéo dài gây tổn thương từ từ cho mạch máu và thần kinh trong toàn cơ thể. Kiểm soát tốt giúp làm chậm hoặc ngăn chặn những tổn thương này.",
-      actionToday:
-        "Kiểm tra lịch tái khám tiếp theo của mình – nếu chưa có, hãy đặt lịch với bác sĩ trong tuần này.",
-      illustrationPlaceholder: "/images/placeholder-complications.svg",
-      illustrationAlt:
-        "Hình minh họa cơ thể người với các cơ quan bị ảnh hưởng bởi đường huyết cao: tim, thận, mắt, bàn chân",
-      body: [
-        "Glucose ở mức cao trong máu, đặc biệt khi kéo dài nhiều năm, dần dần làm tổn thương lớp trong của mạch máu.",
-        "**Mạch máu nhỏ** (microvascular): bị tổn thương ở mắt (có thể gây mờ mắt, mù lòa), thận (suy thận) và thần kinh ngoại biên (tê bì, đau nhức bàn tay chân).",
-        "**Mạch máu lớn** (macrovascular): tăng nguy cơ bệnh tim mạch, đột quỵ và bệnh động mạch ngoại vi (tuần hoàn kém ở chân).",
-        "Tin tốt là: những tổn thương này **không xảy ra ngay lập tức** và **có thể được làm chậm lại** đáng kể khi đường huyết được kiểm soát tốt hơn.",
-        "Kiểm soát đường huyết không nhất thiết phải hoàn hảo – ngay cả việc giảm đường huyết vừa phải cũng giúp giảm nguy cơ biến chứng.",
-        "Đó là lý do tại sao mỗi bữa ăn tốt hơn, mỗi lần đi bộ sau ăn, mỗi lần uống thuốc đúng giờ đều có ý nghĩa.",
-      ],
-      safetyAlerts: [
-        {
-          type: "default",
-          message:
-            "Nội dung này nhằm mục đích giáo dục sức khỏe. Không tự ý ngưng thuốc, đổi liều thuốc hoặc thay đổi insulin khi chưa trao đổi với bác sĩ điều trị.",
-        },
-      ],
-      quiz: [
-        {
-          id: "q6-1",
-          question: "Kiểm soát đường huyết tốt hơn có giúp ngăn ngừa biến chứng không?",
-          options: [
-            "Có, giúp làm chậm và giảm nguy cơ biến chứng đáng kể",
-            "Không, biến chứng sẽ xảy ra dù có kiểm soát hay không",
-          ],
-          correctIndex: 0,
-          explanation:
-            "Đúng rồi! Nhiều nghiên cứu lớn đã chứng minh rằng kiểm soát đường huyết tốt có thể giảm nguy cơ biến chứng từ 25% đến hơn 50%.",
-        },
-        {
-          id: "q6-2",
-          question:
-            "Biến chứng của đường huyết cao thường ảnh hưởng đến cơ quan nào?",
-          options: [
-            "Mắt, thận, thần kinh và tim mạch",
-            "Chỉ ảnh hưởng đến dạ dày",
-          ],
-          correctIndex: 0,
-          explanation:
-            "Chính xác! Đường huyết cao ảnh hưởng đến mạch máu nhỏ và lớn khắp cơ thể, đặc biệt là mắt, thận, thần kinh và tim.",
-        },
-      ],
-      sources: [
-        "UK Prospective Diabetes Study (UKPDS) Group (1998), Lancet",
-        "American Diabetes Association, Standards of Medical Care in Diabetes (2024), Section 10: Cardiovascular Disease",
-      ],
-    },
-  },
-  {
-    id: 7,
-    slug: "met-sau-an-bien-chung-lau-dai",
-    title: "Mệt sau ăn, nhanh đói và biến chứng lâu dài",
-    chapter: "nguy-co-va-theo-doi",
-    estimatedMinutes: 5,
-    icon: "Zap",
-    previewText:
-      "Kết nối giữa cảm giác mệt sau ăn, cơn đói nhanh và những nguy cơ lâu dài.",
-    hasSafetyAlert: false,
-    content: {
-      openingLine:
-        "Bao giờ ăn xong mà vẫn thấy mệt, buồn ngủ hoặc nhanh đói lại? Đây không phải chuyện bình thường.",
-      simpleSummary:
-        "Mệt sau ăn và nhanh đói là dấu hiệu của đường cong đột biến. Nhận ra dấu hiệu này giúp cô chú điều chỉnh bữa ăn kịp thời.",
-      actionToday:
-        "Hôm nay, sau bữa cơm trưa, ghi lại: 'Sau 1 tiếng tôi cảm thấy thế nào? Buồn ngủ không? Đói không?'",
-      illustrationPlaceholder: "/images/placeholder-fatigue.svg",
-      illustrationAlt: "Hình minh họa người cảm thấy mệt sau bữa ăn nhiều tinh bột",
-      body: [
-        "**Mệt và buồn ngủ sau ăn**: Khi đường huyết tăng vọt, cơ thể tiết nhiều insulin để hạ đường nhanh. Đường huyết có thể xuống thấp nhanh chóng sau đó – gây cảm giác mệt mỏi, khó tập trung.",
-        "**Nhanh đói trở lại**: Đường cong đột biến rồi hạ xuống nhanh khiến não nhận tín hiệu 'cần thêm năng lượng' – dù bữa trước chưa lâu.",
-        "**Thèm đồ ngọt hoặc tinh bột**: Khi đường huyết xuống, cơ thể thường thèm thứ gì đó ngọt hoặc tinh bột để tăng năng lượng nhanh – tạo thành vòng lặp.",
-        "**Về lâu dài**: Những đột biến thường xuyên này tích lũy dần, góp phần làm tăng tình trạng viêm nhiễm mạn tính trong cơ thể và đẩy nhanh quá trình lão hóa mạch máu.",
-        "**Bữa ăn ổn định hơn** (đường cong phẳng hơn) giúp cô chú duy trì năng lượng đều đặn suốt ngày, không còn những cơn buồn ngủ hay đói bất chợt.",
-      ],
-      quiz: [
-        {
-          id: "q7-1",
-          question:
-            "Mệt mỏi buồn ngủ sau bữa ăn có thể liên quan đến điều gì?",
-          options: [
-            "Đường huyết tăng vọt rồi hạ nhanh sau khi ăn nhiều tinh bột",
-            "Cơ thể đang tiêu hóa bình thường, không có gì đáng lo",
-          ],
-          correctIndex: 0,
-          explanation:
-            "Đúng! Mặc dù mệt sau ăn đôi khi là bình thường, nhưng nếu xảy ra thường xuyên và rõ ràng, đó thường là dấu hiệu của đường huyết tăng đột biến.",
-        },
-        {
-          id: "q7-2",
-          question:
-            "Ăn bữa ăn ổn định hơn (ít gây đột biến đường huyết) có lợi ích gì?",
-          options: [
-            "Duy trì năng lượng đều đặn, ít đói bất chợt và ít thèm đồ ngọt hơn",
-            "Chỉ tốt cho đường huyết, không ảnh hưởng đến cảm giác hằng ngày",
-          ],
-          correctIndex: 0,
-          explanation:
-            "Chính xác! Bữa ăn cân bằng giúp đường cong ổn định, năng lượng đều suốt ngày, và giảm thèm đồ ngọt vào buổi chiều.",
-        },
-      ],
-      sources: [
-        "Jessie Inchauspé (2022), Glucose Revolution, tr. 95–120",
-        "Benton D et al. (2020), Low glycemic index diets and cognitive performance, Nutrients",
-      ],
-    },
-  },
-  {
-    id: 8,
-    slug: "an-theo-thu-tu",
-    title: "Ăn theo thứ tự: rau trước, món đạm sau, cơm cuối",
-    chapter: "thuc-hanh-bua-an",
-    estimatedMinutes: 7,
-    icon: "Layers",
-    previewText:
-      "Một thay đổi đơn giản trong thứ tự ăn giúp giảm đường huyết sau ăn mà không cần thay đổi món ăn.",
-    hasSafetyAlert: true,
-    content: {
-      openingLine:
-        "Cùng một bữa cơm, cùng những món ăn đó – nhưng ăn theo thứ tự khác nhau sẽ cho kết quả đường huyết khác nhau. Nghe có vẻ lạ, nhưng đây là sự thật.",
-      simpleSummary:
-        "Ăn rau trước, sau đó đến thịt/cá/đậu, và ăn cơm/bún cuối cùng giúp giảm mức đỉnh đường huyết đáng kể – mà không cần thay đổi món ăn hay khẩu phần.",
-      actionToday:
-        "Hôm nay ở bữa cơm, hãy thử: ăn hết phần rau trước, rồi mới ăn thịt hoặc cá, cuối cùng mới lấy cơm. Ghi lại cảm nhận.",
-      illustrationPlaceholder: "/images/placeholder-meal-order.svg",
-      illustrationAlt:
-        "Hình minh họa đĩa cơm Việt: bước 1 ăn rau xanh, bước 2 ăn thịt/cá, bước 3 ăn cơm",
-      body: [
-        "Nghiên cứu đã chỉ ra rằng thứ tự ăn thực phẩm trong bữa ăn ảnh hưởng đáng kể đến mức đường huyết sau ăn.",
-        "**Tại sao rau trước giúp ích?**\nChất xơ trong rau xanh tạo ra một lớp 'màng nhầy' nhẹ trong ruột non. Khi tinh bột từ cơm đi vào ruột sau đó, glucose được hấp thu chậm hơn và đều hơn.",
-        "**Thứ tự được khuyến nghị:**\n1. **Rau xanh và rau củ** (ăn trước: canh rau, rau luộc, dưa chuột, cà chua...)\n2. **Đạm và chất béo** (ăn tiếp theo: thịt, cá, đậu phụ, trứng)\n3. **Tinh bột** (ăn cuối: cơm, bún, bánh mì)",
-        "Một nghiên cứu nhỏ tại Nhật Bản cho thấy cùng một bữa ăn, nhưng ăn rau trước rồi mới ăn cơm giúp giảm mức đỉnh đường huyết sau ăn so với ăn cơm trước.",
-        "**Điều này phù hợp với bữa cơm Việt Nam không?**\nRất phù hợp! Cô chú vẫn có đủ cơm, canh, thịt/cá – chỉ thay đổi thứ tự là bắt đầu bằng tô canh rau hoặc đĩa rau luộc trước khi gắp cơm.",
-        "**Lưu ý thực tế:**\nKhông cần ăn hoàn toàn xong rau mới được đụng đến thứ khác. Chỉ cần **bắt đầu bằng rau** và để rau chiếm phần lớn những gắp đầu tiên.",
-        "**Áp dụng tại nhà hàng, đám tiệc:**\nNhìn vào bàn ăn và tìm rau trước – dưa muối, gỏi, canh rau, rau sống – ăn những thứ đó trước khi đụng đến cơm hay bánh.",
-      ],
-      safetyAlerts: [
-        {
-          type: "diet",
-          message:
-            "Nội dung này nhằm mục đích giáo dục sức khỏe. Không tự ý ngưng thuốc, đổi liều thuốc hoặc thay đổi insulin khi chưa trao đổi với bác sĩ điều trị.",
-        },
-        {
-          type: "medication",
-          message:
-            "Người đang dùng insulin hoặc thuốc có nguy cơ gây hạ đường huyết cần trao đổi với bác sĩ trước khi thay đổi nhiều trong chế độ ăn hoặc vận động.",
-        },
-      ],
-      quiz: [
-        {
-          id: "q8-1",
-          question: "Theo thứ tự ăn được khuyến nghị, cô chú nên ăn gì đầu tiên?",
-          options: [
-            "Rau xanh và rau củ",
-            "Cơm hoặc bún để no lâu hơn",
-          ],
-          correctIndex: 0,
-          explanation:
-            "Đúng rồi! Ăn rau trước giúp chất xơ tạo lớp đệm trong ruột, làm chậm hấp thu glucose từ cơm và tinh bột ăn sau đó.",
-        },
-        {
-          id: "q8-2",
-          question:
-            "Áp dụng thứ tự ăn có nghĩa là cô chú phải thay đổi hoàn toàn món ăn trong bữa không?",
-          options: [
-            "Không, vẫn ăn những món cũ, chỉ thay đổi thứ tự",
-            "Có, phải bỏ hoàn toàn cơm và tinh bột",
-          ],
-          correctIndex: 0,
-          explanation:
-            "Chính xác! Đây là điểm hay nhất của thói quen này – không cần thay đổi món ăn, không cần từ bỏ cơm. Chỉ cần bắt đầu bữa ăn bằng rau.",
-        },
-      ],
-      sources: [
-        "Jessie Inchauspé (2022), Glucose Revolution, tr. 89–100",
-        "Imai S et al. (2013), A simple meal plan of 'eating vegetables before carbohydrates', Asia Pac J Clin Nutr",
-        "Shukla AP et al. (2017), Food Order Has a Significant Impact on Postprandial Glucose and Insulin Levels, Diabetes Care",
-      ],
-    },
-  },
-  {
-    id: 9,
-    slug: "them-dia-rau-nho",
-    title: "Thêm một đĩa rau nhỏ trước bữa chính",
-    chapter: "thuc-hanh-bua-an",
-    estimatedMinutes: 5,
-    icon: "Salad",
-    previewText:
-      "Cách thực tế nhất để áp dụng thứ tự ăn vào bữa cơm Việt Nam hằng ngày.",
-    hasSafetyAlert: false,
-    content: {
-      openingLine:
-        "Nếu bài trước nói về thứ tự ăn, bài này giúp cô chú làm điều đó thật dễ trong bữa cơm hằng ngày.",
-      simpleSummary:
-        "Thêm một đĩa rau nhỏ ăn đầu bữa – rau luộc, canh rau, rau sống – là cách đơn giản nhất để giảm đường huyết sau ăn.",
-      actionToday:
-        "Thêm một đĩa rau luộc (bất kỳ loại gì trong nhà) vào bữa tối hôm nay và ăn hết trước khi cầm đũa gắp cơm.",
-      illustrationPlaceholder: "/images/placeholder-vegetable-plate.svg",
-      illustrationAlt:
-        "Hình minh họa đĩa rau luộc xanh tươi đặt trước bữa cơm Việt Nam",
-      body: [
-        "Gợi ý rau dễ làm cho bữa cơm hằng ngày:\n- **Rau luộc**: rau muống, rau lang, bông cải xanh, đậu cô ve\n- **Canh rau**: bất kỳ canh rau nào đều được\n- **Dưa leo, cà chua, giá đỗ** ăn sống\n- **Dưa muối** (ít muối, lượng vừa phải)\n- **Rau thơm** ăn kèm",
-        "**Không cần chế biến phức tạp**: rau luộc chấm nước mắm, hoặc canh rau đơn giản là đủ.",
-        "**Lượng bao nhiêu?** Một đĩa nhỏ hay một tô canh rau là đủ để tạo hiệu ứng làm chậm đường huyết.",
-        "**Khi ăn ngoài hàng**: gọi thêm một đĩa rau hoặc tô súp rau trước. Nhiều quán bún/phở có rau sống kèm – hãy ăn rau đó trước khi ăn bún.",
-        "**Khi bận không có rau**: một vài lát dưa leo hay cà chua sẵn trong tủ lạnh cũng là lựa chọn tốt.",
-        "Đây là thói quen nhỏ nhưng dễ duy trì – và hiệu quả được khoa học hỗ trợ.",
-      ],
-      quiz: [
-        {
-          id: "q9-1",
-          question: "Rau nào phù hợp để ăn trước bữa chính?",
-          options: [
-            "Bất kỳ rau xanh nào: luộc, sống, canh rau đều được",
-            "Chỉ được dùng salad theo kiểu phương Tây",
-          ],
-          correctIndex: 0,
-          explanation:
-            "Hoàn toàn đúng! Không cần thay đổi phong cách ăn uống – rau muống luộc, canh cải, giá đỗ... tất cả đều phù hợp và tốt cho đường huyết.",
-        },
-        {
-          id: "q9-2",
-          question: "Khi ăn ngoài hàng bún/phở, cô chú có thể làm gì?",
-          options: [
-            "Ăn rau sống kèm theo trước khi ăn bún hoặc phở",
-            "Tránh ăn rau vì không biết nguồn gốc",
-          ],
-          correctIndex: 0,
-          explanation:
-            "Rất thực tế! Rau sống kèm theo bún, phở là cơ hội tốt để áp dụng thứ tự ăn – ăn rau trước, sau đó mới ăn bún.",
-        },
-      ],
-      sources: [
-        "Jessie Inchauspé (2022), Glucose Revolution, tr. 92–95",
-        "Imai S et al. (2013), Asia Pac J Clin Nutr",
-      ],
-    },
-  },
-  {
-    id: 10,
-    slug: "khong-chi-nhin-calo",
-    title: "Không chỉ nhìn calo: hãy nhìn cả cơm, bánh và đồ ngọt",
-    chapter: "thuc-hanh-bua-an",
-    estimatedMinutes: 5,
-    icon: "Eye",
-    previewText:
-      "Tại sao hai bữa ăn cùng calo có thể ảnh hưởng rất khác nhau đến đường huyết.",
-    hasSafetyAlert: false,
-    content: {
-      openingLine:
-        "Nhiều cô chú cẩn thận đếm calo nhưng vẫn thấy đường huyết không ổn định. Lý do là calo không nói lên tất cả.",
-      simpleSummary:
-        "Calo quan trọng cho cân nặng, nhưng với đường huyết, loại và chất lượng carbohydrate ăn vào quan trọng hơn tổng số calo.",
-      actionToday:
-        "Hôm nay nhìn vào bữa sáng của mình: bên cạnh calo, có bao nhiêu phần là cơm/bánh/đồ ngọt, và bao nhiêu phần là rau và đạm?",
-      illustrationPlaceholder: "/images/placeholder-calories-vs-carbs.svg",
-      illustrationAlt:
-        "Hình so sánh: bữa ăn 400 calo toàn tinh bột vs bữa ăn 400 calo gồm rau, đạm và ít tinh bột",
-      body: [
-        "**Calo là gì?** Calo đo lường năng lượng tổng cộng trong thức ăn. Nó không cho biết thức ăn đó ảnh hưởng đến đường huyết như thế nào.",
-        "Ví dụ: 400 calo từ một tô cơm trắng sẽ làm đường huyết tăng rất khác so với 400 calo từ một bữa có rau, trứng và một chén cơm nhỏ.",
-        "**Điều quan trọng hơn calo cho đường huyết:**\n- Loại carbohydrate (tinh bột trắng hay ngũ cốc nguyên hạt)\n- Lượng chất xơ trong bữa ăn\n- Có rau và đạm đi kèm không\n- Thứ tự ăn trong bữa",
-        "**Không có nghĩa là calo không quan trọng** – calo vẫn liên quan đến cân nặng, và cân nặng ảnh hưởng đến tiểu đường. Nhưng cô chú cần nhìn thêm vào chất lượng carbohydrate.",
-        "**Thực hành đơn giản:** Với mỗi bữa ăn, hỏi: 'Tôi có đủ rau không? Tôi có đạm (thịt/cá/đậu) không? Phần cơm/bánh có quá nhiều không?'",
-      ],
-      quiz: [
-        {
-          id: "q10-1",
-          question: "Hai bữa ăn cùng calo có ảnh hưởng đường huyết giống nhau không?",
-          options: [
-            "Không nhất thiết – loại thức ăn và tỉ lệ carbohydrate mới quyết định đường huyết",
-            "Có, cùng calo thì tác động đến đường huyết luôn giống nhau",
-          ],
-          correctIndex: 0,
-          explanation:
-            "Đúng! Một bữa 400 calo toàn tinh bột sẽ gây đường huyết tăng cao hơn nhiều so với bữa 400 calo gồm rau, đạm và ít tinh bột.",
-        },
-        {
-          id: "q10-2",
-          question: "Điều gì quan trọng hơn khi xem xét ảnh hưởng đến đường huyết?",
-          options: [
-            "Chất lượng và loại carbohydrate, lượng chất xơ và đạm trong bữa",
-            "Chỉ cần giảm tổng lượng calo xuống dưới 1200 là đủ",
-          ],
-          correctIndex: 0,
-          explanation:
-            "Chính xác! Với người tiểu đường, chất lượng carbohydrate – không chỉ số calo – mới là yếu tố then chốt ảnh hưởng đến đường huyết sau ăn.",
-        },
-      ],
-      sources: [
-        "Jessie Inchauspé (2022), Glucose Revolution, tr. 55–70",
-        "Ludwig DS et al. (2018), The carbohydrate-insulin model, BMJ Open",
-      ],
-    },
-  },
-  {
     id: 11,
-    slug: "bua-sang-no-lau",
-    title: "Bữa sáng no lâu, đường huyết êm hơn",
-    chapter: "thuc-hanh-bua-an",
-    estimatedMinutes: 6,
-    icon: "Sunrise",
+    slug: "chiec-can-khong-phai-tham-phan",
+    title: "Chiếc cân không phải thám phán",
+    chapter: "theo-doi-tai-nha",
+    estimatedMinutes: 14,
+    icon: "Scale",
     previewText:
-      "Xây dựng bữa sáng cân đối giúp duy trì năng lượng và hạn chế cơn đói giữa buổi.",
-    hasSafetyAlert: true,
+      "Cân nặng và vòng eo liên quan chặt chẽ đến tiểu đường — nhưng mục tiêu không phải là gầy, mà là giảm 5–10% cân nặng một cách bền vững.",
+    hasSafetyAlert: false,
+    videoUrl: undefined,
     content: {
       openingLine:
-        "Buổi sáng cô chú hay ăn gì? Một ổ bánh mì, tô cháo hay một bát phở? Bữa sáng ảnh hưởng đến đường huyết cả ngày.",
+        "Cái cân trong nhà tắm không phải là thám phán phán xét cô chú — nó chỉ là một trong nhiều công cụ theo dõi.",
       simpleSummary:
-        "Bữa sáng có nhiều đạm và chất xơ, ít tinh bột đơn giản giúp đường huyết ổn định hơn và no lâu hơn trong buổi sáng.",
+        "Giảm 5–10% cân nặng (ví dụ từ 70kg xuống 63–66kg) đã có thể cải thiện đáng kể đường huyết. Quan trọng hơn số cân là vòng eo — mỡ bụng ảnh hưởng đến đề kháng insulin nhiều nhất.",
       actionToday:
-        "Hôm nay thử thêm một quả trứng hoặc miếng đậu phụ vào bữa sáng của mình, bên cạnh phần tinh bột đã có.",
-      illustrationPlaceholder: "/images/placeholder-breakfast.svg",
+        "Đo vòng eo hôm nay: dùng thước dây đo quanh rốn. Nam: trên 90cm là cần giảm. Nữ: trên 80cm là cần giảm.",
+      illustrationPlaceholder:
+        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1200&q=85&fit=crop",
       illustrationAlt:
-        "Hình minh họa bữa sáng cân đối: trứng, rau, một phần nhỏ tinh bột",
+        "Người đi bộ trong công viên buổi sáng — vận động nhẹ nhàng là nền tảng kiểm soát cân nặng",
       body: [
-        "**Bữa sáng nhiều tinh bột đơn giản** (bánh mì trắng, cháo trắng, phở, bún bò...): glucose vào máu nhanh → đường huyết tăng cao buổi sáng → nhanh đói trở lại sau 2–3 tiếng.",
-        "**Bữa sáng cân đối hơn** (có thêm đạm và chất béo lành mạnh): glucose tăng từ từ → no lâu hơn → ít thèm ăn vặt buổi sáng.",
-        "**Gợi ý bữa sáng cân đối hơn cho người Việt:**\n- Bánh mì + trứng ốp la + rau sống (giảm bớt mứt và bơ ngọt)\n- Cháo + đậu phụ hoặc thịt nạc xay + rau\n- Phở + thêm nhiều giá đỗ, rau, ăn rau trước khi ăn bún/phở\n- Xôi lạc/xôi đậu xanh (lạc và đậu có đạm) thay vì xôi gà mỡ ngọt",
-        "**Bữa sáng nên tránh (hoặc hạn chế):**\n- Bánh ngọt, bánh mì kẹp mứt/kem\n- Cháo đường, cháo đậu xanh ngọt nhiều đường\n- Nước trái cây đóng hộp thay cho bữa sáng\n- Ngũ cốc ăn sáng ngọt",
-        "**Nếu sáng cô chú không có nhiều thời gian:** Hai quả trứng luộc sẵn từ tối hôm trước kết hợp với rau sống là bữa sáng nhanh và tốt.",
-        "**Nhắc nhở quan trọng:** Không bỏ bữa sáng, đặc biệt khi đang uống thuốc tiểu đường vì có thể gây hạ đường huyết.",
-      ],
-      safetyAlerts: [
-        {
-          type: "medication",
-          message:
-            "Người đang dùng insulin hoặc thuốc có nguy cơ gây hạ đường huyết cần trao đổi với bác sĩ trước khi thay đổi nhiều trong chế độ ăn hoặc vận động.",
-        },
+        "**Tại sao cân nặng quan trọng với tiểu đường?** Mỡ thừa — đặc biệt là mỡ bụng — tiết ra các chất kích thích đề kháng insulin. Giảm mỡ bụng có thể cải thiện đường huyết rõ rệt ngay cả khi cân nặng chỉ giảm ít.",
+        "**Mục tiêu thực tế:** Không cần đạt cân nặng 'lý tưởng'. Nghiên cứu cho thấy giảm 5–10% cân nặng ban đầu đã có thể:\n- Giảm HbA1c từ 0.5–1%\n- Giảm huyết áp\n- Cải thiện mỡ máu\n- Một số người đạt được 'thuyên giảm' tiểu đường (đường huyết trở về mức bình thường mà không cần thuốc)",
+        "**Vòng eo quan trọng hơn BMI:** Mỡ nội tạng (mỡ bao quanh các cơ quan trong bụng) mới là loại mỡ nguy hiểm nhất. Người có cân nặng bình thường nhưng vòng eo lớn vẫn có nguy cơ cao. Ngược lại, người thừa cân nhưng vòng eo nhỏ hơn có nguy cơ thấp hơn.",
+        "**Không cần giảm cân nhanh:** Giảm 0.5–1 kg mỗi tuần là an toàn và bền vững. Giảm nhanh hơn có thể làm mất cơ bắp và khó duy trì.",
+        "**Cách giảm cân phù hợp với người tiểu đường:**\n- Giảm khẩu phần tinh bột theo phương pháp ba vùng\n- Thêm rau và đạm vào mỗi bữa\n- Vận động sau ăn mỗi ngày\n- Ngủ đủ giấc (thiếu ngủ làm tăng đề kháng insulin)\n- Không cần nhịn đói",
+        "**Cân khi nào:** Cân vào buổi sáng sau khi đi vệ sinh, trước khi ăn sáng. Cân cùng điều kiện mỗi lần để so sánh chính xác. Cân 1–2 lần mỗi tuần là đủ.",
       ],
       quiz: [
         {
           id: "q11-1",
-          question: "Bữa sáng có đạm (trứng, đậu phụ...) so với bữa sáng toàn tinh bột thì?",
+          question:
+            "Giảm bao nhiêu phần trăm cân nặng đã có thể cải thiện đáng kể đường huyết?",
           options: [
-            "No lâu hơn và đường huyết tăng chậm hơn",
-            "Không khác gì nhau về đường huyết",
+            "5–10% cân nặng ban đầu",
+            "Cần giảm ít nhất 30% mới có tác dụng",
           ],
           correctIndex: 0,
           explanation:
-            "Đúng! Đạm và chất xơ làm chậm tiêu hóa, giúp glucose vào máu từ từ hơn và cảm giác no kéo dài hơn.",
+            "Đúng! Giảm 5–10% cân nặng (ví dụ từ 70kg xuống 63–66kg) đã có thể giảm HbA1c, huyết áp và cải thiện mỡ máu đáng kể. Mục tiêu nhỏ, kết quả thực tế.",
         },
         {
           id: "q11-2",
-          question: "Người đang uống thuốc tiểu đường có nên bỏ bữa sáng để giảm đường huyết không?",
+          question:
+            "Tại sao vòng eo lại quan trọng hơn cân nặng tổng thể đối với nguy cơ tiểu đường?",
           options: [
-            "Không – bỏ bữa khi uống thuốc có thể gây nguy hiểm (hạ đường huyết)",
-            "Có – nhịn sáng giúp đường huyết ổn định hơn",
+            "Vì mỡ bụng (mỡ nội tạng) là loại mỡ gây đề kháng insulin nhiều nhất",
+            "Vì cân nặng không liên quan đến tiểu đường",
           ],
           correctIndex: 0,
           explanation:
-            "Rất quan trọng! Một số thuốc tiểu đường (đặc biệt là insulin và sulfonylurea) có thể gây hạ đường huyết nếu bỏ bữa. Hỏi bác sĩ về lịch uống thuốc khi thay đổi bữa ăn.",
+            "Chính xác! Mỡ nội tạng (bao quanh các cơ quan trong bụng) tiết ra nhiều chất kích thích đề kháng insulin hơn so với mỡ dưới da ở đùi hay tay.",
         },
       ],
       sources: [
-        "Jessie Inchauspé (2022), Glucose Revolution, tr. 110–130",
-        "Jakubowicz D et al. (2015), High-energy breakfast with low-energy dinner, Diabetologia",
+        "Look AHEAD Research Group (2013), Cardiovascular effects of intensive lifestyle intervention in type 2 diabetes, NEJM",
+        "Hội Nội tiết - Đái tháo đường Việt Nam, Hướng dẫn kiểm soát cân nặng trong tiểu đường type 2",
       ],
     },
   },
   {
     id: 12,
-    slug: "mat-ong-duong-phen-van-la-duong",
-    title: "Mật ong, đường phèn hay đường nâu vẫn là đường",
-    chapter: "thuc-hanh-bua-an",
-    estimatedMinutes: 4,
-    icon: "Honey",
+    slug: "van-dong-sau-bua-an",
+    title: "Vận động sau bữa ăn — 10 phút đủ rồi",
+    chapter: "theo-doi-tai-nha",
+    estimatedMinutes: 10,
+    icon: "Footprints",
     previewText:
-      "Làm rõ sự thật về mật ong, đường phèn, đường nâu và các chất ngọt 'tự nhiên' khác.",
+      "Vì sao 10 phút đi bộ nhẹ sau ăn hiệu quả hơn 30 phút tập gym lúc đói — và cách bắt đầu từ hôm nay.",
     hasSafetyAlert: true,
+    videoUrl: undefined,
     content: {
       openingLine:
-        "Nhiều người nghĩ mật ong hay đường phèn là 'đường tốt, không hại' cho người tiểu đường. Điều này không hoàn toàn đúng.",
+        "Không cần phòng gym, không cần quần áo thể thao — chỉ cần đôi dép và 10 phút.",
       simpleSummary:
-        "Mật ong, đường phèn, đường nâu, đường dừa đều chứa đường và làm tăng đường huyết. Chúng có thể có thêm một số dưỡng chất nhưng tác động lên đường huyết tương tự đường trắng.",
+        "Vận động nhẹ sau ăn giúp cơ bắp hấp thu glucose trực tiếp từ máu mà không cần insulin. 10 phút đi bộ nhẹ sau ăn có thể giảm đường huyết sau bữa đáng kể.",
       actionToday:
-        "Kiểm tra trong bếp xem cô chú đang dùng loại ngọt gì – mật ong, đường phèn hay đường cát – và nhớ rằng tất cả đều cần dùng tiết kiệm.",
-      illustrationPlaceholder: "/images/placeholder-sweeteners.svg",
+        "Sau bữa tối hôm nay, đứng dậy và đi bộ nhẹ 10 phút — quanh nhà, ra sân trước, hoặc trong ngõ. Bắt đầu trong vòng 30 phút sau khi ăn xong.",
+      illustrationPlaceholder:
+        "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=1200&q=85&fit=crop",
       illustrationAlt:
-        "Hình so sánh các loại đường: đường trắng, đường nâu, đường phèn, mật ong – tất cả có chỉ số đường huyết tương đương",
+        "Người lớn tuổi đi bộ trong công viên buổi chiều — vận động nhẹ nhàng sau bữa ăn",
       body: [
-        "**Mật ong**: chứa fructose và glucose, chỉ số đường huyết (GI) khoảng 55–65, cao hơn một số loại đường. Có thêm một số enzyme và khoáng chất nhỏ, nhưng lượng quá ít để có ý nghĩa y khoa.",
-        "**Đường phèn (đường thô, đường nâu)**: gần giống đường trắng về mặt hóa học, chỉ có thêm ít mật mía. GI tương tự đường trắng.",
-        "**Đường dừa, siro agave**: cũng là đường, ảnh hưởng đến đường huyết tương tự.",
-        "**Điều này không có nghĩa là không bao giờ dùng mật ong**: cô chú vẫn có thể dùng một lượng nhỏ mật ong – nhưng cần biết rằng nó CŨNG làm tăng đường huyết, và không phải là 'đường an toàn' đặc biệt cho người tiểu đường.",
-        "**Gợi ý thực tế:**\n- Thay vì dùng nhiều đường, hãy làm quen với vị ngọt nhẹ hơn\n- Khi nấu ăn, giảm dần lượng đường trong công thức\n- Nếu cần ngọt, dùng lượng rất nhỏ bất kỳ loại nào và theo dõi đường huyết",
-      ],
-      safetyAlerts: [
-        {
-          type: "default",
-          message:
-            "Nội dung này nhằm mục đích giáo dục sức khỏe. Không tự ý ngưng thuốc, đổi liều thuốc hoặc thay đổi insulin khi chưa trao đổi với bác sĩ điều trị.",
-        },
-      ],
-      quiz: [
-        {
-          id: "q12-1",
-          question: "Mật ong có an toàn để người tiểu đường dùng thoải mái không?",
-          options: [
-            "Không – mật ong vẫn làm tăng đường huyết và cần dùng tiết kiệm",
-            "Có – mật ong là đường tự nhiên nên không ảnh hưởng đến đường huyết",
-          ],
-          correctIndex: 0,
-          explanation:
-            "Đúng! Mật ong chứa đường và làm tăng đường huyết giống đường trắng. Có thể dùng lượng rất nhỏ nhưng không phải là lựa chọn 'tự do'.",
-        },
-        {
-          id: "q12-2",
-          question: "Đường phèn so với đường trắng thì ảnh hưởng đến đường huyết như thế nào?",
-          options: [
-            "Tương đương nhau về mặt tác động lên đường huyết",
-            "Đường phèn hoàn toàn không làm tăng đường huyết",
-          ],
-          correctIndex: 0,
-          explanation:
-            "Chính xác! Đường phèn chủ yếu là sucrose – giống đường trắng về cấu tạo hóa học và tác động lên đường huyết.",
-        },
-      ],
-      sources: [
-        "Jessie Inchauspé (2022), Glucose Revolution, tr. 145–155",
-        "American Diabetes Association, Sweeteners and Diabetes (2023)",
-      ],
-    },
-  },
-  {
-    id: 13,
-    slug: "neu-an-mon-ngot",
-    title: "Nếu ăn món ngọt, ăn ít và ăn sau bữa chính",
-    chapter: "thuc-hanh-bua-an",
-    estimatedMinutes: 5,
-    icon: "Cookie",
-    previewText:
-      "Cách thưởng thức đồ ngọt mà không gây đột biến đường huyết lớn.",
-    hasSafetyAlert: true,
-    content: {
-      openingLine:
-        "Cô chú không nhất thiết phải từ bỏ hoàn toàn đồ ngọt – nhưng thời điểm và lượng ăn rất quan trọng.",
-      simpleSummary:
-        "Ăn đồ ngọt sau bữa chính (không phải lúc đói hay thay bữa), với lượng nhỏ, giúp giảm mức độ tăng đường huyết so với ăn đồ ngọt lúc bụng đói.",
-      actionToday:
-        "Nếu muốn ăn chút bánh hay trái cây ngọt, hãy ăn sau bữa cơm – không phải lúc đói hay thay bữa.",
-      illustrationPlaceholder: "/images/placeholder-dessert-timing.svg",
-      illustrationAlt:
-        "Hình minh họa: ăn bánh lúc bụng đói vs ăn bánh sau bữa cơm – đường cong đường huyết khác nhau",
-      body: [
-        "**Tại sao thời điểm quan trọng?**\nKhi bụng đói, không có gì trong ruột để làm chậm hấp thu glucose. Đồ ngọt ăn lúc này sẽ làm đường huyết tăng vọt rất nhanh.",
-        "**Sau bữa chính**, ruột đã có rau, đạm và chất béo – những thứ này làm chậm tốc độ hấp thu glucose từ đồ ngọt ăn thêm.",
-        "**Lượng nhỏ**: Một miếng bánh nhỏ, vài viên kẹo, hay một ít trái cây sau bữa ăn tác động ít hơn nhiều so với ăn cả đĩa bánh lúc đói.",
-        "**Trái cây**: Trái cây chứa đường fructose và glucose tự nhiên, cùng với chất xơ. Ăn cả trái (không ép nước) sau bữa ăn là cách tốt hơn ăn lúc đói hay uống nước ép.",
-        "**Không nên:**\n- Ăn đồ ngọt như bữa sáng thay cơm\n- Ăn bánh kẹo lúc đói giữa buổi\n- Uống nước ngọt cùng bữa ăn (làm đường huyết tăng rất nhanh)\n- Coi đây là thói quen hằng ngày",
-        "**Nhấn mạnh:** Bài học này không khuyến khích cô chú ăn đồ ngọt nhiều hơn. Đây là hướng dẫn cho những dịp đặc biệt khi không thể tránh.",
-      ],
-      safetyAlerts: [
-        {
-          type: "diet",
-          message:
-            "Nội dung này nhằm mục đích giáo dục sức khỏe. Không tự ý ngưng thuốc, đổi liều thuốc hoặc thay đổi insulin khi chưa trao đổi với bác sĩ điều trị.",
-        },
-      ],
-      quiz: [
-        {
-          id: "q13-1",
-          question: "Khi nào nên ăn đồ ngọt để giảm ảnh hưởng lên đường huyết?",
-          options: [
-            "Sau bữa ăn chính, với lượng nhỏ",
-            "Lúc đói để không còn thèm nữa",
-          ],
-          correctIndex: 0,
-          explanation:
-            "Đúng! Sau bữa ăn chính, ruột đã có rau và đạm giúp hấp thu đường chậm hơn. Lúc đói, không có gì cản trở glucose đổ thẳng vào máu.",
-        },
-        {
-          id: "q13-2",
-          question: "Bài học này có nghĩa là cô chú có thể ăn đồ ngọt hằng ngày không?",
-          options: [
-            "Không – đây là hướng dẫn cho dịp đặc biệt, không phải khuyến khích ăn ngọt nhiều hơn",
-            "Có, chỉ cần ăn sau bữa cơm là được",
-          ],
-          correctIndex: 0,
-          explanation:
-            "Chính xác! Bài học này giúp cô chú biết cách xử lý khi không thể tránh đồ ngọt – không phải để ăn ngọt nhiều hơn mỗi ngày.",
-        },
-      ],
-      sources: [
-        "Jessie Inchauspé (2022), Glucose Revolution, tr. 155–170",
-        "Goff LM et al. (2013), Meal sequence impacts blood sugar, Nutrition & Metabolism",
-      ],
-    },
-  },
-  {
-    id: 14,
-    slug: "giam-trong-bua-an",
-    title: "Giấm trong bữa ăn: lựa chọn phụ, không bắt buộc",
-    chapter: "thuc-hanh-bua-an",
-    estimatedMinutes: 5,
-    icon: "Flask",
-    previewText:
-      "Sự thật về giấm, tác dụng có giới hạn và cách dùng đúng nếu muốn thử.",
-    hasSafetyAlert: true,
-    content: {
-      openingLine:
-        "Cô chú có nghe nhiều người nói uống giấm trước bữa ăn để giảm đường huyết không? Có phần đúng, nhưng cần hiểu rõ hơn.",
-      simpleSummary:
-        "Axit acetic trong giấm có thể giúp làm chậm hấp thu glucose một chút. Đây là lựa chọn phụ, không thay thế thuốc hay phương pháp chính.",
-      actionToday:
-        "Nếu muốn thử, cho thêm một thìa giấm gạo vào nước chấm hoặc trộn salad – không uống giấm nguyên chất.",
-      illustrationPlaceholder: "/images/placeholder-vinegar.svg",
-      illustrationAlt: "Hình minh họa giấm gạo được dùng trong bữa ăn Việt",
-      body: [
-        "Nghiên cứu cho thấy axit acetic trong giấm có thể làm chậm enzyme tiêu hóa tinh bột, giúp glucose hấp thu chậm hơn một chút.",
-        "**Tác dụng là có thật nhưng khiêm tốn**: Giấm không thay thế được thuốc điều trị, không thay thế được chế độ ăn tốt hay vận động.",
-        "**Cách dùng an toàn:**\n- Pha loãng trong nước (1 thìa cà phê + 1 ly nước) uống trước bữa ăn 10–15 phút\n- Dùng làm nước chấm (giấm pha nước mắm, chanh)\n- Trộn vào rau sống (giấm + dầu ô liu + rau)\n- Cho vào canh chua",
-        "**Không nên:**\n- Uống giấm nguyên chất – gây kích ứng thực quản và dạ dày\n- Dùng nhiều hơn 2 thìa mỗi ngày\n- Coi giấm là 'thuốc' điều trị tiểu đường\n- Dùng giấm để thay thuốc",
-        "**Ai không nên dùng:** Người có vấn đề về dạ dày (viêm loét), người dùng thuốc làm loãng máu cần hỏi bác sĩ trước.",
-        "Nếu cô chú không thích mùi giấm, hoàn toàn không cần dùng. Những thói quen khác trong khóa học này quan trọng hơn nhiều.",
-      ],
-      safetyAlerts: [
-        {
-          type: "default",
-          message:
-            "Nội dung này nhằm mục đích giáo dục sức khỏe. Không tự ý ngưng thuốc, đổi liều thuốc hoặc thay đổi insulin khi chưa trao đổi với bác sĩ điều trị.",
-        },
-        {
-          type: "medication",
-          message:
-            "Người dùng thuốc làm loãng máu hoặc có vấn đề dạ dày cần hỏi bác sĩ trước khi thêm giấm vào chế độ ăn thường xuyên.",
-        },
-      ],
-      quiz: [
-        {
-          id: "q14-1",
-          question: "Giấm trong bữa ăn có thể thay thế thuốc điều trị tiểu đường không?",
-          options: [
-            "Không – giấm chỉ là lựa chọn phụ, không thay thế thuốc",
-            "Có – nếu dùng đủ giấm mỗi ngày thì không cần thuốc nữa",
-          ],
-          correctIndex: 0,
-          explanation:
-            "Tuyệt đối không! Giấm chỉ có tác dụng rất nhỏ và không thay thế được thuốc điều trị. Không bao giờ tự ý ngưng thuốc.",
-        },
-        {
-          id: "q14-2",
-          question: "Cách dùng giấm an toàn nhất là gì?",
-          options: [
-            "Pha loãng trong nước hoặc dùng làm nước chấm, không uống nguyên chất",
-            "Uống thẳng từ chai giấm mỗi sáng để hiệu quả nhất",
-          ],
-          correctIndex: 0,
-          explanation:
-            "Đúng! Uống giấm nguyên chất gây kích ứng thực quản và dạ dày. Pha loãng hoặc dùng trong nấu ăn là cách an toàn.",
-        },
-      ],
-      sources: [
-        "Jessie Inchauspé (2022), Glucose Revolution, tr. 169–175",
-        "Johnston CS et al. (2004), Vinegar improves insulin sensitivity, Diabetes Care",
-      ],
-    },
-  },
-  {
-    id: 15,
-    slug: "sau-an-van-dong-nhe",
-    title: "Sau ăn vận động nhẹ 10 phút",
-    chapter: "thuc-hanh-bua-an",
-    estimatedMinutes: 7,
-    icon: "PersonStanding",
-    previewText:
-      "Vì sao đi bộ hoặc vận động nhẹ 10 phút sau ăn giúp giảm đường huyết sau bữa một cách đáng kể.",
-    hasSafetyAlert: true,
-    content: {
-      openingLine:
-        "Không cần đến phòng gym, không cần đổ mồ hôi – chỉ 10 phút đi bộ nhẹ sau bữa ăn đã có thể tạo ra sự khác biệt.",
-      simpleSummary:
-        "Vận động nhẹ sau ăn giúp cơ bắp sử dụng glucose trực tiếp mà không cần insulin, làm giảm đường huyết sau bữa ăn một cách hiệu quả và an toàn.",
-      actionToday:
-        "Sau bữa cơm tối hôm nay, thử đi bộ nhẹ 10 phút quanh nhà hoặc ra sân trước. Ghi lại cảm nhận.",
-      illustrationPlaceholder: "/images/placeholder-walk-after-meal.svg",
-      illustrationAlt:
-        "Hình minh họa người cao tuổi đi bộ nhẹ nhàng sau bữa ăn trong sân nhà",
-      body: [
-        "**Tại sao vận động sau ăn lại hiệu quả?**\nKhi cơ bắp hoạt động, chúng có thể hấp thu glucose trực tiếp từ máu mà **không cần insulin**. Điều này giúp hạ đường huyết nhanh hơn và hiệu quả hơn.",
-        "Nghiên cứu cho thấy chỉ 10–15 phút đi bộ nhẹ sau ăn có thể giảm đường huyết sau bữa ăn đáng kể so với ngồi yên.",
-        "**Tốt nhất là bắt đầu trong vòng 30 phút sau khi ăn xong** – đây là khoảng thời gian đường huyết bắt đầu tăng.",
-        "**Hình thức vận động phù hợp:**\n- Đi bộ nhẹ trong nhà hoặc quanh sân\n- Làm việc nhà nhẹ nhàng (rửa bát, tưới cây)\n- Đứng và đi lại thay vì nằm ngay sau ăn\n- Đạp xe đạp tại chỗ nhẹ nhàng\n- Bài tập ngồi (chair exercises) nếu khó đi lại",
-        "**Không cần mạnh hay vội vàng**: Đi bộ chậm, thoải mái là đủ. Không cần đổ mồ hôi.",
-        "**Lưu ý thực tế**: Nhiều cô chú có thể tranh thủ sau bữa cơm trưa hoặc tối đi bộ nhẹ xung quanh nhà 1–2 vòng.",
+        "**Tại sao vận động sau ăn đặc biệt hiệu quả?** Khi cơ bắp hoạt động, chúng có thể hấp thu glucose trực tiếp từ máu mà không cần insulin — thông qua một cơ chế khác. Đây là 'lối tắt' giúp hạ đường huyết nhanh và tự nhiên.",
+        "**Nghiên cứu nói gì?** Chỉ 10–15 phút đi bộ nhẹ sau ăn có thể giảm đường huyết sau bữa đáng kể so với ngồi yên. Hiệu quả tốt nhất khi bắt đầu trong vòng 30 phút sau ăn.",
+        "**Hình thức vận động phù hợp:**\n- Đi bộ nhẹ trong nhà hoặc quanh sân\n- Làm việc nhà nhẹ nhàng: rửa bát, tưới cây, quét nhà\n- Đứng lên đi lại thay vì nằm ngay sau ăn\n- Đạp xe đạp tại chỗ (loại nhỏ để trong nhà)\n- Bài tập ngồi ghế (chair exercises) nếu khó đi lại",
+        "**Không cần mạnh — chỉ cần di chuyển:** Đi bộ chậm, thoải mái là đủ. Không cần đổ mồ hôi, không cần đau chân. Mục tiêu là cơ bắp hoạt động — dù nhẹ.",
+        "**Vận động xa bữa ăn cũng tốt:** 30 phút đi bộ vào buổi sáng hoặc chiều cũng rất có ích — cải thiện độ nhạy insulin chung, giúp cơ thể 'nghe' insulin tốt hơn suốt ngày.",
+        "**Bắt đầu từ đâu nếu chưa quen vận động:** Đi bộ 5 phút sau mỗi bữa ăn trong tuần đầu. Tăng dần lên 10, 15, 20 phút theo tuần. Không cần đặt mục tiêu quá lớn ngay từ đầu.",
       ],
       safetyAlerts: [
         {
           type: "exercise",
           message:
-            "Người đang dùng insulin hoặc thuốc có nguy cơ gây hạ đường huyết cần trao đổi với bác sĩ trước khi thay đổi nhiều trong chế độ ăn hoặc vận động.",
+            "Người đang dùng insulin hoặc thuốc sulfonylure: đo đường huyết trước khi vận động. Mang theo kẹo hoặc đường trong người. Nếu thấy run rẩy, vã mồ hôi hoặc chóng mặt khi đang vận động — dừng lại ngay và ăn/uống gì đó có đường.",
         },
+      ],
+      quiz: [
+        {
+          id: "q12-1",
+          question:
+            "Tại sao vận động sau ăn đặc biệt có lợi cho đường huyết?",
+          options: [
+            "Vì cơ bắp hấp thu glucose trực tiếp từ máu mà không cần insulin khi đang hoạt động",
+            "Vì vận động làm cơ thể tiết thêm insulin",
+          ],
+          correctIndex: 0,
+          explanation:
+            "Đúng! Đây là cơ chế đặc biệt của vận động — cơ bắp đang hoạt động có thể 'mở cửa' riêng để nhận glucose mà không cần chìa khóa insulin.",
+        },
+        {
+          id: "q12-2",
+          question:
+            "Người dùng insulin cần làm gì trước khi bắt đầu vận động?",
+          options: [
+            "Đo đường huyết và mang theo kẹo/đường đề phòng hạ đường huyết",
+            "Không cần chuẩn bị gì, vận động là luôn an toàn",
+          ],
+          correctIndex: 0,
+          explanation:
+            "Rất quan trọng! Vận động làm giảm đường huyết — với người dùng insulin, có thể xảy ra hạ đường huyết. Đo trước và mang theo đường dự phòng là biện pháp an toàn cần thiết.",
+        },
+      ],
+      sources: [
+        "DiPietro L et al. (2013), Three 15-min bouts of moderate postmeal walking, Diabetes Care",
+        "Reynolds AN et al. (2020), Advice to walk after meals is more effective for lowering postprandial glycaemia in type 2 diabetes, Diabetologia",
+      ],
+    },
+  },
+
+  // ─────────────────────────────────────────────
+  // CHẶNG 4: SỐNG AN TOÀN (bài 13–16)
+  // ─────────────────────────────────────────────
+  {
+    id: 13,
+    slug: "thuoc-khong-phai-that-bai",
+    title: "Thuốc không phải thất bại",
+    chapter: "song-an-toan",
+    estimatedMinutes: 10,
+    icon: "Pill",
+    previewText:
+      "Nhiều người cảm thấy 'thất bại' khi phải dùng thuốc hoặc chuyển sang insulin. Bài này giúp thay đổi góc nhìn đó.",
+    hasSafetyAlert: true,
+    videoUrl: undefined,
+    content: {
+      openingLine:
+        "Phải uống thuốc không có nghĩa là cô chú đã 'thua' — nó có nghĩa là cô chú đang được chăm sóc đúng cách.",
+      simpleSummary:
+        "Thuốc tiểu đường là công cụ giúp cơ thể làm những gì nó đang gặp khó khăn. Dùng thuốc đúng cách, đúng giờ kết hợp với lối sống là nền tảng điều trị hiệu quả.",
+      actionToday:
+        "Kiểm tra xem cô chú có đang uống thuốc đúng giờ và đúng liều không. Nếu có nghi ngờ, ghi câu hỏi ra để hỏi bác sĩ trong lần tái khám tới.",
+      illustrationPlaceholder:
+        "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=1200&q=85&fit=crop",
+      illustrationAlt:
+        "Hộp thuốc và máy đo đường huyết — dụng cụ chăm sóc sức khỏe hằng ngày",
+      body: [
+        "**Tại sao cần thuốc?** Tiểu đường type 2 là bệnh tiến triển — theo thời gian, tụy có thể mất dần khả năng tiết đủ insulin. Không phải lỗi của cô chú — đây là tiến trình tự nhiên của bệnh. Thuốc giúp bù đắp những gì cơ thể không còn làm được.",
+        "**Các loại thuốc thường gặp:**\n- Metformin: thuốc đầu tay, giúp cơ thể dùng insulin hiệu quả hơn, ít gây hạ đường huyết\n- Nhóm sulfonylurea (glibenclamide, gliclazide): kích thích tụy tiết insulin thêm — CÓ nguy cơ hạ đường huyết nếu bỏ bữa\n- SGLT2 inhibitor (empagliflozin, dapagliflozin): thải đường qua nước tiểu — cũng bảo vệ tim và thận\n- GLP-1 (liraglutide, semaglutide): tiêm dưới da, giảm cân và đường huyết\n- Insulin: khi tụy không còn tiết đủ — không phải 'hình phạt' mà là điều trị cần thiết",
+        "**Không tự ý giảm hoặc ngưng thuốc:** Đường huyết 'trông có vẻ ổn' là vì thuốc đang làm việc — không phải vì bệnh đã khỏi. Ngưng thuốc đột ngột có thể gây tăng đường huyết nhanh và nguy hiểm.",
+        "**Câu hỏi thường gặp về insulin:** 'Tiêm insulin có đau không?' — Kim tiêm insulin hiện đại rất nhỏ, đa số bệnh nhân không thấy đau nhiều. 'Tiêm insulin có nghĩa là hết hy vọng không?' — Hoàn toàn không! Insulin chỉ là giai đoạn điều trị tiếp theo.",
+        "**Dùng thuốc đúng cách:**\n- Uống đúng giờ theo hướng dẫn\n- Không bỏ liều dù cảm thấy khỏe\n- Báo bác sĩ nếu có tác dụng phụ\n- Hỏi bác sĩ trước khi thêm bất kỳ thuốc hay thực phẩm chức năng nào",
+        "**Thuốc và lối sống không thay thế nhau:** Dùng thuốc tốt nhưng ăn uống không kiểm soát sẽ không đạt mục tiêu. Ăn uống và vận động tốt mà không dùng thuốc khi cần cũng không đủ. Cả hai phải cùng nhau.",
+      ],
+      safetyAlerts: [
         {
           type: "medication",
           message:
-            "Nếu dùng insulin hoặc thuốc sulfonylure, hãy đo đường huyết trước khi vận động. Mang theo đường hoặc kẹo trong người đề phòng hạ đường huyết. Nếu thấy run rẩy, vã mồ hôi hoặc chóng mặt khi đang vận động, hãy dừng ngay và ăn/uống gì đó có đường.",
+            "Không tự ý ngưng thuốc, giảm liều hoặc thay đổi insulin khi chưa trao đổi với bác sĩ điều trị. Nếu quên liều, hỏi bác sĩ hoặc dược sĩ về cách xử lý.",
         },
       ],
       quiz: [
         {
-          id: "q15-1",
-          question: "Vận động nhẹ sau ăn giúp giảm đường huyết như thế nào?",
-          options: [
-            "Cơ bắp hấp thu glucose trực tiếp mà không cần insulin",
-            "Vận động đốt cháy toàn bộ đường đã ăn trong bữa",
-          ],
-          correctIndex: 0,
-          explanation:
-            "Đúng! Khi cơ bắp đang hoạt động, chúng có thể nhận glucose từ máu mà không cần chờ insulin – giúp hạ đường huyết tự nhiên và hiệu quả.",
-        },
-        {
-          id: "q15-2",
+          id: "q13-1",
           question:
-            "Người dùng insulin khi cảm thấy run rẩy hoặc chóng mặt lúc đang đi bộ nên làm gì?",
+            "Khi đường huyết 'trông có vẻ ổn', cô chú có nên tự ý ngưng thuốc không?",
           options: [
-            "Dừng vận động ngay và ăn/uống gì có đường (kẹo, nước ngọt)",
-            "Tiếp tục đi nhanh hơn để làm ấm người",
+            "Không — đường huyết ổn là vì thuốc đang làm việc, ngưng thuốc có thể gây tăng đột biến",
+            "Có — nếu đường huyết ổn nghĩa là bệnh đã khỏi",
           ],
           correctIndex: 0,
           explanation:
-            "Rất quan trọng! Các triệu chứng trên có thể là dấu hiệu hạ đường huyết. Phải dừng lại và bổ sung đường ngay. Nếu không đỡ sau 15 phút, cần đến cơ sở y tế.",
+            "Đúng! Thuốc đang kiểm soát đường huyết. Ngưng thuốc đột ngột mà không có hướng dẫn của bác sĩ có thể gây tăng đường huyết nguy hiểm trong vài ngày.",
+        },
+        {
+          id: "q13-2",
+          question: "Chuyển sang dùng insulin có nghĩa là gì?",
+          options: [
+            "Là giai đoạn điều trị tiếp theo khi tụy không còn tiết đủ insulin — không phải 'thất bại'",
+            "Nghĩa là bệnh đã ở giai đoạn cuối và không còn hy vọng",
+          ],
+          correctIndex: 0,
+          explanation:
+            "Chính xác! Insulin là điều trị y khoa cần thiết, không phải thất bại. Nhiều người dùng insulin vẫn sống tích cực, đi du lịch và làm việc bình thường.",
         },
       ],
       sources: [
-        "Jessie Inchauspé (2022), Glucose Revolution, tr. 178–185",
-        "DiPietro L et al. (2013), Three 15-min bouts of moderate postmeal walking, Diabetes Care",
-        "Reynolds AN et al. (2020), Advice to walk after meals, Diabetologia",
+        "American Diabetes Association, Standards of Medical Care in Diabetes (2024), Section 9: Pharmacologic Approaches",
+        "Hội Nội tiết - Đái tháo đường Việt Nam, Hướng dẫn sử dụng thuốc điều trị tiểu đường type 2 (2023)",
       ],
     },
   },
   {
-    id: 16,
-    slug: "bua-phu-thong-minh",
-    title: "Bữa phụ thông minh: ưu tiên món mặn, ít đường",
-    chapter: "thuc-hanh-bua-an",
-    estimatedMinutes: 5,
-    icon: "UtensilsCrossed",
+    id: 14,
+    slug: "tui-cuu-ho-ha-duong-huyet",
+    title: "Túi cứu hộ hạ đường huyết",
+    chapter: "song-an-toan",
+    estimatedMinutes: 12,
+    icon: "AlertCircle",
     previewText:
-      "Cách chọn bữa phụ giữa các bữa chính mà không làm đường huyết tăng vọt.",
-    hasSafetyAlert: false,
-    content: {
-      openingLine:
-        "Bữa phụ giữa buổi của cô chú thường là gì? Bánh, kẹo, trái cây hay cốc trà đá?",
-      simpleSummary:
-        "Bữa phụ tốt nhất là loại có đạm, chất béo lành mạnh hoặc chất xơ – không phải bánh ngọt hay trái cây ngọt một mình.",
-      actionToday:
-        "Thay vì bánh quy hay kẹo vào buổi chiều, thử ăn một quả trứng luộc, miếng phô mai nhỏ hoặc một nắm hạt nhỏ.",
-      illustrationPlaceholder: "/images/placeholder-snack.svg",
-      illustrationAlt:
-        "Hình minh họa bữa phụ lành mạnh: trứng luộc, hạt, rau củ nhỏ",
-      body: [
-        "**Bữa phụ nguy hiểm cho đường huyết:**\n- Bánh quy ngọt, bánh kem\n- Kẹo, chocolate (nếu nhiều đường)\n- Trái cây ngọt ăn một mình lúc đói (xoài, chuối, nho)\n- Nước ép trái cây, nước ngọt\n- Bánh mì ngọt",
-        "**Bữa phụ ít ảnh hưởng đến đường huyết:**\n- Trứng luộc\n- Phô mai (cheese) lượng nhỏ\n- Hạt (hạnh nhân, hạt điều, hạt bí) một nắm nhỏ\n- Dưa leo, cà rốt nhỏ\n- Đậu phụ trắng\n- Sữa chua không đường",
-        "**Tại sao 'mặn hơn ngọt' cho bữa phụ?**\nThực phẩm mặn thường có đạm và chất béo, ít đường đơn. Chúng tiêu hóa chậm hơn và không gây đột biến đường huyết.",
-        "**Khi nào nên ăn bữa phụ?**\nKhi thực sự đói giữa các bữa – không ăn vặt theo thói quen hay do chán.",
-        "**Lưu ý:** Một số người tiểu đường cần ăn bữa phụ để tránh hạ đường huyết – hỏi bác sĩ xem cô chú có cần ăn bữa phụ bắt buộc không.",
-      ],
-      quiz: [
-        {
-          id: "q16-1",
-          question: "Loại bữa phụ nào ít ảnh hưởng đến đường huyết nhất?",
-          options: [
-            "Trứng luộc hoặc một nắm hạt nhỏ",
-            "Một ly nước ép trái cây tươi",
-          ],
-          correctIndex: 0,
-          explanation:
-            "Đúng! Trứng và hạt có đạm + chất béo, tiêu hóa chậm và ổn định. Nước ép trái cây không có chất xơ, glucose vào máu rất nhanh.",
-        },
-        {
-          id: "q16-2",
-          question: "Tại sao không nên ăn trái cây ngọt một mình lúc đói?",
-          options: [
-            "Vì không có rau/đạm đi kèm, đường từ trái cây hấp thu nhanh hơn vào máu",
-            "Vì trái cây không tốt cho người tiểu đường và không nên ăn bao giờ",
-          ],
-          correctIndex: 0,
-          explanation:
-            "Chính xác! Trái cây vẫn tốt cho sức khỏe nhưng nên ăn sau bữa cơm. Ăn trái cây ngọt lúc bụng đói có thể làm đường huyết tăng nhanh.",
-        },
-      ],
-      sources: [
-        "Jessie Inchauspé (2022), Glucose Revolution, tr. 190–200",
-        "American Diabetes Association, Snacking Guidelines (2023)",
-      ],
-    },
-  },
-  {
-    id: 17,
-    slug: "dung-an-tinh-bot-mot-minh",
-    title: "Đừng ăn tinh bột một mình",
-    chapter: "thuc-hanh-bua-an",
-    estimatedMinutes: 5,
-    icon: "Combine",
-    previewText:
-      "Phối hợp tinh bột với rau, đạm và chất béo giúp đường cong ổn định hơn nhiều.",
-    hasSafetyAlert: false,
-    content: {
-      openingLine:
-        "Một bát cơm trắng không với bất kỳ thứ gì khác sẽ làm đường huyết tăng nhanh hơn rất nhiều so với cùng lượng cơm đó ăn cùng rau và thịt.",
-      simpleSummary:
-        "Khi ăn tinh bột kết hợp với chất xơ (rau), đạm (thịt/cá/đậu) và chất béo tốt, tốc độ hấp thu glucose sẽ chậm lại đáng kể.",
-      actionToday:
-        "Hôm nay đừng ăn cơm không – luôn kết hợp với ít nhất một loại rau và một món đạm.",
-      illustrationPlaceholder: "/images/placeholder-balanced-plate.svg",
-      illustrationAlt:
-        "Hình minh họa đĩa ăn cân đối: rau xanh chiếm nửa đĩa, đạm một phần tư, tinh bột một phần tư",
-      body: [
-        "**Tinh bột một mình**: Tốc độ tiêu hóa cực nhanh, glucose tràn vào máu rất nhanh.",
-        "**Tinh bột + rau (chất xơ)**: Chất xơ tạo độ nhớt trong ruột, làm chậm hấp thu glucose.",
-        "**Tinh bột + đạm**: Đạm làm chậm tốc độ tiêu hóa chung của bữa ăn.",
-        "**Tinh bột + chất béo tốt**: Chất béo làm chậm quá trình làm rỗng dạ dày.",
-        "**Khi ba yếu tố cùng có mặt**: Đường huyết tăng chậm nhất và ổn định nhất.",
-        "**Ứng dụng trong bữa ăn Việt:**\n- Luôn có canh rau hoặc đĩa rau trong bữa\n- Luôn có một món đạm: thịt, cá, đậu phụ, trứng\n- Không ăn cơm hoặc bún không (không có gì đi kèm)\n- Có thể thêm một ít chất béo tốt: dầu ăn khi xào rau, cá có omega-3",
-        "**Mô hình đĩa ăn gợi ý:**\n- ½ đĩa: rau xanh và rau củ\n- ¼ đĩa: đạm (thịt, cá, đậu)\n- ¼ đĩa: tinh bột (cơm, khoai)",
-      ],
-      quiz: [
-        {
-          id: "q17-1",
-          question:
-            "Tại sao ăn cơm kèm rau và thịt tốt hơn ăn cơm một mình?",
-          options: [
-            "Vì rau và thịt làm chậm hấp thu glucose từ cơm vào máu",
-            "Vì cơm một mình có nhiều calo hơn",
-          ],
-          correctIndex: 0,
-          explanation:
-            "Đúng! Sự phối hợp của chất xơ (từ rau) và đạm làm chậm tốc độ tiêu hóa và hấp thu glucose – đường cong sau ăn sẽ phẳng hơn nhiều.",
-        },
-        {
-          id: "q17-2",
-          question: "Trong mô hình đĩa ăn cân đối, tinh bột nên chiếm bao nhiêu phần đĩa?",
-          options: [
-            "Khoảng ¼ đĩa – phần còn lại dành cho rau và đạm",
-            "½ đĩa – tinh bột cần nhiều để đủ năng lượng",
-          ],
-          correctIndex: 0,
-          explanation:
-            "Chính xác! Mô hình gợi ý: ½ đĩa rau xanh, ¼ đĩa đạm, ¼ đĩa tinh bột. Cơ thể vẫn có đủ năng lượng nhưng đường huyết ổn định hơn.",
-        },
-      ],
-      sources: [
-        "Jessie Inchauspé (2022), Glucose Revolution, tr. 190–205",
-        "USDA MyPlate Method, diabetes adaptation",
-        "Hội Nội tiết - Đái tháo đường Việt Nam, Hướng dẫn dinh dưỡng cho người tiểu đường",
-      ],
-    },
-  },
-  {
-    id: 18,
-    slug: "lich-7-ngay-thuc-hanh",
-    title: "Lịch 7 ngày thực hành ổn định đường huyết",
-    chapter: "ke-hoach-ca-nhan",
-    estimatedMinutes: 6,
-    icon: "CalendarDays",
-    previewText:
-      "Kế hoạch 7 ngày kết hợp tất cả những thói quen đã học vào cuộc sống hằng ngày.",
+      "Nhận biết triệu chứng hạ đường huyết, xử trí đúng cách và chuẩn bị sẵn 'túi cứu hộ' cho những tình huống khẩn cấp.",
     hasSafetyAlert: true,
+    videoUrl: undefined,
     content: {
       openingLine:
-        "Bây giờ cô chú đã có đủ kiến thức – hãy cùng đặt kế hoạch 7 ngày đầu tiên.",
+        "Hạ đường huyết có thể xảy ra bất ngờ — nhưng nếu biết nhận ra và xử lý đúng, cô chú hoàn toàn an toàn.",
       simpleSummary:
-        "Một kế hoạch 7 ngày thực tế giúp cô chú áp dụng từng thói quen một cách có hệ thống mà không quá áp lực.",
+        "Hạ đường huyết (dưới 3.9 mmol/L): nhận biết triệu chứng sớm (run, vã mồ hôi, chóng mặt), xử trí bằng quy tắc 15-15, và chuẩn bị sẵn thứ cần thiết trong túi.",
       actionToday:
-        "Đọc kế hoạch 7 ngày dưới đây và bắt đầu từ Ngày 1 vào bữa ăn hôm nay.",
-      illustrationPlaceholder: "/images/placeholder-7day-plan.svg",
-      illustrationAlt: "Hình minh họa lịch 7 ngày với các ngày được đánh dấu",
+        "Chuẩn bị ngay hôm nay: bỏ vào ví hoặc túi của cô chú 3–4 viên kẹo cứng hoặc gói đường nhỏ. Đây là 'bảo hiểm' đơn giản nhất.",
+      illustrationPlaceholder:
+        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=85&fit=crop",
+      illustrationAlt:
+        "Hộp sơ cứu nhỏ gọn — chuẩn bị sẵn sàng cho mọi tình huống",
       body: [
-        "**Ngày 1–2: Tập ăn rau trước**\nMỗi bữa ăn, ăn phần rau (bất kỳ loại nào) trước khi ăn cơm hoặc tinh bột. Chỉ cần tập trung vào một thói quen này.",
-        "**Ngày 3–4: Cải thiện bữa sáng**\nThêm một quả trứng hoặc một ít đạm vào bữa sáng. Giảm bớt một nửa phần bánh ngọt hoặc đường trong đồ uống sáng.",
-        "**Ngày 5: Thêm đi bộ sau ăn**\nSau bữa cơm tối, đi bộ nhẹ 10 phút. Chỉ một bữa trong ngày là đủ để bắt đầu.",
-        "**Ngày 6: Không ăn tinh bột một mình**\nMỗi khi ăn cơm/bún/bánh, đảm bảo có rau và đạm đi kèm. Nhớ quy tắc ¼ đĩa tinh bột.",
-        "**Ngày 7: Tổng kết và ghi nhật ký**\nNhìn lại 6 ngày: cô chú đã làm được những gì? Cảm thấy thế nào? Đường huyết có thay đổi không? Ghi vào nhật ký.",
-        "**Tuần tiếp theo:** Lặp lại và thêm thói quen bữa phụ thông minh (bài 16) và không ăn tinh bột một mình (bài 17).",
-        "**Nhắc nhở:** Không cần hoàn hảo 100%. Làm được 5 trong 7 ngày là tốt. Mỗi bữa cải thiện một chút là đang tiến về phía trước.",
+        "**Hạ đường huyết là gì?** Đường huyết xuống dưới 3.9 mmol/L. Với người dùng insulin hoặc thuốc sulfonylurea, đây là nguy cơ có thật. Người chỉ dùng metformin ít có nguy cơ hơn nhiều.",
+        "**Nhận biết sớm — triệu chứng nhẹ:**\n- Run rẩy tay chân\n- Vã mồ hôi lạnh\n- Hồi hộp, tim đập nhanh\n- Cảm giác đói đột ngột\n- Chóng mặt nhẹ\n- Khó tập trung",
+        "**Triệu chứng nặng hơn:** Lú lẫn, nói lắp, nhìn mờ, yếu người không đứng được. Cần người thân giúp đỡ ngay.",
+        "**Quy tắc 15-15:**\n1. Ăn hoặc uống 15g đường nhanh (15g glucose): 3–4 viên kẹo cứng, hoặc 1/2 ly nước ngọt (không diet), hoặc 1 thìa đường pha nước, hoặc 1 gói đường nhỏ\n2. Chờ 15 phút\n3. Đo lại đường huyết\n4. Nếu vẫn dưới 3.9 mmol/L — lặp lại bước 1\n5. Khi ổn, ăn thêm một bữa nhẹ có tinh bột để đường huyết không hạ lại",
+        "**'Túi cứu hộ' nên có:**\n- 3–4 viên kẹo cứng (loại có đường, không phải kẹo không đường)\n- Một gói đường nhỏ (gói đường cà phê)\n- Thẻ ghi thông tin tiểu đường và số điện thoại liên lạc khẩn\n- Máy đo đường huyết và que thử (nếu có)",
+        "**Dạy người thân:** Hãy cho người sống cùng biết triệu chứng hạ đường huyết và cách xử lý. Nếu cô chú bất tỉnh — không cho uống hay ăn gì, gọi cấp cứu ngay.",
+      ],
+      safetyAlerts: [
+        {
+          type: "medication",
+          message:
+            "Hạ đường huyết dưới 3.9 mmol/L với triệu chứng cần xử trí ngay bằng quy tắc 15-15. Nếu bất tỉnh hoặc không cải thiện sau 15 phút — gọi cấp cứu 115 ngay lập tức.",
+        },
+      ],
+      quiz: [
+        {
+          id: "q14-1",
+          question:
+            "Khi đường huyết xuống thấp và cô chú thấy run rẩy, vã mồ hôi — bước đầu tiên là gì?",
+          options: [
+            "Ăn/uống 15g đường nhanh (kẹo, nước ngọt, gói đường) rồi chờ 15 phút",
+            "Nằm xuống nghỉ và chờ tự khỏi",
+          ],
+          correctIndex: 0,
+          explanation:
+            "Đúng! Quy tắc 15-15: 15g đường nhanh, chờ 15 phút, đo lại. Không tự chờ khỏi — hạ đường huyết không tự cải thiện mà có thể nặng hơn.",
+        },
+        {
+          id: "q14-2",
+          question:
+            "Nếu người thân bị hạ đường huyết và bất tỉnh, nên làm gì?",
+          options: [
+            "Không cho ăn/uống gì, gọi cấp cứu 115 ngay lập tức",
+            "Cố nhét kẹo vào miệng người bất tỉnh",
+          ],
+          correctIndex: 0,
+          explanation:
+            "Rất quan trọng! Khi đã bất tỉnh, cho ăn uống có thể gây sặc nguy hiểm. Gọi cấp cứu và giữ người bệnh an toàn (nằm nghiêng) là việc đúng cần làm.",
+        },
+      ],
+      sources: [
+        "American Diabetes Association, Hypoglycemia (Low Blood Sugar) (2024)",
+        "Hội Nội tiết - Đái tháo đường Việt Nam, Hướng dẫn xử trí hạ đường huyết (2023)",
+      ],
+    },
+  },
+  {
+    id: 15,
+    slug: "ba-phut-moi-toi-giu-doi-chan",
+    title: "Ba phút mỗi tối — giữ đôi chân",
+    chapter: "song-an-toan",
+    estimatedMinutes: 10,
+    icon: "Eye",
+    previewText:
+      "Chăm sóc bàn chân là thói quen đơn giản nhất nhưng nhiều người bỏ qua — trong khi đây là cách phòng ngừa biến chứng bàn chân hiệu quả nhất.",
+    hasSafetyAlert: true,
+    videoUrl: undefined,
+    content: {
+      openingLine:
+        "Mỗi tối trước khi ngủ, ba phút nhìn vào bàn chân — thói quen nhỏ này có thể giúp cô chú giữ được đôi chân của mình.",
+      simpleSummary:
+        "Biến chứng bàn chân tiểu đường thường bắt đầu từ những vết thương nhỏ bị bỏ qua. Kiểm tra bàn chân mỗi tối, giữ chân sạch và khô, chọn giày dép phù hợp là ba bước đơn giản nhất.",
+      actionToday:
+        "Tối nay, trước khi ngủ, ngồi kiểm tra bàn chân: có vết đỏ, phồng rộp, vết nứt, móng quặp hay tê ngứa không? Dùng gương nhỏ soi lòng bàn chân nếu khó nhìn.",
+      illustrationPlaceholder:
+        "https://images.unsplash.com/photo-1544161513-0179fe746fd5?w=1200&q=85&fit=crop",
+      illustrationAlt:
+        "Đôi bàn chân trên sàn gỗ — cần được chăm sóc và kiểm tra thường xuyên",
+      body: [
+        "**Tại sao bàn chân quan trọng?** Đường huyết cao lâu ngày gây tổn thương thần kinh ở bàn chân (neuropathy) — cô chú có thể không cảm nhận được đau hay nóng lạnh bình thường. Một vết thương nhỏ không đau → bị bỏ qua → nhiễm trùng nặng → nguy cơ cắt bỏ.",
+        "**Kiểm tra bàn chân mỗi tối — 5 điều cần nhìn:**\n1. Vết đỏ, phồng rộp, vết trầy xước\n2. Vết nứt ở gót chân hay giữa các ngón\n3. Móng quặp hoặc móng mọc vào trong\n4. Thay đổi màu da (tím, đen, trắng bất thường)\n5. Sưng hoặc nóng so với ngày thường",
+        "**Chăm sóc hằng ngày:**\n- Rửa chân bằng nước ấm (thử nhiệt độ bằng tay, không dùng chân)\n- Lau khô hoàn toàn, đặc biệt giữa các ngón\n- Thoa kem dưỡng ẩm lên lòng bàn chân và gót (không thoa giữa ngón tay)\n- Cắt móng thẳng, không cắt quá sâu",
+        "**Giày dép:** Không đi chân trần kể cả trong nhà. Luôn mang dép trong nhà để tránh đạp phải vật nhỏ. Chọn giày đủ rộng, không bóp ngón, không cao gót. Kiểm tra bên trong giày trước khi mang (sỏi nhỏ có thể gây vết thương mà không đau).",
+        "**Khi nào cần gặp bác sĩ ngay:**\n- Vết thương không lành sau 3–5 ngày\n- Bàn chân đỏ, sưng, có mủ hoặc mùi hôi\n- Vùng da đen hoặc hoại tử\n- Tê bì, đau nhức nhiều bất thường",
+        "**Khám bàn chân định kỳ:** Ít nhất 1 lần mỗi năm với bác sĩ — kiểm tra cảm giác (dây thần kinh) và tuần hoàn (mạch máu). Phát hiện sớm có thể phòng ngừa được nhiều biến chứng.",
       ],
       safetyAlerts: [
         {
           type: "default",
           message:
-            "Nội dung này nhằm mục đích giáo dục sức khỏe. Không tự ý ngưng thuốc, đổi liều thuốc hoặc thay đổi insulin khi chưa trao đổi với bác sĩ điều trị.",
+            "Nếu phát hiện vết thương ở bàn chân không lành trong 3–5 ngày, hoặc có dấu hiệu nhiễm trùng (đỏ, sưng, mủ, mùi hôi) — đến cơ sở y tế ngay. Đừng tự điều trị vết thương bàn chân ở nhà nếu không chắc.",
         },
       ],
       quiz: [
         {
-          id: "q18-1",
-          question: "Trong kế hoạch 7 ngày, thói quen nào được bắt đầu trước tiên?",
-          options: ["Ăn rau trước mỗi bữa ăn chính", "Nhịn ăn để giảm đường huyết"],
-          correctIndex: 0,
-          explanation:
-            "Đúng! Ăn rau trước là thói quen đơn giản, không cần thay đổi món ăn, dễ duy trì nhất và là nền tảng cho các thói quen khác.",
-        },
-        {
-          id: "q18-2",
-          question: "Nếu trong 7 ngày có 2 ngày không làm được, cô chú nên làm gì?",
+          id: "q15-1",
+          question:
+            "Tại sao người tiểu đường có thể không cảm nhận được vết thương ở bàn chân?",
           options: [
-            "Tiếp tục với những ngày còn lại – 5/7 ngày đã là rất tốt",
-            "Bỏ cuộc vì không hoàn thành được kế hoạch",
+            "Vì đường huyết cao lâu ngày gây tổn thương thần kinh (neuropathy) làm giảm cảm giác đau",
+            "Vì da bàn chân người tiểu đường cứng hơn bình thường",
           ],
           correctIndex: 0,
           explanation:
-            "Hoàn toàn đúng! Thay đổi thói quen không cần phải hoàn hảo. Mỗi bữa cải thiện một chút là đang tạo ra sự khác biệt thực sự.",
+            "Đúng! Biến chứng thần kinh làm giảm cảm giác ở bàn chân. Vết thương nhỏ không đau nên bị bỏ qua — nếu không được chăm sóc có thể dẫn đến nhiễm trùng nặng.",
+        },
+        {
+          id: "q15-2",
+          question:
+            "Cô chú nên làm gì khi kiểm tra bàn chân vào mỗi tối?",
+          options: [
+            "Nhìn kỹ 5 điều: vết đỏ/phồng, vết nứt, móng quặp, thay đổi màu da, sưng/nóng",
+            "Chỉ cần nhìn nhanh xem có máu không",
+          ],
+          correctIndex: 0,
+          explanation:
+            "Chính xác! Kiểm tra toàn diện 5 dấu hiệu mỗi tối giúp phát hiện sớm vấn đề trước khi nó trở nên nghiêm trọng. Ba phút mỗi tối là đầu tư nhỏ với lợi ích lớn.",
         },
       ],
       sources: [
-        "Jessie Inchauspé (2022), Glucose Revolution, tr. 200–220",
-        "Dựa trên khuyến cáo của Hội Nội tiết - Đái tháo đường Việt Nam",
+        "American Diabetes Association, Foot Care (2024)",
+        "Hội Nội tiết - Đái tháo đường Việt Nam, Hướng dẫn chăm sóc bàn chân cho người tiểu đường (2023)",
+        "Bus SA et al. (2020), IWGDF guidelines on the prevention of foot ulcers in persons with diabetes",
       ],
     },
   },
   {
-    id: 19,
-    slug: "tai-kham-hoi-bac-si",
-    title: "Tái khám và hỏi bác sĩ điều gì?",
-    chapter: "ke-hoach-ca-nhan",
-    estimatedMinutes: 5,
-    icon: "Stethoscope",
+    id: 16,
+    slug: "ke-hoach-28-ngay",
+    title: "Kế hoạch 28 ngày — sống chủ động mỗi ngày",
+    chapter: "song-an-toan",
+    estimatedMinutes: 15,
+    icon: "CalendarCheck",
     previewText:
-      "Danh sách câu hỏi nên hỏi bác sĩ trong lần tái khám tiếp theo để quản lý tốt hơn.",
+      "Tổng kết 28 ngày học — từ hiểu bệnh đến áp dụng hằng ngày — và kế hoạch tiếp tục từ ngày 29 trở đi.",
     hasSafetyAlert: false,
+    videoUrl: undefined,
     content: {
       openingLine:
-        "Sau khi học xong khóa này, cô chú có thêm nhiều câu hỏi để hỏi bác sĩ – và điều đó rất tốt!",
+        "Cô chú đã đi được 28 ngày — đây là thành tích thực sự, không phải chuyện nhỏ.",
       simpleSummary:
-        "Tái khám định kỳ là cơ hội quý giá để cô chú cập nhật tình trạng sức khỏe và điều chỉnh kế hoạch điều trị cùng bác sĩ.",
+        "Tổng kết 8 thói quen cốt lõi từ 4 chặng học. Kế hoạch duy trì và phát triển sau 28 ngày. Nhắc nhở quan trọng về tái khám và sống chủ động với bệnh tiểu đường.",
       actionToday:
-        "Ghi ra giấy hoặc điện thoại những câu hỏi cô chú muốn hỏi bác sĩ trong lần tái khám tới.",
-      illustrationPlaceholder: "/images/placeholder-doctor-visit.svg",
+        "Hôm nay, chọn 3 thói quen từ danh sách dưới đây mà cô chú đã làm được trong 28 ngày qua. Ghi vào giấy và dán ở chỗ dễ nhìn.",
+      illustrationPlaceholder:
+        "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=1200&q=85&fit=crop",
       illustrationAlt:
-        "Hình minh họa bệnh nhân và bác sĩ ngồi nói chuyện thân thiện tại phòng khám",
+        "Trang nhật ký với những ghi chép và kế hoạch — hành trình 28 ngày được ghi lại",
       body: [
-        "**Câu hỏi về chỉ số mục tiêu:**\n- Chỉ số HbA1c của tôi hiện tại là bao nhiêu và mục tiêu là bao nhiêu?\n- Đường huyết lúc đói và sau ăn của tôi nên ở mức nào?\n- Tôi có cần đo đường huyết tại nhà không? Nếu có, đo khi nào?",
-        "**Câu hỏi về thuốc:**\n- Thuốc tôi đang uống có nguy cơ gây hạ đường huyết không?\n- Nếu tôi thay đổi chế độ ăn, thuốc có cần điều chỉnh không?\n- Tôi có cần tiêm insulin không? Tiêu chí nào để quyết định?",
-        "**Câu hỏi về lối sống:**\n- Tôi có thể đi bộ sau ăn không? Cường độ và thời gian bao nhiêu là phù hợp?\n- Tôi nên hạn chế thực phẩm gì cụ thể với tình trạng của mình?\n- Tôi có cần gặp chuyên gia dinh dưỡng không?",
-        "**Câu hỏi về theo dõi:**\n- Ngoài đường huyết, tôi cần xét nghiệm gì khác mỗi năm (mắt, thận, tim, thần kinh)?\n- Tôi nên tái khám bao lâu một lần?\n- Khi nào tôi cần gọi ngay cho bác sĩ?",
-        "**Mẹo nhỏ:** Ghi câu hỏi ra giấy trước khi vào phòng khám – khi gặp bác sĩ dễ quên vì lo lắng hoặc vội vàng.",
+        "**8 thói quen cốt lõi của chương trình:**\n1. Hiểu ba chỉ số của mình (HbA1c, đường lúc đói, sau ăn)\n2. Ăn theo phương pháp ba vùng (½ rau, ¼ đạm, ¼ tinh bột)\n3. Ăn rau trước — đạm tiếp — cơm sau\n4. Vận động nhẹ 10 phút sau ít nhất một bữa mỗi ngày\n5. Đo và ghi đường huyết (nếu có máy)\n6. Kiểm tra bàn chân mỗi tối\n7. Uống thuốc đúng giờ, không tự ý bỏ\n8. Tái khám theo lịch và hỏi bác sĩ những gì chưa hiểu",
+        "**Không cần hoàn hảo — cần kiên định:** Nếu cô chú làm được 5 trong 8 thói quen này, đó là thành công thực sự. Mỗi thói quen nhỏ duy trì đều đặn qua năm tháng mới tạo ra sự thay đổi thực sự trong HbA1c và chất lượng cuộc sống.",
+        "**Từ ngày 29 trở đi:**\n- Tiếp tục 8 thói quen — thêm dần những thói quen còn thiếu\n- Đặt lịch tái khám tiếp theo và chuẩn bị câu hỏi\n- Chia sẻ những gì đã học với người thân — kiến thức có giá trị hơn khi lan rộng\n- Xem lại bài học bất kỳ khi cần nhắc nhở",
+        "**Khi nào cần liên hệ bác sĩ ngay:**\n- Đường huyết liên tục cao (trên 13.9 mmol/L nhiều ngày)\n- Triệu chứng hạ đường huyết thường xuyên\n- Vết thương bàn chân không lành\n- Bất kỳ triệu chứng mới lạ nào đáng lo ngại",
+        "**Nhớ rằng:** Cô chú không đơn độc trong hành trình này. Bác sĩ, gia đình, và kiến thức đều là đồng đội. Tiểu đường không phải là câu chuyện kết thúc — mà là hành trình cô chú học cách sống tốt hơn mỗi ngày.",
+        "**Lời từ bác sĩ Hương:** 'Tôi không mong đợi cô chú hoàn hảo. Tôi chỉ mong cô chú hiểu cơ thể mình hơn một chút mỗi ngày, và tự tin hơn mỗi lần ngồi trước mâm cơm.'",
       ],
       quiz: [
         {
-          id: "q19-1",
-          question: "HbA1c là gì?",
+          id: "q16-1",
+          question:
+            "Trong 8 thói quen cốt lõi, thói quen nào liên quan đến an toàn hằng ngày?",
           options: [
-            "Chỉ số phản ánh mức đường huyết trung bình trong 2–3 tháng qua",
-            "Chỉ số đo đường huyết lúc đói buổi sáng",
+            "Kiểm tra bàn chân mỗi tối và uống thuốc đúng giờ",
+            "Chỉ cần ăn uống đúng là đủ, không cần lo về thuốc hay bàn chân",
           ],
           correctIndex: 0,
           explanation:
-            "Đúng! HbA1c (Hemoglobin A1c) cho biết đường huyết trung bình trong 2–3 tháng – đây là chỉ số quan trọng nhất trong quản lý tiểu đường lâu dài.",
+            "Đúng! An toàn hằng ngày bao gồm cả việc chăm sóc bàn chân (phòng biến chứng bàn chân) và uống thuốc đúng cách (phòng tăng/hạ đường huyết nguy hiểm).",
         },
         {
-          id: "q19-2",
-          question: "Nếu thay đổi chế độ ăn nhiều, cô chú có cần báo bác sĩ không?",
+          id: "q16-2",
+          question:
+            "Sau khi hoàn thành 28 ngày, cô chú nên làm gì tiếp theo?",
           options: [
-            "Có – thay đổi ăn uống có thể ảnh hưởng đến hiệu quả thuốc",
-            "Không cần – chế độ ăn không liên quan đến thuốc",
+            "Tiếp tục duy trì các thói quen đã học, tái khám theo lịch và hỏi bác sĩ khi cần",
+            "Bệnh đã ổn, không cần tiếp tục lo lắng nữa",
           ],
           correctIndex: 0,
           explanation:
-            "Rất quan trọng! Đặc biệt với người dùng insulin hoặc thuốc hạ đường huyết, thay đổi chế độ ăn cần được bác sĩ biết để điều chỉnh thuốc nếu cần.",
+            "Chính xác! Tiểu đường là bệnh mạn tính — cần quản lý lâu dài. 28 ngày đầu là nền tảng; từ ngày 29 trở đi là hành trình duy trì và phát triển.",
         },
       ],
       sources: [
-        "Hội Nội tiết - Đái tháo đường Việt Nam, Hướng dẫn bệnh nhân tái khám (2023)",
-        "American Diabetes Association, Standards of Medical Care (2024), Section 4: Comprehensive Medical Evaluation",
+        "Hội Nội tiết - Đái tháo đường Việt Nam, Chương trình giáo dục bệnh nhân tiểu đường (2023)",
+        "American Diabetes Association, Diabetes Self-Management Education and Support (2024)",
+        "Bác sĩ Nguyễn Thị Hương, Khung chương trình 'Hiểu đúng tiểu đường — 28 ngày' (2024)",
       ],
     },
   },
 ];
 
 export const chapters = {
-  "hieu-duong-huyet": {
-    title: "Hiểu đường huyết",
-    description: "Cơ bản về glucose và cách cơ thể hoạt động",
-    color: "#237A57",
-    lessonIds: [0, 1, 2, 3, 4, 5],
+  "hieu-benh-va-chi-so": {
+    title: "Chặng 1: Hiểu bệnh & chỉ số",
+    description: "Từ chẩn đoán đến hiểu rõ cơ thể và các con số cần theo dõi",
+    color: "#2D6A4F",
+    lessonIds: [1, 2, 3, 4],
   },
-  "nguy-co-va-theo-doi": {
-    title: "Hiểu nguy cơ và theo dõi",
-    description: "Nhận biết dấu hiệu và theo dõi đường huyết",
+  "bua-com-viet": {
+    title: "Chặng 2: Bữa cơm Việt",
+    description: "Điều chỉnh bữa ăn quen thuộc mà không cần từ bỏ cơm",
     color: "#D97745",
-    lessonIds: [6, 7],
+    lessonIds: [5, 6, 7, 8],
   },
-  "thuc-hanh-bua-an": {
-    title: "Thực hành trong bữa ăn",
-    description: "10 thói quen ăn uống có thể áp dụng ngay",
+  "theo-doi-tai-nha": {
+    title: "Chặng 3: Theo dõi tại nhà",
+    description: "Đo đường huyết, theo dõi cân nặng và xây dựng thói quen vận động",
+    color: "#1B4D8E",
+    lessonIds: [9, 10, 11, 12],
+  },
+  "song-an-toan": {
+    title: "Chặng 4: Sống an toàn",
+    description: "Thuốc, hạ đường huyết, chăm sóc bàn chân và kế hoạch dài hạn",
     color: "#153D32",
-    lessonIds: [8, 9, 10, 11, 12, 13, 14, 15, 16, 17],
-  },
-  "ke-hoach-ca-nhan": {
-    title: "Kế hoạch của cô chú",
-    description: "Lên kế hoạch và làm việc cùng bác sĩ",
-    color: "#237A57",
-    lessonIds: [18, 19],
+    lessonIds: [13, 14, 15, 16],
   },
 } as const;
 

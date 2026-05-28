@@ -19,7 +19,7 @@ export function Hero() {
           transition={{ duration: 0.5 }}
           className="flex items-center justify-between mb-16 md:mb-24"
         >
-          <div className="eyebrow text-muted">№ 01 — Khóa học sức khỏe</div>
+          <div className="eyebrow text-muted">16 bài giảng · 28 ngày</div>
           <div className="hidden md:flex items-center gap-2 text-xs text-muted">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
             Đang nhận học viên mới

@@ -29,16 +29,16 @@ export function DoctorIntro() {
           >
             {/* Headline */}
             <h2 className="mb-8 leading-[1.1] tracking-tight">
-              <span className="block font-display italic text-2xl md:text-3xl text-muted mb-3">
+              <span className="block font-display italic text-3xl md:text-4xl text-muted mb-3">
                 Xin chào, tôi là
               </span>
-              <span className="block font-display text-3xl md:text-4xl lg:text-[40px] text-heading whitespace-nowrap">
+              <span className="block font-display text-4xl md:text-5xl lg:text-[56px] text-heading whitespace-nowrap">
                 Ts.Bs. Lê Thị <span className="text-accent">Thu Hương</span>
               </span>
             </h2>
 
             {/* Description */}
-            <p className="text-base text-text leading-[1.8] mb-10">
+            <p className="text-lg text-text leading-[1.8] mb-10">
               Tiến sĩ tại <strong className="text-heading font-700">Đại học Y Hà Nội</strong>,
               {" "}đã đến hơn{" "}
               <strong className="text-heading font-700">30+ quốc gia</strong>{" "}
@@ -52,7 +52,7 @@ export function DoctorIntro() {
             <div className="grid grid-cols-3 gap-4 pb-10 border-b border-heading/10 mb-10">
               {stats.map((s) => (
                 <div key={s.number}>
-                  <div className="font-display text-3xl md:text-4xl text-heading leading-none mb-1">
+                  <div className="font-display text-4xl md:text-5xl text-heading leading-none mb-1">
                     {s.number}
                   </div>
                   <div className="text-xs text-muted leading-snug">{s.label}</div>

@@ -36,7 +36,7 @@ export function DoctorIntro() {
                 Xin chào, tôi là
               </span>
               <span
-                className="block font-display not-italic text-heading leading-[1.06] sm:whitespace-nowrap"
+                className="block font-display not-italic text-heading leading-[1.06] sm:whitespace-nowrap uppercase"
                 style={{ fontWeight: 800, fontSize: "clamp(36px, 3.8vw, 64px)" }}
               >
                 Ts.Bs. Lê Thị{" "}

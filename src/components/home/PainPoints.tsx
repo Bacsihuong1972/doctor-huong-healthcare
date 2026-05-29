@@ -117,9 +117,9 @@ export function PainPoints() {
                       transition={{ duration: 0.3, ease: [0.04, 0.62, 0.23, 0.98] }}
                       className="overflow-hidden"
                     >
-                      <div className="pb-8 max-w-2xl space-y-4">
+                      <div className="pb-8 lg:columns-2 lg:gap-x-14 xl:gap-x-20">
                         {item.body.map((para, i) => (
-                          <p key={i} className="text-text text-[17px] leading-[1.75]">
+                          <p key={i} className="text-text text-[17px] leading-[1.75] mb-4 last:mb-0 break-inside-avoid">
                             {para}
                           </p>
                         ))}

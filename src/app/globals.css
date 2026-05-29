@@ -67,6 +67,12 @@ body {
 .font-display {
   font-family: 'SFUFutura', 'Be Vietnam Pro', system-ui, sans-serif;
   font-feature-settings: "liga", "kern";
+  font-style: normal;
+}
+
+/* Chặn browser tự tổng hợp italic cho Futura Heavy */
+.font-display * {
+  font-style: normal !important;
 }
 
 .font-sans {

@@ -39,8 +39,7 @@ export function DoctorIntro() {
                 className="block font-display not-italic text-heading leading-[1.06] sm:whitespace-nowrap uppercase"
                 style={{ fontWeight: 800, fontSize: "clamp(36px, 3.8vw, 64px)" }}
               >
-                Ts.Bs. Lê Thị{" "}
-                <span className="text-accent">Thu Hương</span>
+                Ts.Bs. Lê Thị Thu Hương
               </span>
             </h2>
 

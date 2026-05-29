@@ -30,11 +30,11 @@ export function DoctorIntro() {
             {/* Headline */}
             <h2 className="mb-8 not-italic">
               {/* Eyebrow — Futura Light */}
-              <span className="block font-display font-300 not-italic text-base md:text-lg text-muted mb-4 tracking-[0.22em] uppercase">
+              <span className="block font-display not-italic text-base md:text-lg text-muted mb-4 tracking-[0.22em] uppercase" style={{ fontWeight: 300 }}>
                 Xin chào, tôi là
               </span>
-              {/* Name — Futura ExtraBold */}
-              <span className="block font-display not-italic text-[44px] md:text-[54px] lg:text-[64px] text-heading leading-[1.1] tracking-[-0.01em]" style={{ fontWeight: 900 }}>
+              {/* Name — Futura Heavy (nặng nhất trong bộ) */}
+              <span className="block font-display not-italic text-[44px] md:text-[54px] lg:text-[64px] text-heading leading-[1.1] tracking-[-0.01em]" style={{ fontWeight: 800 }}>
                 Ts.Bs. Lê Thị{" "}
                 <span className="text-accent">Thu Hương</span>
               </span>

@@ -17,7 +17,7 @@ export function MedicalSafetyBanner() {
         >
           <div className="lg:col-span-4">
             <div className="eyebrow text-accent mb-3">Lưu ý y khoa</div>
-            <h2 className="font-display text-3xl text-cream/90 italic">An toàn trước hết</h2>
+            <h2 className="font-display text-3xl text-cream/90 not-italic" style={{ fontWeight: 800 }}>An toàn trước hết</h2>
           </div>
 
           <div className="lg:col-span-8">

@@ -68,10 +68,9 @@ export function PainPoints() {
       <div className="max-w-[1320px] mx-auto px-5 sm:px-8 lg:px-10">
         {/* Heading */}
         <div className="mb-14 md:mb-16">
-          <h2 className="font-display text-4xl md:text-5xl lg:text-[56px] text-heading leading-[1.05] tracking-tight">
-            Cô chú đang
-            <br />
-            <span className="italic text-accent">gặp điều này không?</span>
+          <h2 className="font-display text-4xl md:text-5xl lg:text-[56px] text-heading leading-[1.05] tracking-tight not-italic lg:whitespace-nowrap" style={{ fontWeight: 800 }}>
+            Cô chú đang{" "}
+            <span className="not-italic text-accent">gặp điều này không?</span>
           </h2>
         </div>
 

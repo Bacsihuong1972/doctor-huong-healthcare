@@ -468,12 +468,12 @@ export function HomeQuiz() {
             {/* Left — text */}
             <div className="lg:col-span-6">
               <div className="eyebrow text-cream/50 mb-6">Trắc nghiệm · {questions.length} câu · 3 phút</div>
-              <h2 className="font-display text-4xl md:text-5xl lg:text-[64px] text-cream leading-[1.05] tracking-tight mb-8">
+              <h2 className="font-display text-4xl md:text-5xl lg:text-[64px] text-cream leading-[1.05] tracking-tight mb-8 not-italic" style={{ fontWeight: 800 }}>
                 Đường huyết
                 <br />
                 cô chú đang
                 <br />
-                <span className="italic text-accent">ở mức nào?</span>
+                <span className="not-italic text-accent">ở mức nào?</span>
               </h2>
               <p className="text-cream/65 leading-relaxed mb-10 text-lg max-w-md">
                 Bác sĩ Hương giúp cô chú nhận ra dấu hiệu sớm và định hướng khoá học phù hợp với tình trạng thực tế.

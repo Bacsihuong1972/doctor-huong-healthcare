@@ -143,6 +143,41 @@ async function callGemini(
   return text;
 }
 
+// ── Groq API call (free tier, Llama 3.3 70B) ─────────────────────────────────
+
+async function callGroq(
+  systemPrompt: string,
+  history: Array<{ role: string; content: string }>,
+  message: string,
+  apiKey: string
+): Promise<string> {
+  const messages = [
+    { role: "system", content: systemPrompt },
+    ...history.slice(-8).map((m) => ({ role: m.role, content: m.content })),
+    { role: "user", content: message },
+  ];
+
+  const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${apiKey}`,
+    },
+    body: JSON.stringify({
+      model: "llama-3.3-70b-versatile",
+      messages,
+      max_tokens: 400,
+      temperature: 0.7,
+    }),
+  });
+
+  if (!response.ok) throw new Error(`Groq ${response.status}`);
+  const data = await response.json();
+  const text: string = data.choices?.[0]?.message?.content ?? "";
+  if (!text) throw new Error("empty");
+  return text;
+}
+
 // ── Claude Haiku API call ─────────────────────────────────────────────────────
 
 async function callClaude(
@@ -193,6 +228,7 @@ export async function POST(req: NextRequest) {
   const { message, lessonSlug, lessonTitle, lessonContent, history } = body;
   const learned = knowledgeBase.get(lessonSlug) ?? [];
 
+  const groqKey   = process.env.GROQ_API_KEY;
   const geminiKey = process.env.GOOGLE_GEMINI_API_KEY;
   const claudeKey = process.env.ANTHROPIC_API_KEY;
 
@@ -200,7 +236,16 @@ export async function POST(req: NextRequest) {
 
   let reply: string | null = null;
 
-  // Priority 1: Google Gemini (free tier)
+  // Priority 1: Groq — Llama 3.3 70B (free, generous limits)
+  if (groqKey && !reply) {
+    try {
+      reply = await callGroq(prompt, history, message, groqKey);
+    } catch {
+      reply = null;
+    }
+  }
+
+  // Priority 2: Google Gemini (free tier)
   if (geminiKey && !reply) {
     try {
       reply = await callGemini(prompt, history, message, geminiKey);
@@ -209,7 +254,7 @@ export async function POST(req: NextRequest) {
     }
   }
 
-  // Priority 2: Claude Haiku
+  // Priority 3: Claude Haiku
   if (claudeKey && !reply) {
     try {
       reply = await callClaude(prompt, history, message, claudeKey);

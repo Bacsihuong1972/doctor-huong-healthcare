@@ -126,7 +126,7 @@ export default function ChuongTrinhPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-end">
             <div className="lg:col-span-7">
               <motion.h1 initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}
-                className="font-display text-5xl md:text-6xl lg:text-[80px] text-heading leading-[1.05] tracking-tight">
+                className="font-display text-5xl md:text-6xl lg:text-[80px] text-heading leading-[1.05] tracking-tight not-italic" style={{ fontWeight: 800 }}>
                 Chọn chương trình
                 <br />
                 phù hợp với
@@ -136,7 +136,7 @@ export default function ChuongTrinhPage() {
             </div>
             <div className="lg:col-span-5 lg:pb-3">
               <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: 0.2 }}
-                className="font-display italic text-xl lg:text-2xl text-heading leading-snug mb-6 tracking-tight">
+                className="font-display not-italic text-xl lg:text-2xl text-heading leading-snug mb-6 tracking-tight" style={{ fontWeight: 500 }}>
                 Ba cấp độ — từ tự học có hướng dẫn đến đồng hành cá nhân hóa trực tiếp cùng Bác sĩ Hương.
               </motion.p>
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.4 }}
@@ -179,9 +179,9 @@ export default function ChuongTrinhPage() {
                     </div>
 
                     {/* Name */}
-                    <h2 className={`font-display text-2xl lg:text-3xl leading-tight tracking-tight mb-4 whitespace-pre-line ${
+                    <h2 className={`font-display not-italic text-2xl lg:text-3xl leading-tight tracking-tight mb-4 whitespace-pre-line ${
                       isFeatured ? "text-cream" : "text-heading"
-                    }`}>
+                    }`} style={{ fontWeight: 800 }}>
                       {course.name}
                     </h2>
 
@@ -189,9 +189,9 @@ export default function ChuongTrinhPage() {
                     <div className={`flex items-baseline gap-1 mb-4 pb-6 border-b ${
                       isFeatured ? "border-cream/15" : "border-heading/10"
                     }`}>
-                      <span className={`font-display text-4xl lg:text-5xl leading-none ${
+                      <span className={`font-display not-italic text-4xl lg:text-5xl leading-none ${
                         isFeatured ? "text-cream" : "text-heading"
-                      }`}>
+                      }`} style={{ fontWeight: 800 }}>
                         {course.price}
                       </span>
                       <span className={`text-lg ${isFeatured ? "text-cream/70" : "text-muted"}`}>{course.unit}</span>
@@ -242,7 +242,7 @@ export default function ChuongTrinhPage() {
         <div className="max-w-[1320px] mx-auto px-5 sm:px-8 lg:px-10">
           <div className="mb-10">
             <div className="eyebrow text-muted mb-3">So sánh chi tiết</div>
-            <h2 className="font-display text-3xl md:text-4xl text-heading tracking-tight">
+            <h2 className="font-display text-3xl md:text-4xl text-heading tracking-tight not-italic" style={{ fontWeight: 800 }}>
               Bảng quyền lợi đầy đủ
             </h2>
           </div>
@@ -255,15 +255,15 @@ export default function ChuongTrinhPage() {
                     <th className="text-left px-6 py-4 text-sm font-600 text-muted w-[40%]">Quyền lợi</th>
                     <th className="px-4 py-4 text-center">
                       <div className="text-xs font-600 text-muted uppercase tracking-wider">Hiểu Đúng</div>
-                      <div className="font-display text-lg text-heading mt-0.5">799.000đ</div>
+                      <div className="font-display not-italic text-lg text-heading mt-0.5" style={{ fontWeight: 700 }}>799.000đ</div>
                     </th>
                     <th className="px-4 py-4 text-center bg-heading rounded-t-none">
                       <div className="text-xs font-600 text-accent uppercase tracking-wider">Phổ biến nhất</div>
-                      <div className="font-display text-lg text-cream mt-0.5">2.999.000đ</div>
+                      <div className="font-display not-italic text-lg text-cream mt-0.5" style={{ fontWeight: 700 }}>2.999.000đ</div>
                     </th>
                     <th className="px-4 py-4 text-center">
                       <div className="text-xs font-600 text-muted uppercase tracking-wider">Chuyên Sâu</div>
-                      <div className="font-display text-lg text-heading mt-0.5">10.299.000đ</div>
+                      <div className="font-display not-italic text-lg text-heading mt-0.5" style={{ fontWeight: 700 }}>10.299.000đ</div>
                     </th>
                   </tr>
                 </thead>
@@ -279,13 +279,13 @@ export default function ChuongTrinhPage() {
                   <tr className="bg-heading/[0.02]">
                     <td className="px-6 py-5 text-sm font-600 text-heading">Mức giá</td>
                     <td className="px-4 py-5 text-center">
-                      <span className="font-display text-xl text-heading">799.000đ</span>
+                      <span className="font-display not-italic text-xl text-heading" style={{ fontWeight: 700 }}>799.000đ</span>
                     </td>
                     <td className="px-4 py-5 text-center bg-heading">
-                      <span className="font-display text-xl text-cream">2.999.000đ</span>
+                      <span className="font-display not-italic text-xl text-cream" style={{ fontWeight: 700 }}>2.999.000đ</span>
                     </td>
                     <td className="px-4 py-5 text-center">
-                      <span className="font-display text-xl text-heading">10.299.000đ</span>
+                      <span className="font-display not-italic text-xl text-heading" style={{ fontWeight: 700 }}>10.299.000đ</span>
                     </td>
                   </tr>
                 </tbody>

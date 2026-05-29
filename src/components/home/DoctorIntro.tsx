@@ -25,54 +25,61 @@ export function DoctorIntro() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.65 }}
-            className="max-w-lg"
+            className="w-full"
           >
-            {/* Headline */}
+            {/* Headline — không giới hạn max-width để chữ cùng một hàng */}
             <h2 className="mb-8 not-italic">
-              {/* Eyebrow — Futura Light */}
-              <span className="block font-display not-italic text-base md:text-lg text-muted mb-4 tracking-[0.22em] uppercase" style={{ fontWeight: 300 }}>
+              <span
+                className="block font-display not-italic text-muted mb-3 tracking-[0.22em] uppercase"
+                style={{ fontWeight: 300, fontSize: "clamp(12px, 1.1vw, 15px)" }}
+              >
                 Xin chào, tôi là
               </span>
-              {/* Name — Futura Heavy (nặng nhất trong bộ) */}
-              <span className="block font-display not-italic text-[56px] md:text-[72px] lg:text-[88px] text-heading leading-[1.05] tracking-[-0.02em]" style={{ fontWeight: 800 }}>
+              <span
+                className="block font-display not-italic text-heading leading-[1.06] sm:whitespace-nowrap"
+                style={{ fontWeight: 800, fontSize: "clamp(36px, 3.8vw, 64px)" }}
+              >
                 Ts.Bs. Lê Thị{" "}
                 <span className="text-accent">Thu Hương</span>
               </span>
             </h2>
 
-            {/* Description */}
-            <p className="text-lg text-text leading-[1.8] mb-10">
-              Tiến sĩ tại <strong className="text-heading font-700">Đại học Y Hà Nội</strong>,
-              {" "}đã đến hơn{" "}
-              <strong className="text-heading font-700">30+ quốc gia</strong>{" "}
-              để nghiên cứu về dinh dưỡng và chuyển hóa. Chuyên gia trong lĩnh vực
-              dinh dưỡng lâm sàng, đã hỗ trợ kiểm soát hơn{" "}
-              <strong className="text-heading font-700">50+ trường hợp tiểu đường</strong>{" "}
-              thông qua thay đổi lối sống và chế độ ăn.
-            </p>
+            {/* Phần còn lại giữ max-w để đọc thoải mái */}
+            <div className="max-w-lg">
+              {/* Description */}
+              <p className="text-lg text-text leading-[1.8] mb-10">
+                Tiến sĩ tại <strong className="text-heading font-700">Đại học Y Hà Nội</strong>,
+                {" "}đã đến hơn{" "}
+                <strong className="text-heading font-700">30+ quốc gia</strong>{" "}
+                để nghiên cứu về dinh dưỡng và chuyển hóa. Chuyên gia trong lĩnh vực
+                dinh dưỡng lâm sàng, đã hỗ trợ kiểm soát hơn{" "}
+                <strong className="text-heading font-700">50+ trường hợp tiểu đường</strong>{" "}
+                thông qua thay đổi lối sống và chế độ ăn.
+              </p>
 
-            {/* Stats row */}
-            <div className="grid grid-cols-3 gap-4 pb-10 border-b border-heading/10 mb-10">
-              {stats.map((s) => (
-                <div key={s.number}>
-                  <div className="font-display text-4xl md:text-5xl text-heading leading-none mb-1">
-                    {s.number}
+              {/* Stats row */}
+              <div className="grid grid-cols-3 gap-4 pb-10 border-b border-heading/10 mb-10">
+                {stats.map((s) => (
+                  <div key={s.number}>
+                    <div className="font-display text-4xl md:text-5xl text-heading leading-none mb-1">
+                      {s.number}
+                    </div>
+                    <div className="text-xs text-muted leading-snug">{s.label}</div>
                   </div>
-                  <div className="text-xs text-muted leading-snug">{s.label}</div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
 
-            {/* CTA */}
-            <Link
-              href="/chuong-trinh"
-              className="group inline-flex items-center gap-3 h-[56px] pl-7 pr-3 rounded-full bg-heading text-cream font-600 text-[15px] hover:bg-heading/85 transition-colors"
-            >
-              <span>Học cùng Bác sĩ Hương</span>
-              <span className="w-10 h-10 rounded-full bg-cream/15 group-hover:bg-cream/25 flex items-center justify-center transition-colors">
-                <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </span>
-            </Link>
+              {/* CTA */}
+              <Link
+                href="/chuong-trinh"
+                className="group inline-flex items-center gap-3 h-[56px] pl-7 pr-3 rounded-full bg-heading text-cream font-600 text-[15px] hover:bg-heading/85 transition-colors"
+              >
+                <span>Học cùng Bác sĩ Hương</span>
+                <span className="w-10 h-10 rounded-full bg-cream/15 group-hover:bg-cream/25 flex items-center justify-center transition-colors">
+                  <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </span>
+              </Link>
+            </div>
           </motion.div>
         </div>
 

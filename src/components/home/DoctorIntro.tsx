@@ -29,10 +29,10 @@ export function DoctorIntro() {
           >
             {/* Headline */}
             <h2 className="mb-8">
-              <span className="block font-display font-300 text-xl md:text-2xl text-muted mb-3 tracking-wide">
+              <span className="block font-display font-300 text-base md:text-lg text-muted mb-4 tracking-[0.18em] uppercase">
                 Xin chào, tôi là
               </span>
-              <span className="block font-display font-800 text-[42px] md:text-5xl lg:text-[60px] text-heading leading-[1.08] tracking-[-0.025em]">
+              <span className="block font-display font-700 text-[44px] md:text-[54px] lg:text-[64px] text-heading leading-[1.05] tracking-[-0.02em]">
                 Ts.Bs. Lê Thị{" "}
                 <span className="text-accent">Thu Hương</span>
               </span>

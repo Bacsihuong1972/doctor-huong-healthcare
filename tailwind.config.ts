@@ -38,7 +38,7 @@ const config: Config = {
         border: "rgba(10, 43, 29, 0.08)",
       },
       fontFamily: {
-        display: ['"Plus Jakarta Sans"', '"Be Vietnam Pro"', "system-ui", "sans-serif"],
+        display: ['"Jost"', '"Be Vietnam Pro"', "system-ui", "sans-serif"],
         sans: ['"Be Vietnam Pro"', "system-ui", "sans-serif"],
         body: ['"Be Vietnam Pro"', "system-ui", "sans-serif"],
       },

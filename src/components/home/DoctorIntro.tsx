@@ -34,7 +34,7 @@ export function DoctorIntro() {
                 Xin chào, tôi là
               </span>
               {/* Name — Futura Heavy (nặng nhất trong bộ) */}
-              <span className="block font-display not-italic text-[44px] md:text-[54px] lg:text-[64px] text-heading leading-[1.1] tracking-[-0.01em]" style={{ fontWeight: 800 }}>
+              <span className="block font-display not-italic text-[56px] md:text-[72px] lg:text-[88px] text-heading leading-[1.05] tracking-[-0.02em]" style={{ fontWeight: 800 }}>
                 Ts.Bs. Lê Thị{" "}
                 <span className="text-accent">Thu Hương</span>
               </span>

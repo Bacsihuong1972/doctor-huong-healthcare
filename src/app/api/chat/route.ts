@@ -7,13 +7,13 @@ const MAX_PER_LESSON = 20;
 // ── Medical query guard ───────────────────────────────────────────────────────
 
 const MEDICAL_DENY = [
-  "thuốc", "toa thuốc", "đơn thuốc", "liều", "liều lượng",
-  "ngưng thuốc", "đổi thuốc", "bỏ thuốc", "uống thuốc",
-  "insulin", "tiêm", "kim tiêm",
-  "hba1c", "a1c", "mmol", "mg/dl",
-  "xét nghiệm", "kết quả xét nghiệm", "phiếu xét nghiệm",
-  "chẩn đoán", "chỉ số", "con số của tôi",
-  "tác dụng phụ", "metformin", "glipizide",
+  "toa thuốc", "đơn thuốc", "uống thuốc bao nhiêu", "liều lượng thuốc",
+  "tiêm insulin", "liều insulin", "loại insulin", "điều chỉnh insulin",
+  "hba1c của tôi", "a1c của tôi", "chỉ số của tôi", "kết quả xét nghiệm của tôi",
+  "đường huyết của tôi bao nhiêu",
+  "ngưng thuốc", "đổi thuốc", "bỏ thuốc", "tác dụng phụ thuốc",
+  "metformin", "glipizide", "empagliflozin", "sitagliptin",
+  "chẩn đoán cho tôi",
 ];
 
 function isMedical(text: string): boolean {

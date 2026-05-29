@@ -10,12 +10,16 @@ type Message = { role: "user" | "assistant"; content: string };
 
 // ── Client-side AI engine ─────────────────────────────────────────────────────
 
+// Only block questions asking for PERSONAL medical advice — not course concepts.
+// "insulin là gì" → OK (course content). "tiêm insulin bao nhiêu" → block.
 const MEDICAL_KEYWORDS = [
-  "thuốc","toa thuốc","đơn thuốc","liều","uống thuốc",
-  "insulin","tiêm","kim tiêm",
-  "hba1c","a1c","mmol","mg/dl",
-  "xét nghiệm","chẩn đoán","chỉ số của tôi",
-  "tác dụng phụ","metformin","glipizide","ngưng thuốc","đổi thuốc",
+  "toa thuốc","đơn thuốc","uống thuốc bao nhiêu","liều lượng thuốc",
+  "tiêm insulin","liều insulin","loại insulin","điều chỉnh insulin",
+  "hba1c của tôi","a1c của tôi","chỉ số của tôi","kết quả xét nghiệm của tôi",
+  "mmol/l của tôi","đường huyết của tôi bao nhiêu",
+  "ngưng thuốc","đổi thuốc","bỏ thuốc","tác dụng phụ thuốc",
+  "metformin","glipizide","empagliflozin","sitagliptin",
+  "chẩn đoán cho tôi",
 ];
 
 const MEDICAL_REPLY =

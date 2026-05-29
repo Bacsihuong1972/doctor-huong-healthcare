@@ -28,12 +28,13 @@ export function DoctorIntro() {
             className="max-w-lg"
           >
             {/* Headline */}
-            <h2 className="mb-8 leading-[1.1] tracking-tight">
-              <span className="block font-display italic text-3xl md:text-4xl text-muted mb-3">
+            <h2 className="mb-8">
+              <span className="block font-display font-300 text-xl md:text-2xl text-muted mb-3 tracking-wide">
                 Xin chào, tôi là
               </span>
-              <span className="block font-display text-4xl md:text-5xl lg:text-[56px] text-heading whitespace-nowrap">
-                Ts.Bs. Lê Thị <span className="text-accent">Thu Hương</span>
+              <span className="block font-display font-800 text-[42px] md:text-5xl lg:text-[60px] text-heading leading-[1.08] tracking-[-0.025em]">
+                Ts.Bs. Lê Thị{" "}
+                <span className="text-accent">Thu Hương</span>
               </span>
             </h2>
 

@@ -22,7 +22,7 @@ function isMedical(text: string): boolean {
 }
 
 const MEDICAL_REPLY =
-  "Câu hỏi này cần được Bác sĩ Hương giải đáp trực tiếp ạ. Chim Sẻ không thể tư vấn về thuốc, chỉ số hay tình trạng sức khỏe cá nhân — để đảm bảo an toàn cho cô chú. Cô chú có thể đặt lịch tư vấn 1-1 với Bác sĩ Hương tại mục Liên hệ nhé 🌿";
+  "Câu hỏi này cần được Bác sĩ Hương giải đáp trực tiếp ạ. Mèo Con không thể tư vấn về thuốc, chỉ số hay tình trạng sức khỏe cá nhân — để đảm bảo an toàn cho cô chú. Cô chú có thể đặt lịch tư vấn 1-1 với Bác sĩ Hương tại mục Liên hệ nhé 🐱";
 
 // ── Stop-words & tokenizer ────────────────────────────────────────────────────
 
@@ -48,7 +48,7 @@ function localReply(question: string, lessonTitle: string, lessonContent: string
 
   const words = tokens(question);
   if (words.length === 0 || !lessonContent) {
-    return "Chim Sẻ chỉ có thể giải đáp thắc mắc về nội dung 16 bài học trong khóa ạ. Câu hỏi của cô chú có thể phù hợp để hỏi trực tiếp Bác sĩ Hương nhé 🌿";
+    return "Mèo Con chỉ có thể giải đáp thắc mắc về nội dung 16 bài học trong khóa ạ. Câu hỏi của cô chú có thể phù hợp để hỏi trực tiếp Bác sĩ Hương nhé 🐱";
   }
 
   const paragraphs = lessonContent.split("\n\n").map((p) => p.trim()).filter((p) => p.length > 30);
@@ -58,10 +58,10 @@ function localReply(question: string, lessonTitle: string, lessonContent: string
 
   const top = scored.filter((p) => p.score > 0).slice(0, 2);
   if (top.length === 0) {
-    return `Về bài "${lessonTitle}", Chim Sẻ chưa tìm được thông tin phù hợp. Cô chú thử hỏi theo cách khác hoặc đặt lịch với Bác sĩ Hương nhé 🌿`;
+    return `Về bài "${lessonTitle}", Mèo Con chưa tìm được thông tin phù hợp. Cô chú thử hỏi theo cách khác hoặc đặt lịch với Bác sĩ Hương nhé 🐱`;
   }
 
-  return `Về câu hỏi của cô chú:\n\n${top.map((p) => p.text).join("\n\n")}\n\n🌿`;
+  return `Về câu hỏi của cô chú:\n\n${top.map((p) => p.text).join("\n\n")}\n\n🐱`;
 }
 
 // ── Shared system prompt ──────────────────────────────────────────────────────
@@ -77,9 +77,9 @@ function buildSystemPrompt(
         learned.slice(-6).map((qa) => `• Hỏi: ${qa.q}\n  Đáp: ${qa.a}`).join("\n")
       : "";
 
-  return `Bạn là Trợ lý Chim Sẻ — trợ lý học tập khóa "Hiểu Đúng Tiểu Đường" do Ts.Bs. Lê Thị Thu Hương thiết kế dành cho người tiền tiểu đường và đái tháo đường type 2.
+  return `Bạn là Trợ lý Mèo Con — trợ lý học tập khóa "Hiểu Đúng Tiểu Đường" do Ts.Bs. Lê Thị Thu Hương thiết kế dành cho người tiền tiểu đường và đái tháo đường type 2.
 
-XƯNG HÔ: Luôn xưng "Chim Sẻ", gọi người học là "cô/chú" hoặc "cô chú". Giọng thân thiện, ấm áp, kiên nhẫn, phù hợp người lớn tuổi.
+XƯNG HÔ: Luôn xưng "Mèo Con", gọi người học là "cô/chú" hoặc "cô chú". Giọng thân thiện, ấm áp, kiên nhẫn, phù hợp người lớn tuổi.
 
 BÀI HỌC HIỆN TẠI: ${lessonTitle}
 NỘI DUNG BÀI:
@@ -100,7 +100,7 @@ KHÔNG TRẢ LỜI — chuyển đến Bác sĩ Hương:
 
 Khi gặp câu hỏi y khoa cá nhân, trả lời ĐÚNG: "${MEDICAL_REPLY}"
 
-CÁCH VIẾT: Ngắn gọn (tối đa 120 từ), dùng ví dụ từ bữa cơm Việt, chia gạch đầu dòng nếu cần, kết thúc bằng 🌿`;
+CÁCH VIẾT: Ngắn gọn (tối đa 120 từ), dùng ví dụ từ bữa cơm Việt, chia gạch đầu dòng nếu cần, kết thúc bằng 🐱`;
 }
 
 // ── Gemini API call ───────────────────────────────────────────────────────────

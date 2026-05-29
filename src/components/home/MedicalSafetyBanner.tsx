@@ -21,8 +21,8 @@ export function MedicalSafetyBanner() {
           </div>
 
           <div className="lg:col-span-8">
-            <p className="font-display text-2xl md:text-3xl lg:text-4xl text-cream leading-[1.15] tracking-tight">
-              Khóa học không thay thế <span className="italic text-accent">bác sĩ điều trị</span>. Cô chú không tự ý ngưng thuốc, đổi liều hay thay đổi insulin khi chưa trao đổi với bác sĩ.
+            <p className="font-display text-xl md:text-2xl lg:text-[28px] text-cream leading-[1.3] tracking-tight not-italic">
+              Khóa học không thay thế <span className="not-italic text-accent" style={{ fontWeight: 700 }}>bác sĩ điều trị</span>. Cô chú không tự ý ngưng thuốc, đổi liều hay thay đổi insulin khi chưa trao đổi với bác sĩ.
             </p>
 
             <div className="mt-10 pt-8 border-t border-cream/15 grid grid-cols-1 sm:grid-cols-3 gap-6 text-sm text-cream/70">

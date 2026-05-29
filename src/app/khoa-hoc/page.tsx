@@ -8,20 +8,14 @@ import { AuthGate } from "@/components/auth/AuthGate";
 import { useProgress } from "@/hooks/useProgress";
 import { useAuth } from "@/hooks/useAuth";
 import { lessons, chapters } from "@/data/lessons";
-import type { LessonChapter, Lesson } from "@/types";
+import type { LessonChapter } from "@/types";
 
 const chapterKeys = Object.keys(chapters) as LessonChapter[];
-
-function findNextLesson(progress: Record<string, string>): Lesson {
-  // Featured = first not-completed lesson, or lesson 1 if all done
-  const next = lessons.find((l) => progress[l.slug] !== "completed");
-  return next ?? lessons[0];
-}
 
 function CourseContent() {
   const searchParams = useSearchParams();
   const filterChapter = searchParams.get("chuong") as LessonChapter | null;
-  const { getStatus, progress, completedCount } = useProgress();
+  const { getStatus, completedCount } = useProgress();
   const { user } = useAuth();
   const [mounted, setMounted] = useState(false);
 
@@ -35,7 +29,6 @@ function CourseContent() {
     ? lessons.filter((l) => l.chapter === filterChapter)
     : lessons;
 
-  const featured = findNextLesson(progress);
   const percentage = Math.round((completedCount / lessons.length) * 100);
 
   return (
@@ -55,7 +48,7 @@ function CourseContent() {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-end mb-16">
             <div className="lg:col-span-7">
-              <h1 className="font-display text-5xl md:text-6xl lg:text-[96px] text-heading leading-[1.05] tracking-tight">
+              <h1 className="font-display text-5xl md:text-6xl lg:text-[96px] text-heading leading-[1.05] tracking-tight not-italic" style={{ fontWeight: 800 }}>
                 Chào {user?.name ?? "cô chú"},
                 <br />
                 hôm nay học gì?
@@ -66,7 +59,7 @@ function CourseContent() {
               <div className="bg-paper rounded-3xl p-7 border border-heading/8">
                 <div className="flex items-baseline justify-between mb-3">
                   <div className="eyebrow text-muted">Tiến độ của cô chú</div>
-                  <div className="font-display text-3xl text-heading italic tabular">
+                  <div className="font-display text-3xl text-heading not-italic tabular" style={{ fontWeight: 800 }}>
                     {completedCount}<span className="text-muted text-2xl">/{lessons.length}</span>
                   </div>
                 </div>
@@ -86,13 +79,6 @@ function CourseContent() {
               </div>
             </div>
           </div>
-
-          {/* Featured lesson — the one to continue */}
-          <LessonCard
-            lesson={featured}
-            status={getStatus(featured.slug)}
-            variant="featured"
-          />
         </div>
       </section>
 
@@ -102,7 +88,7 @@ function CourseContent() {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 md:mb-16">
             <div>
               <div className="eyebrow text-muted mb-3">Tất cả bài học</div>
-              <h2 className="font-display text-4xl md:text-5xl text-heading tracking-tight leading-tight">
+              <h2 className="font-display text-4xl md:text-5xl text-heading tracking-tight leading-tight not-italic" style={{ fontWeight: 800 }}>
                 {filterChapter ? chapters[filterChapter].title : "Mười sáu bài học"}
               </h2>
             </div>
@@ -171,7 +157,8 @@ function CourseContent() {
                         <div className="eyebrow text-muted mb-2">Chương · {done}/{chapterLessons.length} hoàn thành</div>
                         <h3
                           id={`chapter-${key}`}
-                          className="font-display text-3xl md:text-4xl text-heading tracking-tight"
+                          className="font-display text-3xl md:text-4xl text-heading tracking-tight not-italic"
+                          style={{ fontWeight: 800 }}
                         >
                           {ch.title}
                         </h3>
@@ -205,8 +192,8 @@ function CourseContent() {
                 <Check className="w-5 h-5 text-accent" />
                 <span className="eyebrow text-accent">Hoàn thành</span>
               </div>
-              <h2 className="font-display text-4xl md:text-5xl mb-4">
-                Cô chú đã <span className="italic">hoàn thành</span> khóa học
+              <h2 className="font-display text-4xl md:text-5xl mb-4 not-italic" style={{ fontWeight: 800 }}>
+                Cô chú đã <span className="text-accent">hoàn thành</span> khóa học
               </h2>
               <p className="text-cream/70 max-w-xl mx-auto mb-8">
                 Tiếp tục áp dụng những thói quen mỗi ngày — và đừng quên chia sẻ với bác sĩ trong lần tái khám tới.

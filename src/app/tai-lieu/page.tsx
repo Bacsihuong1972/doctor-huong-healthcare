@@ -218,14 +218,14 @@ export default function TaiLieuPage() {
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-end">
               <div className="lg:col-span-7">
-                <h1 className="font-display text-5xl md:text-6xl lg:text-[88px] text-heading leading-[1.05] tracking-tight">
+                <h1 className="font-display text-5xl md:text-6xl lg:text-[88px] text-heading leading-[1.05] tracking-tight not-italic" style={{ fontWeight: 800 }}>
                   Tài liệu
                   <br />
                   tiểu đường
                 </h1>
               </div>
               <div className="lg:col-span-5 lg:pb-3">
-                <p className="font-display italic text-xl lg:text-2xl text-heading leading-snug mb-6 tracking-tight">
+                <p className="font-display not-italic text-xl lg:text-2xl text-heading leading-snug mb-6 tracking-tight" style={{ fontWeight: 500 }}>
                   Tổng hợp tài liệu thực hành từ Bác sĩ Hương — tải về, in ra, và dùng ngay trong bếp.
                 </p>
                 <div className="flex items-center gap-5 pt-6 border-t border-heading/10">
@@ -264,7 +264,7 @@ export default function TaiLieuPage() {
           <div className="max-w-[1320px] mx-auto px-5 sm:px-8 lg:px-10">
             <div className="mb-10 md:mb-14">
               <div className="eyebrow text-muted mb-3">№ 01 — Tài liệu</div>
-              <h2 className="font-display text-4xl md:text-5xl text-heading tracking-tight">
+              <h2 className="font-display text-4xl md:text-5xl text-heading tracking-tight not-italic" style={{ fontWeight: 800 }}>
                 Bác sĩ Hương kính tặng cô chú anh chị
               </h2>
             </div>
@@ -318,7 +318,7 @@ export default function TaiLieuPage() {
             {/* Right */}
             <div className="flex flex-col justify-center px-8 py-14 sm:px-12 lg:px-16 xl:px-20">
               <div className="eyebrow text-muted mb-6">№ 02 — Công cụ dinh dưỡng</div>
-              <h2 className="font-display text-4xl md:text-5xl lg:text-[48px] text-heading leading-[1.1] tracking-tight mb-5">
+              <h2 className="font-display text-4xl md:text-5xl lg:text-[48px] text-heading leading-[1.1] tracking-tight mb-5 not-italic" style={{ fontWeight: 800 }}>
                 Cô chú cần
                 <br />
                 bao nhiêu đạm
@@ -348,7 +348,7 @@ export default function TaiLieuPage() {
         <section className="border-t border-heading/8 py-16 md:py-20 bg-paper">
           <div className="max-w-[1320px] mx-auto px-5 sm:px-8 lg:px-10 text-center">
             <div className="eyebrow text-muted mb-4">Muốn học sâu hơn?</div>
-            <h2 className="font-display text-4xl md:text-5xl text-heading tracking-tight mb-6">Khóa học 20 bài — miễn phí</h2>
+            <h2 className="font-display text-4xl md:text-5xl text-heading tracking-tight mb-6 not-italic" style={{ fontWeight: 800 }}>Khóa học 16 bài</h2>
             <p className="text-text max-w-xl mx-auto mb-8 leading-relaxed">
               Ngoài tài liệu, Bác sĩ Hương còn có khóa học video ngắn giúp cô chú hiểu sâu hơn về tiểu đường và cách kiểm soát qua bữa ăn hàng ngày.
             </p>

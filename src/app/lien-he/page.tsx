@@ -13,7 +13,7 @@ export default function LienHePage() {
       <section className="pt-20 pb-16 md:pt-28 md:pb-20 border-b border-heading/8">
         <div className="max-w-[1320px] mx-auto px-5 sm:px-8 lg:px-10">
           <div className="eyebrow text-muted mb-3">№ — Liên hệ</div>
-          <h1 className="font-display text-5xl md:text-6xl lg:text-[96px] text-heading leading-[1.05] tracking-tight max-w-3xl">
+          <h1 className="font-display text-5xl md:text-6xl lg:text-[96px] text-heading leading-[1.05] tracking-tight max-w-3xl not-italic" style={{ fontWeight: 800 }}>
             Bác sĩ Hương lắng nghe cô chú
           </h1>
           <p className="mt-8 text-lg text-text max-w-2xl leading-relaxed">
@@ -43,7 +43,7 @@ export default function LienHePage() {
                       <item.icon className="w-5 h-5 text-muted" />
                       <div>
                         <div className="eyebrow text-muted mb-1">{item.label}</div>
-                        <div className="font-display text-xl md:text-2xl text-heading italic">
+                        <div className="font-display text-xl md:text-2xl text-heading not-italic" style={{ fontWeight: 600 }}>
                           {item.value}
                         </div>
                       </div>
@@ -61,7 +61,7 @@ export default function LienHePage() {
                 <div className="eyebrow text-accent mb-4">Lưu ý quan trọng</div>
                 <div className="flex items-start gap-4 mb-6">
                   <Shield className="w-6 h-6 text-accent shrink-0 mt-1" />
-                  <p className="font-display text-2xl text-cream leading-snug italic">
+                  <p className="font-display text-2xl text-cream leading-snug not-italic" style={{ fontWeight: 700 }}>
                     Đây là nền tảng giáo dục — không phải dịch vụ khám bệnh.
                   </p>
                 </div>

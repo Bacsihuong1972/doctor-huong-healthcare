@@ -7,7 +7,7 @@ const stages = [
   {
     num: "01",
     title: "Hiểu đường huyết",
-    count: "6 bài",
+    count: "4 bài",
     description: "Cơ bản về glucose, insulin và cách cơ thể tiêu hóa thức ăn",
     image:
       "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1000&q=85&fit=crop&auto=format",
@@ -15,7 +15,7 @@ const stages = [
   {
     num: "02",
     title: "Nhận diện nguy cơ",
-    count: "2 bài",
+    count: "4 bài",
     description: "Dấu hiệu của đường cong đột biến và biến chứng lâu dài",
     image:
       "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1000&q=85&fit=crop&auto=format",
@@ -23,7 +23,7 @@ const stages = [
   {
     num: "03",
     title: "Thực hành bữa ăn",
-    count: "10 bài",
+    count: "4 bài",
     description: "Thứ tự ăn, bữa sáng, bữa phụ, vận động sau ăn",
     image:
       "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1000&q=85&fit=crop&auto=format",
@@ -31,7 +31,7 @@ const stages = [
   {
     num: "04",
     title: "Kế hoạch riêng",
-    count: "2 bài",
+    count: "4 bài",
     description: "Lịch 7 ngày thực hành và làm việc cùng bác sĩ",
     image:
       "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=1000&q=85&fit=crop&auto=format",
@@ -45,7 +45,7 @@ export function LearningRoadmap() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-16 md:mb-20">
           <div className="lg:col-span-5">
             <div className="eyebrow text-muted mb-3">№ 04 — Lộ trình</div>
-            <h2 className="font-display text-4xl md:text-5xl lg:text-[64px] text-heading leading-[1.1] tracking-tight">
+            <h2 className="font-display text-4xl md:text-5xl lg:text-[64px] text-heading leading-[1.1] tracking-tight not-italic" style={{ fontWeight: 800 }}>
               Bốn chặng đi
               <br />
               rõ ràng
@@ -86,7 +86,7 @@ export function LearningRoadmap() {
                 </div>
               </div>
 
-              <h3 className="font-display text-3xl md:text-4xl text-heading leading-tight tracking-tight mb-3">
+              <h3 className="font-display text-3xl md:text-4xl text-heading leading-tight tracking-tight mb-3 not-italic" style={{ fontWeight: 800 }}>
                 {stage.title}
               </h3>
               <p className="text-text leading-relaxed">
@@ -105,7 +105,7 @@ export function LearningRoadmap() {
           className="mt-20 md:mt-24 pt-12 border-t border-heading/10 text-center"
         >
           <p className="text-sm text-muted mb-5 max-w-md mx-auto">
-            Để vào học toàn bộ 20 bài, cô chú vui lòng đăng ký hoặc đăng nhập tài khoản — Bác sĩ Hương sẽ ghi nhớ tiến độ học.
+            Để vào học toàn bộ 16 bài, cô chú vui lòng đăng ký hoặc đăng nhập tài khoản — Bác sĩ Hương sẽ ghi nhớ tiến độ học.
           </p>
           <Link
             href="/chuong-trinh"
